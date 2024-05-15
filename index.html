@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FuTURES Lab</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+    <!--<link rel="stylesheet" href="css/main.css"/>
+    <link href="css/utah-main.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="css/main.css"/>
+    <link href="css/utah-main.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <a class="navbar-brand" href="http://cs.utah.edu">
+            <img class="button" width="185px" src="img/logos/ksoclogo_white.png" style="margin-top:1.3%">
+        </a>
+
+        <div class="ml-auto">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav" style="margin-top: 1px;">
+                    <li><a href="./">Home</a></li>
+                    <li><a href="./#news">News</a></li>
+                    <li><a href="people">People</a></li>
+                    <li><a href="publications">Publications</a></li>
+                    <li><a href="./">Disclosures</a></li>
+                    <li><a href="https://github.com/FuturesLab">Software</a></li>
+                    <li><a href="./">Visiting</a></li>
+                    <li><a href="./#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-container" style="margin-top:1.15em">
+        <div class="col-md-12">
+            <div id="photos" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#photos" data-slide-to="0" class="active"></li>
+                    <li data-target="#photos" data-slide-to="1"></li>
+                    <li data-target="#photos" data-slide-to="2"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="item active"><img src="img/slideshow/mountains.png"></div>
+                    <div class="item"><img src="img/slideshow/dinner.png"></div>
+                    <div class="item"><img src="img/slideshow/arch.png"></div>
+                    <div class="item"><img src="img/slideshow/david.png"></div>
+                    <div class="item"><img src="img/slideshow/trees.png"></div>
+                    <div class="item"><img src="img/slideshow/utahsec.png"></div>
+                </div>
+
+                <a class="carousel-control left" href="#photos" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="carousel-control right" href="#photos" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+            <br>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <h1 align=center><img class="button" src="img/logos/lablogo-full_blue_path.svg" style="width: 100%; max-width: 575px;"></h1>
+            </div>
+
+            <br class="on-narrow">
+
+            <div class="col-md-6" style="margin-top:1ex">
+                <p align="justify">We are a team of researchers who build practical systems with the aim of improving <b>real-world software security and robustness</b>. 
+                </p>
+                <p align="justify">We routinely publish our work in <b>security</b> and <b>software engineering venues</b> such as IEEE S&P, USENIX Security, ACM CCS, and ICSE.</p>
+                <p align="justify">Our group is currently focusing on the following research areas: <b>software testing</b>, <b>binary analysis</b>, <b>vulnerability triage</b>, and <b>bug repair</b>.</p>
+            </div>
+        </div>
+
+        <!-- News (e.g., papers, talks, etc.) -->
+        <div class="col-md-12" style="margin-top:10pt;">
+            <br><hr><h2 id="news" align="left">Recent News</h2>
+            <table><td>
+            <ul>   
+                <li><b>05/2024</b>: Congratulations to our student researchers <a href="https://candrewlee14.github.io/">Andrew</a>, <a href="https://www.linkedin.com/in/david-clark-1434891b6/">David</a>, and <a href="https://www.linkedin.com/in/gabe-sherman-891200/">Gabe</a> for graduating!</li>
+
+                <li><b>06/2023</b>: Our paper on <em>target-embedded Windows fuzzing snapshotting</em> is accepted to <a href="https://www.usenix.org/conference/usenixsecurity23">USENIX'23</a>!</li>
+
+                <li><b>05/2023</b>: Our paper on <em>profile-guided system optimizations</em> for fuzzing is accepted to <a href="https://www.sigsac.org/ccs/CCS2023/">CCS'23</a>!</li>
+
+                <li><b>02/2023</b>: Stefan's guest article for ACM Queue magazine <em>The Fun in Fuzzing</em> is <a href="https://queue.acm.org/detail.cfm?id=3580504">now available</a>!</li>
+
+                <li><b>09/2022</b>: Our paper on directed fuzzing optimization <em>SieveFuzz</em> is accepted to <a href="https://www.acsac.org/">ACSAC'22</a>.</li>
+            </ul>
+            </td></table>
+        </div>
+
+        <div class="col-md-12" style="margin-top:10pt;">
+            <hr><h2 id="news" align="left">Contact</h2>
+
+            <div class="col-md-5 text-left">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td width="10%"  style="padding-left:0em;">
+                            <i class="fa fa-map-marker"></i>
+                        </td>
+                        <td>
+                            3446 Merrill Engineering (MEB) <br>
+                            50 Central Campus Drive <br>
+                            Salt Lake City, UT 84112
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="10%"  style="padding-left:0em;">
+                            <i class="fa fa-envelope-o"></i> 
+                        </td>
+                        <td>
+                            snagy@cs.utah.edu
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="10%"  style="padding-left:0em;">
+                            <i class="fa fa-phone"></i> 
+                        </td>
+                        <td> 
+                            +1 801-581-8224 
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <br class="on-narrow">
+
+            <div class="col-md-7 text-center">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.6947593760556!2d-111.84924788810584!3d40.76873783402054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87525f8e1b9c7d31%3A0x914548c9f976bce5!2sUniversity%20of%20Utah%20School%20of%20Computing!5e0!3m2!1sen!2sus!4v1686075330489!5m2!1sen!2sus" scrolling="no" style="border:0; /*height:20%*/ width:100%; max-height:125px;" allowfullscreen="" loading="lazy" class="rounded"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <footer class="bg-light text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.75em;">
+            Copyright © Stefan Nagy. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

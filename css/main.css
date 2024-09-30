@@ -389,3 +389,7 @@ table td {
     padding: 0.3em 0.05em;
     padding-left:0.75em;
 }
+
+.carousel{
+    border-radius: 55px 55px 55px 55px;
+}

@@ -9,6 +9,9 @@
 @media (max-width 471.98px){
 br.on-wide {
     display: none; 
+}
+table td, th { 
+    padding: 10px;
 }}
 
 @media (max-width: 575.98px) { 
@@ -26,6 +29,9 @@ br.on-wide {
 }
 br.on-wide {
     display: none; 
+}
+table td, th { 
+    padding: 10px;
 }}
 
 @media (min-width: 767.98px) {
@@ -37,6 +43,9 @@ br.on-wide {
 }
 .alert-container{
     max-width: 640px;
+}
+table td, th { 
+    padding: 10px;
 }}
 
 @media (min-width: 991.98px) {
@@ -55,6 +64,9 @@ br.on-wide {
 }
 br.on-narrow {
     display: none; 
+}
+table td, th { 
+    padding: 10px;
 }}
 
 @media (min-width: 1199.98px) {
@@ -73,6 +85,9 @@ br.on-narrow {
 }
 br.on-narrow {
     display: none; 
+}
+table td, th { 
+    padding: 5px;
 }}
 
 /* ------------------------------- */
@@ -385,8 +400,9 @@ table {
     width: 100%;
 }
 
-table td {
-    padding: 0.3em 0.05em;
-    padding-left:0.75em;
+#security-bugs th:nth-child(4), #security-bugs td:nth-child(4) {
+    width: 20%;  /* Adjust the width as needed */
+    min-width: 150px; /* Ensure it doesn’t shrink too much */
+    text-align: left; /* Optional: Align content for better readability */
 }
 

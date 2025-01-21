@@ -1,0 +1,94 @@
+[
+{
+	"id":"CxGo #75", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/75", "lead":"Yeaseen Arafat", "date":"2024-08-24", "desc":"Bug: Testing Boolean to Float Conversions in CxGo: Implicit Conversion Success, Explicit Conversion Error"
+},
+{
+	"id":"CxGo #77", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/77", "lead":"Yeaseen Arafat", "date":"2024-08-24", "desc":"Bug: CxGo translated go code giving different output from gcc and clang"
+},
+{
+	"id":"CxGo #76", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/76", "lead":"Yeaseen Arafat", "date":"2024-08-24", "desc":"Bug: Implicit Bool to Float Conversion Fails When Added with a Float in C"
+},
+{
+	"id":"CxGo #78", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/78", "lead":"Yeaseen Arafat", "date":"2024-08-30", "desc":"Bug: Invalid Pointer Dereference for 3D Arrays; for 2D arrays Pointer Dereference is ok"
+},
+{
+	"id":"CxGo #80", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/80", "lead":"Yeaseen Arafat", "date":"2024-10-16", "desc":"panic: runtime error: index out of range [-1]"
+},
+{
+	"id":"CxGo #81", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/81", "lead":"Yeaseen Arafat", "date":"2024-10-29", "desc":"cxgo fails to handle compound literals in C code"
+},
+{
+	"id":"C4Go #515", "type":"Logical", "url":"https://github.com/Konstantin8105/c4go/issues/515", "lead":"Yeaseen Arafat", "date":"2024-10-24", "desc":"Failure at Union Initialization in the converted Go code"
+},
+{
+	"id":"C4Go #516", "type":"Logical", "url":"https://github.com/Konstantin8105/c4go/issues/516", "lead":"Yeaseen Arafat", "date":"2024-10-24", "desc":"Failure at Converting Boolean Expression to Integer in Struct Initialization"
+},
+{
+	"id":"C4Go #517", "type":"Logical", "url":"https://github.com/Konstantin8105/c4go/issues/517", "lead":"Yeaseen Arafat", "date":"2024-10-30", "desc":"Failure at 2D Array Initialization "
+},
+{
+	"id":"Go2Hx #177", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/177", "lead":"Yeaseen Arafat", "date":"2024-10-17", "desc":"Incorrect type conversion for (int)((uint32)(m))"
+},
+{
+	"id":"Go2Hx #178", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/178", "lead":"Yeaseen Arafat", "date":"2024-10-28", "desc":"Generic Functions Cause Translation Failure in Go2hx"
+},
+{
+	"id":"Go2Hx #179", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/179", "lead":"Yeaseen Arafat", "date":"2024-10-29", "desc":"go2hx fails to translate zero-comparison for arrays, resulting in unexpected runtime panic"
+},
+{
+	"id":"Zig #21855", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/21855", "lead":"Yeaseen Arafat", "date":"2024-10-29", "desc":"zig translate-c fails to translate compound literals like &(float){0.5},"
+},
+
+
+{
+	"id":"C2Rust #1165", "type":"Logical", "url":"https://github.com/immunant/c2rust/issues/1165", "lead":"Yeaseen Arafat", "date":"2024-11-23", "desc":"c2rust fails to handle increment or decrement operations within compound literals"
+},
+{
+	"id":"C2Rust #1166", "type":"Logical", "url":"https://github.com/immunant/c2rust/issues/1166", "lead":"Yeaseen Arafat", "date":"2024-11-23", "desc":"c2rust generates invalid Rust code for compound literals with pointers requiring mutability"
+},
+{
+	"id":"C2Rust #1167", "type":"Logical", "url":"https://github.com/immunant/c2rust/issues/1167", "lead":"Yeaseen Arafat", "date":"2024-11-24", "desc":"Modification to volatile variable between setjmp/longjmp not retained in translated rust code"
+},
+{
+	"id":"C2Rust #1168", "type":"Logical", "url":"https://github.com/immunant/c2rust/issues/1168", "lead":"Yeaseen Arafat", "date":"2024-11-24", "desc":"c2rust Translation Failure with Enums in Compound Literals"
+},
+{
+	"id":"C2Rust #1171", "type":"Logical", "url":"https://github.com/immunant/c2rust/issues/1171", "lead":"Yeaseen Arafat", "date":"2024-12-02", "desc":"c2rust Transpilation failure with Struct Initialization Using Expressions"
+},
+{
+	"id":"C2Rust #1184", "type":"Logical", "url":"https://github.com/immunant/c2rust/issues/1184", "lead":"Yeaseen Arafat", "date":"2024-12-04", "desc":"c2rust Incorrectly Translates const Variable as Mutable static mut"
+},
+{
+	"id":"Go2Hx #183", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/183", "lead":"Yeaseen Arafat", "date":"2024-11-09", "desc":"go2hx Fails to Emit Runtime Error for Uncomparable Types (Slice, Map, Func) within Interfaces"
+},
+{
+	"id":"Go2Hx #184", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/184", "lead":"Yeaseen Arafat", "date":"2024-11-09", "desc":"go2hx Allows Uncomparable Type Comparisons (invalid in Go), Incorrectly Returning false Instead of Causing a Panic "
+},
+{
+	"id":"Go2Hx #185", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/185", "lead":"Yeaseen Arafat", "date":"2024-11-10", "desc":"go2hx Incorrectly Evaluates Function Pointer Comparisons, Leading to Inconsistent Results"
+},
+{
+	"id":"Go2Hx #186", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/186", "lead":"Yeaseen Arafat", "date":"2024-11-10", "desc":"Incorrect Handling of Nil Pointer Conversion for Array Types in go2hx Translation"
+},
+{
+	"id":"Go2Hx #187", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/187", "lead":"Yeaseen Arafat", "date":"2024-11-10", "desc":"Inaccurate Recovery from Double-panic in Translated Haxe Code"
+},
+{
+	"id":"Go2Hx #188", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/188", "lead":"Yeaseen Arafat", "date":"2024-11-10", "desc":"Recover Called Directly in defer Statement Does Not Cause Runtime Error in Translated Haxe Code"
+},
+{
+	"id":"Zig #21876", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/21876", "lead":"Yeaseen Arafat", "date":"2024-11-01", "desc":"Type Mismatch in Zig Translation of Pointer to 2D Array in C Code"
+},
+{
+	"id":"Zig #22045", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/22045", "lead":"Yeaseen Arafat", "date":"2024-11-21", "desc":"zig translate-c Type Propagation Error for Nullable Pointer ([*c]) Dereferencing and Address Calculation in Zig"
+},
+{
+	"id":"Zig #22136", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/22136", "lead":"Yeaseen Arafat", "date":"2024-12-03", "desc":"translate-c Runtime Divergence while comparing String Literals and Compound Literals"
+},
+{
+	"id":"Zig #22139", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/22139", "lead":"Yeaseen Arafat", "date":"2024-12-03", "desc":"translate-c Misinterprets Address of Compound Literal for Struct as Immutable "
+},
+{
+	"id":"Zig #22148", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/22148", "lead":"Yeaseen Arafat", "date":"2024-12-04", "desc":"translate-c Fails to Translate Anonymous Enum Usage"
+}
+]

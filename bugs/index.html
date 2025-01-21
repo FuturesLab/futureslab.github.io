@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FuTURES&#179; Lab</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+    <!--<link rel="stylesheet" href="css/main.css"/>
+    <link href="css/utah-main.css" rel="stylesheet">-->
+    <link href="../css/main.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+
+    <style>
+
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    
+    <script>
+        async function loadBugData() {
+            const jsonFiles = ['gabe.json', 'zao.json', 'yeaseen.json', 'dillon.json']; // Add more JSON files here
+            const tableBody = document.getElementById("table-body");
+            const loadingRow = document.getElementById("loading");
+            const bugCountElement = document.getElementById("bug-count");
+            const counterContainer = document.querySelector('.counter');
+            
+            let allBugs = [];
+
+            try {
+                for (const file of jsonFiles) {
+                    const response = await fetch(file);
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch ${file}: ${response.statusText}`);
+                    }
+
+                    const bugs = await response.json();
+                    allBugs = allBugs.concat(bugs);
+                }
+
+                loadingRow.remove(); // Remove the loading row after successful fetch
+
+                allBugs.forEach(bug => {
+                    const row = `<tr>
+                        <td>${bug.date}</td>
+                        <td>${bug.type}</td>
+                        <td><a href="${bug.url}" target="_blank">${bug.id}</a>: ${bug.desc}</td>
+                        <td>${bug.lead}</td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+
+                // Smooth counting animation
+                animateCounter(bugCountElement, allBugs.length, 1000);
+                counterContainer.style.opacity = 1; // Fade-in effect
+
+                // Initialize DataTables after all content is added
+                $('#security-bugs').DataTable({
+                    "order": [[0, "desc"]],
+                    "paging": true,
+                    "searching": true,
+                    "responsive": true,
+                    "pageLength": 10,
+                    "lengthMenu": [10, 25, 50, 100],
+                    "columnDefs": [
+                        { "type": "date", "targets": 0 }, // Ensure proper sorting of date column
+                        { "orderable": false, "targets": 2 } // Disable sorting for description column
+                    ]
+                });
+
+            } catch (error) {
+                console.error("Error loading bug data:", error);
+                loadingRow.innerHTML = `<td colspan="4" style="text-align:center;color:red;">Failed to load data.</td>`;
+            }
+        }
+
+        function animateCounter(element, targetValue, duration) {
+            let startValue = 0;
+            let increment = Math.ceil(targetValue / (duration / 20));
+            let interval = setInterval(() => {
+                startValue += increment;
+                if (startValue >= targetValue) {
+                    element.textContent = targetValue;
+                    clearInterval(interval);
+                } else {
+                    element.textContent = startValue;
+                }
+            }, 20);
+        }
+
+        document.addEventListener("DOMContentLoaded", loadBugData);
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <a class="navbar-brand" href="http://cs.utah.edu">
+            <img class="button" width="185px" src="img/logos/ksoclogo_white.png" style="margin-top:1.3%">
+        </a>
+
+        <div class="ml-auto">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav" style="margin-top: 1px;">
+                    <li><a href=".././">Home</a></li>
+                    <li><a href=".././#news">News</a></li>
+                    <li><a href="../people">People</a></li>
+                    <li><a href="../publications">Publications</a></li>
+                    <li><a href="../bugs">Reported Bugs</a></li>
+                    <li><a href="https://github.com/FuturesLab">Software</a></li>
+                    <li><a href="../#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-container" style="margin-top:1.15em">
+        <div class="col-md-12 text-center" style="margin-bottom:10px">
+            <h1>FuTURES³ Lab Reported Bugs: 
+                <span class="counter" id="bug-count" style="color:#BE0000;">0</span>
+            </h1>
+        </div>
+        <div class="col-md-12" style="margin-bottom:15px">
+            <h4><p aligin="justify">We regularly discovery new software logic bugs and security vulnerabilities as part of our research. Below is a continually updated list:</p></h4>
+        </div>
+        <div class="col-md-12 table-responsive">
+            <table id="security-bugs" class="display table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Lead</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <tr id="loading">
+                    <td colspan="4" style="text-align:center;">Loading data, please wait...</td>
+                </tr>
+            </tbody>                        
+            </table>
+        </div>
+    </div>
+
+    <br>
+
+    <footer class="bg-light text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.75em;">
+            Copyright © Stefan Nagy. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -151,6 +151,6 @@
 	"date":"2024/11/12", "type":"Security", "url":"https://github.com/PCRE2Project/pcre2/issues/561", "id":"PCRE2 #561", "desc":"Several heap-BoF crashes from pcre2_compile related to parsed_pattern", "lead":"Gabe Sherman"
 },
 { 
-	"date":"2024-08-07", "url":"https://github.com/OpenPrinting/cups/issues/1026", "id":"CUPS #1026", "lead":"Gabe Sherman", "desc":"Potentially missing a NULL value check in _cupsConvertOptions"
+	"date":"2024-08-07", "type":"Security", "url":"https://github.com/OpenPrinting/cups/issues/1026", "id":"CUPS #1026", "lead":"Gabe Sherman", "desc":"Potentially missing a NULL value check in _cupsConvertOptions"
 }
 ]

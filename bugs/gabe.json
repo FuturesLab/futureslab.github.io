@@ -169,5 +169,5 @@
 },
 {
 	"id":"DateUtil #1402", "type":"Logical", "url":"https://github.com/dateutil/dateutil/issues/1402", "lead":"Gabe Sherman", "date":"2024-12-10", "desc":"TypeError: unsupported operand type(s) for *=: 'NoneType' and 'int' when calling tz.gettz"
-},
+}
 ]

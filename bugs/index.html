@@ -18,14 +18,15 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
+    <!-- XSS Protection -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+
     <script>
         function getSanitizedQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             let query = urlParams.get(param);
-
             if (query) {
-                // Remove potentially dangerous characters (basic XSS protection)
-                query = query.replace(/[<>"'(){}]/g, '');
+                query = DOMPurify.sanitize(query); // XSS Protection
             }
             return query;
         }
@@ -64,7 +65,7 @@
                 animateCounter(bugCountElement, allBugs.length, 1000);
                 counterContainer.style.opacity = 1;
 
-                // Initialize DataTables (default search box remains)
+                // Initialize DataTables
                 const table = $('#security-bugs').DataTable({
                     "order": [[0, "desc"]],
                     "paging": true,
@@ -75,7 +76,10 @@
                     "columnDefs": [
                         { "type": "date", "targets": 0 },
                         { "orderable": false, "targets": 2 }
-                    ]
+                    ],
+                    "drawCallback": function () {
+                        updateEntriesText(table);
+                    }
                 });
 
                 // Apply search query from URL if present
@@ -84,13 +88,31 @@
                     table.search(searchQuery).draw();
                 }
 
-                // Update URL dynamically when search box is used
-                $('#security-bugs_filter input').on('input', function () {
-                    const newQuery = this.value.trim();
-                    const newUrl = newQuery ? `?search=${encodeURIComponent(newQuery)}` : window.location.pathname;
+                // Update "Show X out of Y entries" dynamically
+                function updateEntriesText(table) {
+                    let displayed = table.page.info().recordsDisplay;
+                    let total = table.page.info().recordsTotal;
+                    let entriesLabel = document.querySelector("#security-bugs_wrapper .dataTables_length label");
+                    if (entriesLabel) {
+                        entriesLabel.innerHTML = `Show 
+                            <select name="security-bugs_length" aria-controls="security-bugs" class="">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                            out of ${displayed} entries`;
+                    }
+                }
 
-                    // Update URL without reloading the page
-                    window.history.replaceState(null, '', newUrl);
+                // Trigger update on search change
+                $('#security-bugs_filter input').on('input', function () {
+                    table.search(this.value.trim()).draw();
+                });
+
+                // Update text on page change
+                table.on('search.dt page.dt length.dt', function () {
+                    updateEntriesText(table);
                 });
 
             } catch (error) {
@@ -152,11 +174,9 @@
                 <span class="counter" id="bug-count" style="color:#BE0000;">0</span>
             </h1>
         </div>
-
-        <div class="col-md-12" style="margin-bottom:15px">
+        <div class="col-md-12" style="">
             <h4><p align="justify">We regularly discover new software logic bugs and security vulnerabilities as part of our research. Below is a continually updated list:</p></h4>
         </div>
-
         <div class="col-md-12 table-responsive">
             <table id="security-bugs" class="display table table-striped table-bordered" style="width:100%">
                 <thead>
@@ -175,14 +195,5 @@
             </table>
         </div>
     </div>
-
-    <br>
-
-    <footer class="bg-light text-center text-lg-start">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.75em;">
-            Copyright © Stefan Nagy. All rights reserved.
-        </div>
-    </footer>
-
 </body>
 </html>

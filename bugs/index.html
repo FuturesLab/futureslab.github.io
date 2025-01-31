@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>FuTURES³ Lab</title>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -18,16 +20,14 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
+    <!-- XSS Protection with DOMPurify -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+
     <script>
         function getSanitizedQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             let query = urlParams.get(param);
-
-            if (query) {
-                // Remove potentially dangerous characters (basic XSS protection)
-                query = query.replace(/[<>"'(){}]/g, '');
-            }
-            return query;
+            return query ? DOMPurify.sanitize(query) : null; // Prevents XSS
         }
 
         async function loadBugData() {

@@ -59,6 +59,9 @@
 	"id":"C2Rust #1184", "type":"Logical", "url":"https://github.com/immunant/c2rust/issues/1184", "lead":"Yeaseen Arafat", "date":"2024-12-04", "desc":"c2rust Incorrectly Translates const Variable as Mutable static mut"
 },
 {
+	"id":"C2Rust #1201", "type":"Logical", "url":"https://github.com/immunant/c2rust/issues/1201", "lead":"Yeaseen Arafat", "date":"2025-02-20", "desc":"Unsupported _Complex Type Causes c2rust Transpilation Failure"
+},
+{
 	"id":"Go2Hx #183", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/183", "lead":"Yeaseen Arafat", "date":"2024-11-09", "desc":"go2hx Fails to Emit Runtime Error for Uncomparable Types (Slice, Map, Func) within Interfaces"
 },
 {
@@ -77,6 +80,9 @@
 	"id":"Go2Hx #188", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/188", "lead":"Yeaseen Arafat", "date":"2024-11-10", "desc":"Recover Called Directly in defer Statement Does Not Cause Runtime Error in Translated Haxe Code"
 },
 {
+	"id":"Go2Hx #222", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/222", "lead":"Yeaseen Arafat", "date":"2025-02-27", "desc":"Go2Hx incorrectly translates len(*nilPtrToArray) resulting in 0 instead of the expected array length"
+},
+{
 	"id":"Zig #21876", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/21876", "lead":"Yeaseen Arafat", "date":"2024-11-01", "desc":"Type Mismatch in Zig Translation of Pointer to 2D Array in C Code"
 },
 {
@@ -90,5 +96,8 @@
 },
 {
 	"id":"Zig #22148", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/22148", "lead":"Yeaseen Arafat", "date":"2024-12-04", "desc":"translate-c Fails to Translate Anonymous Enum Usage"
+},
+{
+	"id":"Zig #22964", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/22964", "lead":"Yeaseen Arafat", "date":"2025-02-21", "desc":"Casting bool to pointer type results in invalid zig"
 }
 ]

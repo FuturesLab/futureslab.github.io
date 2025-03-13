@@ -100,9 +100,6 @@
 },
 
 {
-	"id":"Go2Hx #226", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/226", "lead":"Yeaseen Arafat", "date":"2025-03-07", "desc":"Tuple Assignment with Struct Pointer Yields Incorrect Output in translated haxe"
-},
-{
 	"id":"Zig #21876", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/21876", "lead":"Yeaseen Arafat", "date":"2024-11-01", "desc":"Type Mismatch in Zig Translation of Pointer to 2D Array in C Code"
 },
 {

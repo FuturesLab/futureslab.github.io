@@ -155,5 +155,5 @@
 },
 { 
 	"date":"2024-08-07", "type":"Security", "url":"https://github.com/OpenPrinting/cups/issues/1026", "id":"CUPS #1026", "lead":"Gabe Sherman", "desc":"Potentially missing a NULL value check in _cupsConvertOptions"
-},
+}
 ]

@@ -40,5 +40,5 @@
 
 {
 	"id":"Zig #21855", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/21855", "lead":"Yeaseen Arafat", "date":"2024-10-29", "desc":"zig translate-c fails to translate compound literals like &(float){0.5},"
-},
+}
 ]

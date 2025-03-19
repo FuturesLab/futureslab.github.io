@@ -1,0 +1,44 @@
+[
+{
+	"id":"CxGo #75", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/75", "lead":"Yeaseen Arafat", "date":"2024-08-24", "desc":"Bug: Testing Boolean to Float Conversions in CxGo: Implicit Conversion Success, Explicit Conversion Error"
+},
+{
+	"id":"CxGo #77", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/77", "lead":"Yeaseen Arafat", "date":"2024-08-24", "desc":"Bug: CxGo translated go code giving different output from gcc and clang"
+},
+{
+	"id":"CxGo #76", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/76", "lead":"Yeaseen Arafat", "date":"2024-08-24", "desc":"Bug: Implicit Bool to Float Conversion Fails When Added with a Float in C"
+},
+{
+	"id":"CxGo #78", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/78", "lead":"Yeaseen Arafat", "date":"2024-08-30", "desc":"Bug: Invalid Pointer Dereference for 3D Arrays; for 2D arrays Pointer Dereference is ok"
+},
+{
+	"id":"CxGo #80", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/80", "lead":"Yeaseen Arafat", "date":"2024-10-16", "desc":"panic: runtime error: index out of range [-1]"
+},
+{
+	"id":"CxGo #81", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/81", "lead":"Yeaseen Arafat", "date":"2024-10-29", "desc":"cxgo fails to handle compound literals in C code"
+},
+
+{
+	"id":"C4Go #515", "type":"Logical", "url":"https://github.com/Konstantin8105/c4go/issues/515", "lead":"Yeaseen Arafat", "date":"2024-10-24", "desc":"Failure at Union Initialization in the converted Go code"
+},
+{
+	"id":"C4Go #516", "type":"Logical", "url":"https://github.com/Konstantin8105/c4go/issues/516", "lead":"Yeaseen Arafat", "date":"2024-10-24", "desc":"Failure at Converting Boolean Expression to Integer in Struct Initialization"
+},
+{
+	"id":"C4Go #517", "type":"Logical", "url":"https://github.com/Konstantin8105/c4go/issues/517", "lead":"Yeaseen Arafat", "date":"2024-10-30", "desc":"Failure at 2D Array Initialization "
+},
+
+{
+	"id":"Go2Hx #177", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/177", "lead":"Yeaseen Arafat", "date":"2024-10-17", "desc":"Incorrect type conversion for (int)((uint32)(m))"
+},
+{
+	"id":"Go2Hx #178", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/178", "lead":"Yeaseen Arafat", "date":"2024-10-28", "desc":"Generic Functions Cause Translation Failure in Go2hx"
+},
+{
+	"id":"Go2Hx #179", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/179", "lead":"Yeaseen Arafat", "date":"2024-10-29", "desc":"go2hx fails to translate zero-comparison for arrays, resulting in unexpected runtime panic"
+},
+
+{
+	"id":"Zig #21855", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/21855", "lead":"Yeaseen Arafat", "date":"2024-10-29", "desc":"zig translate-c fails to translate compound literals like &(float){0.5},"
+},
+]

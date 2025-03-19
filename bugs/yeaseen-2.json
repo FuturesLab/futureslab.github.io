@@ -60,6 +60,10 @@
 },
 
 {
+	"id":"Go #72844", "type":"Logical", "url":"https://github.com/golang/go/issues/72844", "lead":"Yeaseen Arafat", "date":"2025-03-13", "desc":"cmd/compile: len(*f()) does not panic when f() returns (*[k]T)(nil)"
+},
+
+{
 	"id":"Go2Hx #183", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/183", "lead":"Yeaseen Arafat", "date":"2024-11-09", "desc":"go2hx Fails to Emit Runtime Error for Uncomparable Types (Slice, Map, Func) within Interfaces"
 },
 {

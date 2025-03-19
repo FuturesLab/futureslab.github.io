@@ -66,6 +66,40 @@
 {
 	"id":"C2Rust #1201", "type":"Logical", "url":"https://github.com/immunant/c2rust/issues/1201", "lead":"Yeaseen Arafat", "date":"2025-02-20", "desc":"Unsupported _Complex Type Causes c2rust Transpilation Failure"
 },
+{
+	"id":"C2Rust #1208", "type":"Logical", "url":"https://github.com/immunant/c2rust/issues/1208", "lead":"Yeaseen Arafat", "date":"2025-03-17", "desc":"c2rust Translates max_align_t to f128, Causing Compilation Errors in Rust"
+},
+
+{
+	"id":"CxGo #90", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/90", "lead":"Yeaseen Arafat", "date":"2025-03-17", "desc":"cxgo Generates Invalid Address-Taking Operation for String Literal Array"
+},
+{
+	"id":"CxGo #91", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/91", "lead":"Yeaseen Arafat", "date":"2025-03-17", "desc":"cxgo fails to translate switch-based loop unrolling"
+},
+{
+	"id":"CxGo #92", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/92", "lead":"Yeaseen Arafat", "date":"2025-03-17", "desc":"cxgo Fails to Print Integer Value with %zu Format Specifier"
+},
+{
+	"id":"CxGo #93", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/93", "lead":"Yeaseen Arafat", "date":"2025-03-17", "desc":"cxgo Fails to Recognize max_align_t from <stddef.h>"
+},
+{
+	"id":"CxGo #95", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/95", "lead":"Yeaseen Arafat", "date":"2025-03-17", "desc":"cxgo Crashes When Translating _Complex int Type"
+},
+{
+	"id":"CxGo #96", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/96", "lead":"Yeaseen Arafat", "date":"2025-03-17", "desc":"cxgo Generates Out-of-Bounds Pointer for One-Past-the-End Array Access for C"
+},
+{
+	"id":"CxGo #97", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/97", "lead":"Yeaseen Arafat", "date":"2025-03-17", "desc":"cxgo Incorrectly Converts Char Array Initialization, Causing Go Type Mismatch"
+},
+{
+	"id":"CxGo #98", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/98", "lead":"Yeaseen Arafat", "date":"2025-03-17", "desc":"cxgo Fails to Preserve const for External Constant Variables"
+},
+{
+	"id":"CxGo #99", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/99", "lead":"Yeaseen Arafat", "date":"2025-03-17", "desc":"cxgo Fails to Translate NULL Function Pointer, Causing Invalid Function Conversion and Segmentation Fault"
+},
+{
+	"id":"CxGo #100", "type":"Logical", "url":"https://github.com/gotranspile/cxgo/issues/100", "lead":"Yeaseen Arafat", "date":"2025-03-17", "desc":"cxgo Misses Declared Variables Inside switch Blocks in C"
+},
 
 {
 	"id":"Go2Hx #183", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/183", "lead":"Yeaseen Arafat", "date":"2024-11-09", "desc":"go2hx Fails to Emit Runtime Error for Uncomparable Types (Slice, Map, Func) within Interfaces"
@@ -94,6 +128,13 @@
 {
 	"id":"Go2Hx #226", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/226", "lead":"Yeaseen Arafat", "date":"2025-03-07", "desc":"Tuple Assignment with Struct Pointer Yields Incorrect Output in translated haxe"
 },
+{
+	"id":"Go2Hx #230", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/230", "lead":"Yeaseen Arafat", "date":"2025-03-18", "desc":"go2hx Incorrectly Iterates Over nil Pointer to Array Instead of Panicking"
+},
+{
+	"id":"Go2Hx #231", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/231", "lead":"Yeaseen Arafat", "date":"2025-03-18", "desc":"go2hx Fails to Capture and Process Channel Data, Producing Empty Output"
+},
+
 
 {
 	"id":"TinyGo #4786", "type":"Logical", "url":"https://github.com/tinygo-org/tinygo/issues/4786", "lead":"Yeaseen Arafat", "date":"2025-03-07", "desc":"Inconsistent Behavior with len on Nil Array Pointer in tinygo"
@@ -116,5 +157,8 @@
 },
 {
 	"id":"Zig #22964", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/22964", "lead":"Yeaseen Arafat", "date":"2025-02-21", "desc":"Casting bool to pointer type results in invalid zig"
+},
+{
+	"id":"Zig #23283", "type":"Logical", "url":"https://github.com/ziglang/zig/issues/23283", "lead":"Yeaseen Arafat", "date":"2025-03-17", "desc":"Zig translate-c Incorrectly Converts Function Pointers, Leading to Variadic Mismatch Error"
 }
 ]

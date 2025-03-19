@@ -44,6 +44,9 @@
 
 
 
+{
+	"id":"Babel #17190", "type":"Logical", "url":"https://github.com/babel/babel/issues/17190", "lead":"Yeaseen Arafat", "date":"2025-03-19", "desc":"Babel incorrectly transpiles BigInt exponentiation (**) into Math.pow(), causing a TypeError"
+},
 
 {
 	"id":"C2Rust #1165", "type":"Logical", "url":"https://github.com/immunant/c2rust/issues/1165", "lead":"Yeaseen Arafat", "date":"2024-11-23", "desc":"c2rust fails to handle increment or decrement operations within compound literals"

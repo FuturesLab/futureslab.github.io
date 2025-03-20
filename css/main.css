@@ -221,7 +221,8 @@ div.col-sm-1{
 .navbar{
     background-color: #1F273f; 
     border-radius: 0.0px;
-    box-shadow:0 5px 10px rgba(0,0,0,0.19), 0 1px 1px rgba(0,0,0,0.23);
+    border-color: #1F273f;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
     font-size: 100%;
 }
 

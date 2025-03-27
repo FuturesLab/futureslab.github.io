@@ -10,5 +10,8 @@
 },
 {
 	"id":"PlotJuggler #1052", "type":"Logical", "url":"https://github.com/facontidavide/PlotJuggler/issues/1052", "lead":"Dillon Otto", "date":"2025-03-12", "desc":"Plot Docker Toolbar Close (\"X\") Button can cause a Seg Fault"
+},
+{
+	"id":"KDE #502043", "type":"Logical", "url":"https://bugs.kde.org/show_bug.cgi?id=502043", "lead":"Dillon Otto", "date":"2025-03-26", "desc":"Reproducible Segfault: Pin Active Tab > New Spreadsheet > Select Column 2"
 }
 ]

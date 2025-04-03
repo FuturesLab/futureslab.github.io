@@ -13,5 +13,11 @@
 },
 {
 	"id":"KDE #502043", "type":"Logical", "url":"https://bugs.kde.org/show_bug.cgi?id=502043", "lead":"Dillon Otto", "date":"2025-03-26", "desc":"Reproducible Segfault: Pin Active Tab > New Spreadsheet > Select Column 2"
+},
+{
+	"id":"LibreCAD #2093", "type":"Logical", "url":"https://github.com/LibreCAD/LibreCAD/issues/2093", "lead":"Dillon Otto", "date":"2025-04-01", "desc":"Same Properties > Angle > Two Points crashes with a Segfault"
+},
+{
+	"id":"KDE #502347", "type":"Logical", "url":"https://bugs.kde.org/show_bug.cgi?id=502347", "lead":"Dillon Otto", "date":"2025-04-03", "desc":"Cut > Open > Fit crashes Umbrello with a segfault"
 }
 ]

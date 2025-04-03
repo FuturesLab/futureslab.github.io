@@ -97,9 +97,11 @@
 	"id":"Go2Hx #231", "type":"Logical", "url":"https://github.com/go2hx/go2hx/issues/231", "lead":"Yeaseen Arafat", "date":"2025-03-18", "desc":"go2hx Fails to Capture and Process Channel Data, Producing Empty Output"
 },
 
-
 {
 	"id":"TinyGo #4786", "type":"Logical", "url":"https://github.com/tinygo-org/tinygo/issues/4786", "lead":"Yeaseen Arafat", "date":"2025-03-07", "desc":"Inconsistent Behavior with len on Nil Array Pointer in tinygo"
+},
+{
+	"id":"TinyGo #4819", "type":"Logical", "url":"https://github.com/tinygo-org/tinygo/issues/4819", "lead":"Yeaseen Arafat", "date":"2025-03-18", "desc":"TinyGo Panics on Generic Type Aliases"
 },
 
 {

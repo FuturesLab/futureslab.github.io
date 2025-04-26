@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FuTURES&#179; Lab</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+    <!--<link rel="stylesheet" href="css/main.css"/>
+    <link href="css/utah-main.css" rel="stylesheet">-->
+    <link href="css/main.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <a class="navbar-brand" href="http://cs.utah.edu">
+            <img class="button" width="185px" src="img/logos/ksoclogo_white.png" style="margin-top:1.3%">
+        </a>
+
+        <div class="ml-auto">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav" style="margin-top: 1px;">
+                    <li><a href="./">Home</a></li>
+                    <li><a href="./#news">News</a></li>
+                    <li><a href="people">People</a></li>
+                    <li><a href="research">Research</a></li>
+                    <li><a href="publications">Publications</a></li>
+                    <li><a href="bugs">Reported Bugs</a></li>
+                    <li><a href="https://github.com/FuturesLab">Software</a></li>
+                    <!--<li><a href="./">Visiting</a></li>-->
+                    <li><a href="./#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-container" style="margin-top:1.15em">
+        <div class="col-md-12" align="center" style="margin-bottom:50px">
+            <br><h1 align=center>Research Areas</h1>
+            <hr class="wide"><br>
+
+            <!-- Card 1 -->
+            <div class="col-md-6" align="center"><div class="col-md-12 card-white">
+                <h3 align="center">Software Bug Discovery</h3><hr class="center">
+                <div class="col-md-12" style="display:flex; justify-content:center; gap:20px;">
+                    <img class="img-icon" src="img/icons/icon-magnifying.svg">
+                    &emsp;
+                    <img class="img-icon" src="img/icons/icon-bug.svg">
+                </div>
+                <ul align="left" style="display: inline-block; margin-bottom:10px">
+                    <li>Feedback-driven fuzzing</li>
+                    <li>Fuzzing harness generation</li>
+                    <li>Domain-specific fuzzing</li>
+                </ul>
+                <br>
+                <div class="col-md-12">
+                    <p align="center" style="margin-bottom:2%; margin-top:5%">
+                        <b align="left">Related Projects:</b>
+                    </p><br>
+                    <p>
+                        <a class="badge badge-button" href="papers/.pdf">OGHarn</a>
+                        <a class="badge badge-button" href="papers/.pdf">KConfig Tuning</a>
+                        <a class="badge badge-button" href="papers/.pdf">SieveFuzz</a>
+                        <a class="badge badge-button" href="papers/.pdf">UnTracer</a>
+                    </p>
+                </div>                    
+            </div></div>
+
+            <!-- Card 2 -->
+            <div class="col-md-6" align="center"><div class="col-md-12 card-white">
+                <h3 align="center">Program Analysis</h3><hr class="center">
+                <div class="col-md-12" style="display:flex; justify-content:center; gap:20px;">
+                    <img class="img-icon" src="img/icons/icon-exe.svg">
+                    &emsp;
+                    <img class="img-icon" src="img/icons/icon-graph.svg">
+                </div>
+                <ul align="left" style="display: inline-block; margin-bottom:10px">
+                    <li>Binary and source analysis</li>
+                    <li>Source-to-source translation</li>
+                    <li>Emergent languages (e.g., Rust)</li>
+                </ul>
+                <br>
+                <div class="col-md-12">
+                    <p align="center" style="margin-bottom:2%; margin-top:5%">
+                        <b align="left">Related Projects:</b>
+                    </p><br>
+                    <p>
+                        <a class="badge badge-button" href="papers/.pdf">TeTRIS</a>
+                        <a class="badge badge-button" href="papers/.pdf">Bin2Wrong</a>
+                    </p>
+                </div>
+            </div></div>
+
+            <!-- Card 3 -->
+            <div class="col-md-6" align="center"><div class="col-md-12 card-white">
+                <h3 align="center">Software Instrumentation</h3><hr class="center">
+                <div class="col-md-12" style="display:flex; justify-content:center; gap:20px;">
+                    <img class="img-icon" src="img/icons/icon-repair.svg">
+                    &emsp;
+                    <img class="img-icon" src="img/icons/icon-gear.svg">
+                </div>
+                <ul align="left" style="display: inline-block; margin-bottom:10px">
+                    <li>Software isolation</li>
+                    <li>Static binary rewriting</li>
+                    <li>Cross-platform instrumentation</li>
+                </ul>
+                <br>
+                <div class="col-md-12">
+                    <p align="center" style="margin-bottom:2%; margin-top:5%">
+                        <b align="left">Related Projects:</b>
+                    </p><br>
+                    <p>
+                        <a class="badge badge-button" href="papers/.pdf">ZAFL</a>
+                        <a class="badge badge-button" href="papers/.pdf">HeXcite</a>
+                        <a class="badge badge-button" href="papers/.pdf">WinFuzz</a>
+                    </p>
+                </div>
+            </div></div>
+
+            <!-- Recruiting Card -->
+            <div class="col-md-6" align="center"><div class="col-md-12 card-white">
+                <h3 align="center">Want to get involved?</h3><hr class="center">
+                <div class="col-md-12" style="display:flex; justify-content:center; gap:20px;">
+                    <img class="img-icon" src="img/icons/icon-research.svg">
+                    &emsp;
+                    <img class="img-icon" src="img/icons/icon-finish.svg">
+                </div>
+                <div class="col-md-12">
+                    <p align="justify" style="margin: 32px 0 40px 0">We are always looking for motivated students at all levels (<b>Ph.D.</b>, <b>M.S.</b>, and <b>undergraduate</b>). If any of our research areas or projects interest you, check out our current openings and opportunities here:</p>
+                    <p align="center"><a class="badge badge-button" href="join">Join the SSG</a></p>
+                </div>
+            </div></div>
+        </div>
+    </div>
+
+    </div>
+
+    <br>
+
+    <footer class="bg-light text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.75em;">
+            Copyright © Stefan Nagy. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "TmuxRs #48",
+    "type": "Logical",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/48",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-07-08",
+    "desc": "`rename-window` and `rename-session` add trailing garbage bytes"
+  },
+  {
+    "id": "TmuxRs #50",
+    "type": "Logical",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/50",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-07-08",
+    "desc": "`resize-pane` directions `-D` and `-U` do not work as expected"
+  },
+  {
+    "id": "TmuxRs #51",
+    "type": "Logical",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/51",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-07-08",
+    "desc": "`synchronize-panes` does not work correctly in `tmux-rs`"
+  },
+  {
+    "id": "TmuxRs #52",
+    "type": "Logical",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/52",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-07-08",
+    "desc": "`display-message` shows `%s-invalid-utf8` for pane index/title expansions"
+  },
+  {
+    "id": "TmuxRs #53",
+    "type": "Logical",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/53",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-07-08",
+    "desc": "Parsing Issue: `tmux-rs` rejects `-s` but accepts `-S` for `new-session`, unlike real `tmux`"
+  },
+  {
+    "id": "TmuxRs #64",
+    "type": "Logical",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/64",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-07-10",
+    "desc": "`tmux-rs` does not expand `#(whoami)` in `status-right`"
+  }
+]

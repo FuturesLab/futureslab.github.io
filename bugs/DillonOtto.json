@@ -1,7 +1,6 @@
 [
   {
     "id": "Dia #568",
-    "type": "Logical",
     "url": "https://gitlab.gnome.org/GNOME/dia/-/issues/568",
     "lead": "Dillon Otto",
     "date": "2025-05-29",
@@ -9,63 +8,48 @@
   },
   {
     "id": "Glaxnimate #703",
-    "type": "Logical",
     "url": "https://invent.kde.org/graphics/glaxnimate/-/issues/703",
     "lead": "Dillon Otto",
     "date": "2025-04-11",
     "desc": "Composition Width > Copy or Cut > Paste Crashes with a Segfault"
   },
   {
-    "id": "kcalc #504679",
-    "type": "Logical",
+    "id": "Kcalc #504679",
     "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1059230.html",
     "lead": "Dillon Otto",
     "date": "2025-05-22",
     "desc": "Sequence of % Operation followed by inserting ( crashes Kcalc"
   },
   {
-    "id": "kolourpaint #498550",
-    "type": "Logical",
+    "id": "Kolourpaint #498550",
     "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1011862.html",
     "lead": "Dillon Otto",
     "date": "2025-01-11",
     "desc": "Combination of Color Picker and Undo Leads to a segfault"
   },
   {
-    "id": "kolourpaint #504787",
-    "type": "Logical",
-    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1059930.html",
-    "lead": "Dillon Otto",
-    "date": "2025-05-25",
-    "desc": "Segfault in Bug Report Menu"
-  },
-  {
-    "id": "kolourpaint #504786",
-    "type": "Logical",
-    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1059927.html",
-    "lead": "Dillon Otto",
-    "date": "2025-05-25",
-    "desc": "Segfault in Keyboard Shortcut Settings"
-  },
-  {
-    "id": "kolourpaint #502689",
-    "type": "Logical",
+    "id": "Kolourpaint #502689",
     "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1044654.html",
     "lead": "Dillon Otto",
     "date": "2025-04-11",
     "desc": "Transient Segfault / Graphical Glitching on Specific Inputs in Print Preview Window"
   },
   {
-    "id": "LabPlot2 #504839",
-    "type": "Logical",
-    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1060321.html",
+    "id": "Kolourpaint #504786",
+    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1059927.html",
     "lead": "Dillon Otto",
-    "date": "2025-05-26",
-    "desc": "Invalid insert column left crashes lab plot with index out of range"
+    "date": "2025-05-25",
+    "desc": "Segfault in Keyboard Shortcut Settings"
+  },
+  {
+    "id": "Kolourpaint #504787",
+    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1059930.html",
+    "lead": "Dillon Otto",
+    "date": "2025-05-25",
+    "desc": "Segfault in Bug Report Menu"
   },
   {
     "id": "LabPlot2 #502043",
-    "type": "Logical",
     "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1039068.html",
     "lead": "Dillon Otto",
     "date": "2025-03-26",
@@ -73,15 +57,20 @@
   },
   {
     "id": "LabPlot2 #504794",
-    "type": "Logical",
     "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1059973.html",
     "lead": "Dillon Otto",
     "date": "2025-05-25",
     "desc": "Segfault using pin and matrix"
   },
   {
+    "id": "LabPlot2 #504839",
+    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1060321.html",
+    "lead": "Dillon Otto",
+    "date": "2025-05-26",
+    "desc": "Invalid insert column left crashes lab plot with index out of range"
+  },
+  {
     "id": "Librecad #2093",
-    "type": "Logical",
     "url": "https://github.com/LibreCAD/LibreCAD/issues/2093",
     "lead": "Dillon Otto",
     "date": "2025-04-02",
@@ -89,15 +78,13 @@
   },
   {
     "id": "Librecad #2161",
-    "type": "Logical",
     "url": "https://github.com/LibreCAD/LibreCAD/issues/2161",
     "lead": "Dillon Otto",
     "date": "2025-05-26",
     "desc": "Transient Segfault when placing many points consecutively"
   },
   {
-    "id": "Mate-calc #226",
-    "type": "Logical",
+    "id": "MateCalc #226",
     "url": "https://github.com/mate-desktop/mate-calc/issues/226",
     "lead": "Dillon Otto",
     "date": "2024-08-13",
@@ -105,7 +92,6 @@
   },
   {
     "id": "Plotjuggler #1052",
-    "type": "Logical",
     "url": "https://github.com/facontidavide/PlotJuggler/issues/1052",
     "lead": "Dillon Otto",
     "date": "2025-03-12",
@@ -113,63 +99,55 @@
   },
   {
     "id": "QCADForum 11668",
-    "type": "Logical",
     "url": "https://qcad.org/rsforum/viewtopic.php?f=33&t=11668",
     "lead": "Dillon Otto",
     "date": "2025-05-26",
     "desc": "Bug Report: Deterministic sequence leads to QCad crashing with a Segfault"
   },
   {
-    "id": "umbrello #504942",
-    "type": "Logical",
-    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1061354.html",
-    "lead": "Dillon Otto",
-    "date": "2025-05-28",
-    "desc": "Modify Diagram > Open (Discard) > Birds Eye view crashes with a segfault"
-  },
-  {
-    "id": "umbrello #504940",
-    "type": "Logical",
-    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1061350.html",
-    "lead": "Dillon Otto",
-    "date": "2025-05-28",
-    "desc": "Creating 2 new sequence diagrams then creating a new document segfaults"
-  },
-  {
-    "id": "umbrello #504941",
-    "type": "Logical",
-    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1061353.html",
-    "lead": "Dillon Otto",
-    "date": "2025-05-28",
-    "desc": "Modify Diagram > Open (Discard) > Undo crashes with a segfault"
-  },
-  {
-    "id": "umbrello #504939",
-    "type": "Logical",
-    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1061349.html",
-    "lead": "Dillon Otto",
-    "date": "2025-05-28",
-    "desc": "Modify Diagram > Open (Discard) > Print Preview crashes with a segfault"
-  },
-  {
-    "id": "umbrello #502347",
-    "type": "Logical",
+    "id": "Umbrello #502347",
     "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1042174.html",
     "lead": "Dillon Otto",
     "date": "2025-04-05",
     "desc": "Cut > Open > Fit crashes Umbrello with a segfault"
   },
   {
-    "id": "App/xcalc #3",
-    "type": "Logical",
+    "id": "Umbrello #504939",
+    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1061349.html",
+    "lead": "Dillon Otto",
+    "date": "2025-05-28",
+    "desc": "Modify Diagram > Open (Discard) > Print Preview crashes with a segfault"
+  },
+  {
+    "id": "Umbrello #504940",
+    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1061350.html",
+    "lead": "Dillon Otto",
+    "date": "2025-05-28",
+    "desc": "Creating 2 new sequence diagrams then creating a new document segfaults"
+  },
+  {
+    "id": "Umbrello #504941",
+    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1061353.html",
+    "lead": "Dillon Otto",
+    "date": "2025-05-28",
+    "desc": "Modify Diagram > Open (Discard) > Undo crashes with a segfault"
+  },
+  {
+    "id": "Umbrello #504942",
+    "url": "https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1061354.html",
+    "lead": "Dillon Otto",
+    "date": "2025-05-28",
+    "desc": "Modify Diagram > Open (Discard) > Birds Eye view crashes with a segfault"
+  },
+  {
+    "id": "Xcalc #3",
     "url": "https://gitlab.freedesktop.org/xorg/app/xcalc/-/issues/3",
     "lead": "Dillon Otto",
     "date": "2024-08-14",
     "desc": "Certain Mod Operations Crash the Calculator with a Floating Point Exception on Line 532"
   },
   {
-    "id": "App/xcalc #4",
-    "type": "Logical",
+    "id": "Xcalc #4",
     "url": "https://gitlab.freedesktop.org/xorg/app/xcalc/-/issues/4",
     "lead": "Dillon Otto",
     "date": "2025-04-06",

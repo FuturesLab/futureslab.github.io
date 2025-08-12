@@ -1,0 +1,23 @@
+# GUIFuzz++
+https://gitlab.gnome.org/GNOME/dia/-/issues/568
+https://invent.kde.org/graphics/glaxnimate/-/issues/703
+https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1059230.html
+https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1011862.html
+https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1059930.html
+https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1059927.html
+https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1044654.html
+https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1060321.html
+https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1039068.html
+https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1059973.html
+https://github.com/LibreCAD/LibreCAD/issues/2093
+https://github.com/LibreCAD/LibreCAD/issues/2161
+https://github.com/mate-desktop/mate-calc/issues/226
+https://github.com/facontidavide/PlotJuggler/issues/1052
+https://qcad.org/rsforum/viewtopic.php?f=33&t=11668
+https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1061354.html
+https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1061350.html
+https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1061353.html
+https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1061349.html
+https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1042174.html
+https://gitlab.freedesktop.org/xorg/app/xcalc/-/issues/3
+https://gitlab.freedesktop.org/xorg/app/xcalc/-/issues/4

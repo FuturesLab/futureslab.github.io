@@ -31,7 +31,12 @@
         }
 
         async function loadBugData() {
-            const jsonFiles = ['gabe-1.json', 'gabe-2.json', 'zao.json', 'yeaseen-1.json', 'yeaseen-2.json', 'yeaseen-3.json', 'dillon.json'];
+            const jsonFiles = [
+                'ZaoYang.json', 
+                'YeaseenArafat.json', 
+                'GabeSherman.json', 
+                'DillonOtto.json'
+            ];
             const tableBody = document.getElementById("table-body");
             const loadingRow = document.getElementById("loading");
             const bugCountElement = document.getElementById("bug-count");
@@ -54,7 +59,6 @@
                 allBugs.forEach(bug => {
                     const row = `<tr>
                         <td>${bug.date}</td>
-                        <td>${bug.type}</td>
                         <td><a href="${bug.url}" target="_blank">${bug.id}</a>: ${bug.desc}</td>
                         <td>${bug.lead}</td>
                     </tr>`;
@@ -70,7 +74,7 @@
                     "paging": true,
                     "searching": true,
                     "responsive": true,
-                    "pageLength": 10,
+                    "pageLength": 25,
                     "lengthMenu": [10, 25, 50, 100],
                     "columnDefs": [
                         { "type": "date", "targets": 0 },
@@ -161,10 +165,9 @@
             <table id="security-bugs" class="display table table-striped table-bordered" style="width:100%">
                 <thead>
                     <tr>
-                        <th style="width:10%">Date</th>
-                        <th style="width:5%">Category</th>
-                        <th style="width:60%">Description</th>
-                        <th style="width:25%">Lead</th>
+                        <th style="width:12%">Date</th>
+                        <th style="width:68%">Description</th>
+                        <th style="width:20%">Lead</th>
                     </tr>
                 </thead>
                 <tbody id="table-body">

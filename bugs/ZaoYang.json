@@ -1,0 +1,198 @@
+[
+  {
+    "id": "Angr #4582",
+    "url": "https://github.com/angr/angr/issues/4582",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "Un-assigned value for decompiled switch-case statement"
+  },
+  {
+    "id": "Angr #4583",
+    "url": "https://github.com/angr/angr/issues/4583",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "Missing typecast for hexadecimal format of floating point value"
+  },
+  {
+    "id": "Angr #4584",
+    "url": "https://github.com/angr/angr/issues/4584",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "Inconsistent typecasting and shift operation result"
+  },
+  {
+    "id": "Angr #4585",
+    "url": "https://github.com/angr/angr/issues/4585",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "integer is recovered as a pointer"
+  },
+  {
+    "id": "Angr #4586",
+    "url": "https://github.com/angr/angr/issues/4586",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "wrong quotient value for a originally modulo operation"
+  },
+  {
+    "id": "Angr #4587",
+    "url": "https://github.com/angr/angr/issues/4587",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "Un-assigned variable used in operations"
+  },
+  {
+    "id": "Angr #4588",
+    "url": "https://github.com/angr/angr/issues/4588",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "Signed integer recovered as unsigned integer"
+  },
+  {
+    "id": "Angr #4589",
+    "url": "https://github.com/angr/angr/issues/4589",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "Missing type casting for variables"
+  },
+  {
+    "id": "Angr #4590",
+    "url": "https://github.com/angr/angr/issues/4590",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "Typecasted value becomes 0"
+  },
+  {
+    "id": "BinaryninjaApi #5199",
+    "url": "https://github.com/Vector35/binaryninja-api/issues/5199",
+    "lead": "Zao Yang",
+    "date": "2024-03-20",
+    "desc": "PseudoC fails to render HLIL_STRUCT_FIELD correctly."
+  },
+  {
+    "id": "BinaryninjaApi #5200",
+    "url": "https://github.com/Vector35/binaryninja-api/issues/5200",
+    "lead": "Zao Yang",
+    "date": "2024-03-20",
+    "desc": "PseudoC fails to add cast to signed comparisons"
+  },
+  {
+    "id": "BinaryninjaApi #5201",
+    "url": "https://github.com/Vector35/binaryninja-api/issues/5201",
+    "lead": "Zao Yang",
+    "date": "2024-03-20",
+    "desc": "Issue with soundness of HLIL control flow structuring"
+  },
+  {
+    "id": "BinaryninjaApi #5202",
+    "url": "https://github.com/Vector35/binaryninja-api/issues/5202",
+    "lead": "Zao Yang",
+    "date": "2024-03-20",
+    "desc": "`truncf`, `fsqrt`, `fabs` incorrectly rendered in PseudoC"
+  },
+  {
+    "id": "BinaryninjaApi #5205",
+    "url": "https://github.com/Vector35/binaryninja-api/issues/5205",
+    "lead": "Zao Yang",
+    "date": "2024-03-20",
+    "desc": "Division deoptimization bug"
+  },
+  {
+    "id": "BinaryninjaApi #5309",
+    "url": "https://github.com/Vector35/binaryninja-api/issues/5309",
+    "lead": "Zao Yang",
+    "date": "2024-04-22",
+    "desc": "Floating point type propagation failure"
+  },
+  {
+    "id": "R2Ghidra #134",
+    "url": "https://github.com/radareorg/r2ghidra/issues/134",
+    "lead": "Zao Yang",
+    "date": "2024-04-19",
+    "desc": "operation result dereferenced by memory address"
+  },
+  {
+    "id": "R2Ghidra #135",
+    "url": "https://github.com/radareorg/r2ghidra/issues/135",
+    "lead": "Zao Yang",
+    "date": "2024-04-19",
+    "desc": "SBORROW4 wrongly used in condition"
+  },
+  {
+    "id": "R2Ghidra #136",
+    "url": "https://github.com/radareorg/r2ghidra/issues/136",
+    "lead": "Zao Yang",
+    "date": "2024-04-19",
+    "desc": "type casted value recovered as 0"
+  },
+  {
+    "id": "Reko #1338",
+    "url": "https://github.com/uxmal/reko/issues/1338",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "Unexpected argument order when decompiling program"
+  },
+  {
+    "id": "Reko #1339",
+    "url": "https://github.com/uxmal/reko/issues/1339",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "Reko fails to recover floating-point code"
+  },
+  {
+    "id": "Reko #1340",
+    "url": "https://github.com/uxmal/reko/issues/1340",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "Reko doesn't generate any decompiled code"
+  },
+  {
+    "id": "Reko #1341",
+    "url": "https://github.com/uxmal/reko/issues/1341",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "Problems with type inference around `printf`"
+  },
+  {
+    "id": "Reko #1342",
+    "url": "https://github.com/uxmal/reko/issues/1342",
+    "lead": "Zao Yang",
+    "date": "2024-04-17",
+    "desc": "No string literals are generated"
+  },
+  {
+    "id": "Revng #379",
+    "url": "https://github.com/revng/revng/issues/379",
+    "lead": "Zao Yang",
+    "date": "2024-04-18",
+    "desc": "Order of memory accesses not preserved upon emission of `if` statements"
+  },
+  {
+    "id": "Revng #380",
+    "url": "https://github.com/revng/revng/issues/380",
+    "lead": "Zao Yang",
+    "date": "2024-04-18",
+    "desc": "`SimplifyDualSwitch` incorrectly handles `switch` with two cases and `default`"
+  },
+  {
+    "id": "Revng #381",
+    "url": "https://github.com/revng/revng/issues/381",
+    "lead": "Zao Yang",
+    "date": "2024-04-19",
+    "desc": "Assignment of a `generic8_t *` to `generic64_t`"
+  },
+  {
+    "id": "Revng #383",
+    "url": "https://github.com/revng/revng/issues/383",
+    "lead": "Zao Yang",
+    "date": "2024-04-29",
+    "desc": "Crash when an instruction is partially out a segment"
+  },
+  {
+    "id": "RevngC #15",
+    "url": "https://github.com/revng/revng-c/issues/15",
+    "lead": "Zao Yang",
+    "date": "2024-04-29",
+    "desc": "Error when decompiling binary (2)"
+  }
+]

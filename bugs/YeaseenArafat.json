@@ -1,7 +1,6 @@
 [
   {
     "id": "Babel #17190",
-    "type": "Logical",
     "url": "https://github.com/babel/babel/issues/17190",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-19",
@@ -9,7 +8,6 @@
   },
   {
     "id": "Babel #17199",
-    "type": "Logical",
     "url": "https://github.com/babel/babel/issues/17199",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-21",
@@ -17,7 +15,6 @@
   },
   {
     "id": "C2Rust #1165",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1165",
     "lead": "Yeaseen Arafat",
     "date": "2024-11-23",
@@ -25,7 +22,6 @@
   },
   {
     "id": "C2Rust #1166",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1166",
     "lead": "Yeaseen Arafat",
     "date": "2024-11-23",
@@ -33,7 +29,6 @@
   },
   {
     "id": "C2Rust #1171",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1171",
     "lead": "Yeaseen Arafat",
     "date": "2024-12-02",
@@ -41,7 +36,6 @@
   },
   {
     "id": "C2Rust #1184",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1184",
     "lead": "Yeaseen Arafat",
     "date": "2024-12-05",
@@ -49,7 +43,6 @@
   },
   {
     "id": "C2Rust #1208",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1208",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-17",
@@ -57,7 +50,6 @@
   },
   {
     "id": "C2Rust #1217",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1217",
     "lead": "Yeaseen Arafat",
     "date": "2025-04-12",
@@ -65,7 +57,6 @@
   },
   {
     "id": "C2Rust #1231",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1231",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-08",
@@ -73,7 +64,6 @@
   },
   {
     "id": "C2Rust #1233",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1233",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-08",
@@ -81,7 +71,6 @@
   },
   {
     "id": "C2Rust #1234",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1234",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-08",
@@ -89,7 +78,6 @@
   },
   {
     "id": "C2Rust #1236",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1236",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-09",
@@ -97,7 +85,6 @@
   },
   {
     "id": "C2Rust #1237",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1237",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-09",
@@ -105,7 +92,6 @@
   },
   {
     "id": "C2Rust #1238",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1238",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-09",
@@ -113,7 +99,6 @@
   },
   {
     "id": "C2Rust #1239",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1239",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-09",
@@ -121,15 +106,34 @@
   },
   {
     "id": "C2Rust #1240",
-    "type": "Logical",
     "url": "https://github.com/immunant/c2rust/issues/1240",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-09",
     "desc": "Compound Literal Assigned to `volatile int*` Triggers Invalid Pointer Cast in Transpiled Rust"
   },
   {
+    "id": "C4Go #515",
+    "url": "https://github.com/Konstantin8105/c4go/issues/515",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-08-24",
+    "desc": "Failure at Union Initialization in the converted Go code"
+  },
+  {
+    "id": "C4Go #516",
+    "url": "https://github.com/Konstantin8105/c4go/issues/516",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-08-24",
+    "desc": "Failure at Converting Boolean Expression to Integer in Struct Initialization"
+  },
+  {
+    "id": "C4Go #517",
+    "url": "https://github.com/Konstantin8105/c4go/issues/517",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-08-31",
+    "desc": "Failure at 2D Array Initialization"
+  },
+  {
     "id": "Cxgo #100",
-    "type": "Logical",
     "url": "https://github.com/gotranspile/cxgo/issues/100",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
@@ -137,15 +141,55 @@
   },
   {
     "id": "Cxgo #101",
-    "type": "Logical",
     "url": "https://github.com/gotranspile/cxgo/issues/101",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-07",
     "desc": "`cxgo` Mistranslates C Function Pointer causing Runtime Crash in Transpiled Go Code"
   },
   {
+    "id": "Cxgo #75",
+    "url": "https://github.com/gotranspile/cxgo/issues/75",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-08-24",
+    "desc": "Bug: Testing Boolean to Float Conversions in CxGo: Implicit Conversion Success, Explicit Conversion Error"
+  },
+  {
+    "id": "Cxgo #76",
+    "url": "https://github.com/gotranspile/cxgo/issues/76",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-08-24",
+    "desc": "Bug: Implicit Bool to Float Conversion Fails When Added with a Float in C"
+  },
+  {
+    "id": "Cxgo #77",
+    "url": "https://github.com/gotranspile/cxgo/issues/77",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-08-24",
+    "desc": "Bug: CxGo translated go code giving different output from gcc and clang"
+  },
+  {
+    "id": "Cxgo #78",
+    "url": "https://github.com/gotranspile/cxgo/issues/78",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-08-31",
+    "desc": "Bug: Invalid Pointer Dereference for 3D Arrays;  for 2D arrays Pointer Dereference is ok"
+  },
+  {
+    "id": "Cxgo #80",
+    "url": "https://github.com/gotranspile/cxgo/issues/80",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-10-17",
+    "desc": "panic: runtime error: index out of range [-1]"
+  },
+  {
+    "id": "Cxgo #81",
+    "url": "https://github.com/gotranspile/cxgo/issues/81",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-10-30",
+    "desc": "cxgo fails to handle compound literals in C code"
+  },
+  {
     "id": "Cxgo #90",
-    "type": "Logical",
     "url": "https://github.com/gotranspile/cxgo/issues/90",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-17",
@@ -153,7 +197,6 @@
   },
   {
     "id": "Cxgo #91",
-    "type": "Logical",
     "url": "https://github.com/gotranspile/cxgo/issues/91",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-17",
@@ -161,7 +204,6 @@
   },
   {
     "id": "Cxgo #92",
-    "type": "Logical",
     "url": "https://github.com/gotranspile/cxgo/issues/92",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-17",
@@ -169,7 +211,6 @@
   },
   {
     "id": "Cxgo #93",
-    "type": "Logical",
     "url": "https://github.com/gotranspile/cxgo/issues/93",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
@@ -177,7 +218,6 @@
   },
   {
     "id": "Cxgo #95",
-    "type": "Logical",
     "url": "https://github.com/gotranspile/cxgo/issues/95",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
@@ -185,7 +225,6 @@
   },
   {
     "id": "Cxgo #96",
-    "type": "Logical",
     "url": "https://github.com/gotranspile/cxgo/issues/96",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
@@ -193,7 +232,6 @@
   },
   {
     "id": "Cxgo #97",
-    "type": "Logical",
     "url": "https://github.com/gotranspile/cxgo/issues/97",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
@@ -201,7 +239,6 @@
   },
   {
     "id": "Cxgo #98",
-    "type": "Logical",
     "url": "https://github.com/gotranspile/cxgo/issues/98",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
@@ -209,7 +246,6 @@
   },
   {
     "id": "Cxgo #99",
-    "type": "Logical",
     "url": "https://github.com/gotranspile/cxgo/issues/99",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
@@ -217,15 +253,34 @@
   },
   {
     "id": "Go #72844",
-    "type": "Logical",
     "url": "https://github.com/golang/go/issues/72844",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-13",
     "desc": "cmd/compile: `len(*f())` does not panic when f() returns (*[k]T)(nil)"
   },
   {
+    "id": "Go2Hx #177",
+    "url": "https://github.com/go2hx/go2hx/issues/177",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-10-17",
+    "desc": "Incorrect type conversion for (int)((uint32)(m))"
+  },
+  {
+    "id": "Go2Hx #178",
+    "url": "https://github.com/go2hx/go2hx/issues/178",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-10-29",
+    "desc": "Generic Functions Cause Translation Failure in Go2hx"
+  },
+  {
+    "id": "Go2Hx #179",
+    "url": "https://github.com/go2hx/go2hx/issues/179",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-10-29",
+    "desc": "go2hx fails to translate zero-comparison for arrays, resulting in unexpected runtime panic"
+  },
+  {
     "id": "Go2Hx #183",
-    "type": "Logical",
     "url": "https://github.com/go2hx/go2hx/issues/183",
     "lead": "Yeaseen Arafat",
     "date": "2024-11-09",
@@ -233,7 +288,6 @@
   },
   {
     "id": "Go2Hx #184",
-    "type": "Logical",
     "url": "https://github.com/go2hx/go2hx/issues/184",
     "lead": "Yeaseen Arafat",
     "date": "2024-11-09",
@@ -241,7 +295,6 @@
   },
   {
     "id": "Go2Hx #185",
-    "type": "Logical",
     "url": "https://github.com/go2hx/go2hx/issues/185",
     "lead": "Yeaseen Arafat",
     "date": "2024-11-10",
@@ -249,7 +302,6 @@
   },
   {
     "id": "Go2Hx #186",
-    "type": "Logical",
     "url": "https://github.com/go2hx/go2hx/issues/186",
     "lead": "Yeaseen Arafat",
     "date": "2024-11-10",
@@ -257,7 +309,6 @@
   },
   {
     "id": "Go2Hx #187",
-    "type": "Logical",
     "url": "https://github.com/go2hx/go2hx/issues/187",
     "lead": "Yeaseen Arafat",
     "date": "2024-11-10",
@@ -265,7 +316,6 @@
   },
   {
     "id": "Go2Hx #188",
-    "type": "Logical",
     "url": "https://github.com/go2hx/go2hx/issues/188",
     "lead": "Yeaseen Arafat",
     "date": "2024-11-10",
@@ -273,7 +323,6 @@
   },
   {
     "id": "Go2Hx #222",
-    "type": "Logical",
     "url": "https://github.com/go2hx/go2hx/issues/222",
     "lead": "Yeaseen Arafat",
     "date": "2025-02-28",
@@ -281,7 +330,6 @@
   },
   {
     "id": "Go2Hx #225",
-    "type": "Logical",
     "url": "https://github.com/go2hx/go2hx/issues/225",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-07",
@@ -289,7 +337,6 @@
   },
   {
     "id": "Go2Hx #226",
-    "type": "Logical",
     "url": "https://github.com/go2hx/go2hx/issues/226",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-07",
@@ -297,7 +344,6 @@
   },
   {
     "id": "Go2Hx #230",
-    "type": "Logical",
     "url": "https://github.com/go2hx/go2hx/issues/230",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
@@ -305,7 +351,6 @@
   },
   {
     "id": "Go2Hx #231",
-    "type": "Logical",
     "url": "https://github.com/go2hx/go2hx/issues/231",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
@@ -313,7 +358,6 @@
   },
   {
     "id": "Go2Hx #232",
-    "type": "Logical",
     "url": "https://github.com/go2hx/go2hx/issues/232",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
@@ -321,7 +365,6 @@
   },
   {
     "id": "Go2Hx #256",
-    "type": "Logical",
     "url": "https://github.com/go2hx/go2hx/issues/256",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-25",
@@ -329,7 +372,6 @@
   },
   {
     "id": "Tinygo #4786",
-    "type": "Logical",
     "url": "https://github.com/tinygo-org/tinygo/issues/4786",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-07",
@@ -337,7 +379,6 @@
   },
   {
     "id": "Tinygo #4816",
-    "type": "Logical",
     "url": "https://github.com/tinygo-org/tinygo/issues/4816",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
@@ -345,15 +386,62 @@
   },
   {
     "id": "Tinygo #4819",
-    "type": "Logical",
     "url": "https://github.com/tinygo-org/tinygo/issues/4819",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-19",
     "desc": "TinyGo Panics on Generic Type Aliases"
   },
   {
+    "id": "TmuxRs #48",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/48",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-07-08",
+    "desc": "`rename-window` and `rename-session` add trailing garbage bytes"
+  },
+  {
+    "id": "TmuxRs #50",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/50",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-07-08",
+    "desc": "`resize-pane` directions `-D` and `-U` do not work as expected"
+  },
+  {
+    "id": "TmuxRs #51",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/51",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-07-08",
+    "desc": "`synchronize-panes` does not work correctly in `tmux-rs`"
+  },
+  {
+    "id": "TmuxRs #52",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/52",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-07-08",
+    "desc": "`display-message` shows `%s-invalid-utf8` for pane index/title expansions"
+  },
+  {
+    "id": "TmuxRs #53",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/53",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-07-08",
+    "desc": "Parsing Issue: `tmux-rs` rejects `-s` but accepts `-S` for `new-session`, unlike real `tmux`"
+  },
+  {
+    "id": "TmuxRs #64",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/64",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-07-10",
+    "desc": "`tmux-rs` does not expand `#(whoami)` in `status-right`"
+  },
+  {
+    "id": "Zig #21855",
+    "url": "https://github.com/ziglang/zig/issues/21855",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-10-30",
+    "desc": "zig translate-c fails to translate compound literals like &(float){0.5}"
+  },
+  {
     "id": "Zig #21876",
-    "type": "Logical",
     "url": "https://github.com/ziglang/zig/issues/21876",
     "lead": "Yeaseen Arafat",
     "date": "2024-11-01",
@@ -361,7 +449,6 @@
   },
   {
     "id": "Zig #22045",
-    "type": "Logical",
     "url": "https://github.com/ziglang/zig/issues/22045",
     "lead": "Yeaseen Arafat",
     "date": "2024-11-22",
@@ -369,7 +456,6 @@
   },
   {
     "id": "Zig #22136",
-    "type": "Logical",
     "url": "https://github.com/ziglang/zig/issues/22136",
     "lead": "Yeaseen Arafat",
     "date": "2024-12-03",
@@ -377,7 +463,6 @@
   },
   {
     "id": "Zig #22139",
-    "type": "Logical",
     "url": "https://github.com/ziglang/zig/issues/22139",
     "lead": "Yeaseen Arafat",
     "date": "2024-12-04",
@@ -385,7 +470,6 @@
   },
   {
     "id": "Zig #22148",
-    "type": "Logical",
     "url": "https://github.com/ziglang/zig/issues/22148",
     "lead": "Yeaseen Arafat",
     "date": "2024-12-05",
@@ -393,7 +477,6 @@
   },
   {
     "id": "Zig #22964",
-    "type": "Logical",
     "url": "https://github.com/ziglang/zig/issues/22964",
     "lead": "Yeaseen Arafat",
     "date": "2025-02-21",
@@ -401,7 +484,6 @@
   },
   {
     "id": "Zig #23031",
-    "type": "Logical",
     "url": "https://github.com/ziglang/zig/issues/23031",
     "lead": "Yeaseen Arafat",
     "date": "2025-02-28",
@@ -409,7 +491,6 @@
   },
   {
     "id": "Zig #23283",
-    "type": "Logical",
     "url": "https://github.com/ziglang/zig/issues/23283",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
@@ -417,7 +498,6 @@
   },
   {
     "id": "Zig #23975",
-    "type": "Logical",
     "url": "https://github.com/ziglang/zig/issues/23975",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-24",
@@ -425,7 +505,6 @@
   },
   {
     "id": "Zig #23987",
-    "type": "Logical",
     "url": "https://github.com/ziglang/zig/issues/23987",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-25",
@@ -433,7 +512,6 @@
   },
   {
     "id": "Zig #24010",
-    "type": "Logical",
     "url": "https://github.com/ziglang/zig/issues/24010",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-29",

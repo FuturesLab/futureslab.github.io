@@ -1,0 +1,485 @@
+[
+  {
+    "id": "Arrow #1191",
+    "url": "https://github.com/arrow-py/arrow/issues/1191",
+    "lead": "Gabe Sherman",
+    "date": "2024-10-04",
+    "desc": "IndexError in DateTimeParser.parse"
+  },
+  {
+    "id": "Astroid #2734",
+    "url": "https://github.com/pylint-dev/astroid/issues/2734",
+    "lead": "Gabe Sherman",
+    "date": "2025-05-12",
+    "desc": "IndexError when calling extract_node"
+  },
+  {
+    "id": "Autoflake #325",
+    "url": "https://github.com/PyCQA/autoflake/issues/325",
+    "lead": "Gabe Sherman",
+    "date": "2025-04-25",
+    "desc": "TypeError: unhashable type errors in filter_unused_variable"
+  },
+  {
+    "id": "Autoflake #326",
+    "url": "https://github.com/PyCQA/autoflake/issues/326",
+    "lead": "Gabe Sherman",
+    "date": "2025-05-04",
+    "desc": "ValueError: not enough values to unpack (expected 2, got 1) in break_up_import"
+  },
+  {
+    "id": "Babel #1134",
+    "url": "https://github.com/python-babel/babel/issues/1134",
+    "lead": "Gabe Sherman",
+    "date": "2024-09-24",
+    "desc": "List index out of range error in PoFileParser._add_message"
+  },
+  {
+    "id": "Cpython #125648",
+    "url": "https://github.com/python/cpython/issues/125648",
+    "lead": "Gabe Sherman",
+    "date": "2024-10-17",
+    "desc": "TypeError in email.message.Message.get_params"
+  },
+  {
+    "id": "Cpython #134021",
+    "url": "https://github.com/python/cpython/issues/134021",
+    "lead": "Gabe Sherman",
+    "date": "2025-05-14",
+    "desc": "`ast.parse` raises `SystemError: <class 'UnicodeDecodeError'> returned a result with an error set`"
+  },
+  {
+    "id": "Cpython #134151",
+    "url": "https://github.com/python/cpython/issues/134151",
+    "lead": "Gabe Sherman",
+    "date": "2025-05-17",
+    "desc": "`TypeError: '<' not supported between instances of 'NoneType' and 'int'` raised during call to `email.message_from_file`"
+  },
+  {
+    "id": "Cpython #134152",
+    "url": "https://github.com/python/cpython/issues/134152",
+    "lead": "Gabe Sherman",
+    "date": "2025-05-17",
+    "desc": "`UnboundLocalError` in `email._header_value_parser.parse_message_id`"
+  },
+  {
+    "id": "Cpython #134155",
+    "url": "https://github.com/python/cpython/issues/134155",
+    "lead": "Gabe Sherman",
+    "date": "2025-05-17",
+    "desc": "`AttributeError` in `email._header_value_parser.get_address`"
+  },
+  {
+    "id": "Cups #1026",
+    "url": "https://github.com/OpenPrinting/cups/issues/1026",
+    "lead": "Gabe Sherman",
+    "date": "2024-08-07",
+    "desc": "Potentially missing a NULL value check in _cupsConvertOptions"
+  },
+  {
+    "id": "Dateutil #1402",
+    "url": "https://github.com/dateutil/dateutil/issues/1402",
+    "lead": "Gabe Sherman",
+    "date": "2024-12-10",
+    "desc": "TypeError: unsupported operand type(s) for *=: 'NoneType' and 'int' when calling tz.gettz"
+  },
+  {
+    "id": "Geos #1021",
+    "url": "https://github.com/libgeos/geos/issues/1021",
+    "lead": "Gabe Sherman",
+    "date": "2023-12-28",
+    "desc": "Heap-buffer-overflow on intersection"
+  },
+  {
+    "id": "Geos #1070",
+    "url": "https://github.com/libgeos/geos/issues/1070",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Stack Overflow in coordinate.h"
+  },
+  {
+    "id": "Geos #1071",
+    "url": "https://github.com/libgeos/geos/issues/1071",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Segmentation fault in polygon.cpp"
+  },
+  {
+    "id": "Geos #1072",
+    "url": "https://github.com/libgeos/geos/issues/1072",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Segmentation fault in CGAlgorithmsDD.cpp"
+  },
+  {
+    "id": "Geos #1073",
+    "url": "https://github.com/libgeos/geos/issues/1073",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Segmentation fault in Centroid.cpp"
+  },
+  {
+    "id": "Geos #1074",
+    "url": "https://github.com/libgeos/geos/issues/1074",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "heap-buffer overflow in LineIntersector.h"
+  },
+  {
+    "id": "Geos #1084",
+    "url": "https://github.com/libgeos/geos/issues/1084",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-26",
+    "desc": "stack-buffer-overflow related to non-DE9IM argument for GEOSRelatePatternMatch_r"
+  },
+  {
+    "id": "H5Py #2581",
+    "url": "https://github.com/h5py/h5py/issues/2581",
+    "lead": "Gabe Sherman",
+    "date": "2025-05-12",
+    "desc": "TypeError when calling clear() on a file"
+  },
+  {
+    "id": "Hdf5 #3790",
+    "url": "https://github.com/HDFGroup/hdf5/issues/3790",
+    "lead": "Gabe Sherman",
+    "date": "2023-10-27",
+    "desc": "infinite loop closing library"
+  },
+  {
+    "id": "Hdf5 #4431",
+    "url": "https://github.com/HDFGroup/hdf5/issues/4431",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-21",
+    "desc": "allocation-size-too-big error in H5MM.c"
+  },
+  {
+    "id": "Hdf5 #4432",
+    "url": "https://github.com/HDFGroup/hdf5/issues/4432",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-21",
+    "desc": "StackOverflow in vasprintf.c"
+  },
+  {
+    "id": "Hdf5 #4433",
+    "url": "https://github.com/HDFGroup/hdf5/issues/4433",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-21",
+    "desc": "Segmentation fault in H5Oint.c"
+  },
+  {
+    "id": "Hdf5 #4434",
+    "url": "https://github.com/HDFGroup/hdf5/issues/4434",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-21",
+    "desc": "heap-buffer-overflow in H5Fio.c"
+  },
+  {
+    "id": "Hdf5 #4435",
+    "url": "https://github.com/HDFGroup/hdf5/issues/4435",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-21",
+    "desc": "allocation-size-too-big error in H5Centry.c"
+  },
+  {
+    "id": "HiredisPy #205",
+    "url": "https://github.com/redis/hiredis-py/issues/205",
+    "lead": "Gabe Sherman",
+    "date": "2025-05-03",
+    "desc": "Segmentation fault in Reader.gets()"
+  },
+  {
+    "id": "HiredisPy #206",
+    "url": "https://github.com/redis/hiredis-py/issues/206",
+    "lead": "Gabe Sherman",
+    "date": "2025-05-03",
+    "desc": "Reads returns a result with an exception set, leading to a SystemError"
+  },
+  {
+    "id": "Jinja #2092",
+    "url": "https://github.com/pallets/jinja/issues/2092",
+    "lead": "Gabe Sherman",
+    "date": "2025-05-12",
+    "desc": "Various SyntaxErrors encountered during fuzzing"
+  },
+  {
+    "id": "Lexbor #220",
+    "url": "https://github.com/lexbor/lexbor/issues/220",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Segmentation fault in element.c"
+  },
+  {
+    "id": "Lexbor #221",
+    "url": "https://github.com/lexbor/lexbor/issues/221",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Segmentation fault in avl.c"
+  },
+  {
+    "id": "Lexbor #222",
+    "url": "https://github.com/lexbor/lexbor/issues/222",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "heap-buffer overflow in str.c"
+  },
+  {
+    "id": "Libfyaml #107",
+    "url": "https://github.com/pantoniou/libfyaml/issues/107",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Segmentation Fault in list_empty upon malformed input"
+  },
+  {
+    "id": "Libfyaml #108",
+    "url": "https://github.com/pantoniou/libfyaml/issues/108",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Unknown crash in fy_utf8_get in fy-utf8.h"
+  },
+  {
+    "id": "Libfyaml #118",
+    "url": "https://github.com/pantoniou/libfyaml/issues/118",
+    "lead": "Gabe Sherman",
+    "date": "2024-08-09",
+    "desc": "Seg fault in fy-atom.c on malformed input"
+  },
+  {
+    "id": "Libfyaml #119",
+    "url": "https://github.com/pantoniou/libfyaml/issues/119",
+    "lead": "Gabe Sherman",
+    "date": "2024-08-09",
+    "desc": "Seg fault in fy-walk.h"
+  },
+  {
+    "id": "Libfyaml #120",
+    "url": "https://github.com/pantoniou/libfyaml/issues/120",
+    "lead": "Gabe Sherman",
+    "date": "2024-08-09",
+    "desc": "heap-use-after-free in fy-walk.c"
+  },
+  {
+    "id": "Libfyaml #121",
+    "url": "https://github.com/pantoniou/libfyaml/issues/121",
+    "lead": "Gabe Sherman",
+    "date": "2024-08-16",
+    "desc": "heap-use-after-free in fy_path_parser_cleanup"
+  },
+  {
+    "id": "Libfyaml #122",
+    "url": "https://github.com/pantoniou/libfyaml/issues/122",
+    "lead": "Gabe Sherman",
+    "date": "2024-08-16",
+    "desc": "segmentation fault in fy-doc.c"
+  },
+  {
+    "id": "Libfyaml #123",
+    "url": "https://github.com/pantoniou/libfyaml/issues/123",
+    "lead": "Gabe Sherman",
+    "date": "2024-08-16",
+    "desc": "Segmentation fault in fy_path_expr_execute"
+  },
+  {
+    "id": "Libical #677",
+    "url": "https://github.com/libical/libical/issues/677",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Segmentation Fault upon malformed input"
+  },
+  {
+    "id": "Libical #678",
+    "url": "https://github.com/libical/libical/issues/678",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Segmentation fault in icalcomponent.c"
+  },
+  {
+    "id": "LibpgQuery #254",
+    "url": "https://github.com/pganalyze/libpg_query/issues/254",
+    "lead": "Gabe Sherman",
+    "date": "2024-07-23",
+    "desc": "munmap_chunk(): invalid pointer error due to memcpy with negative size param in pg_query_normalize.c"
+  },
+  {
+    "id": "Libucl #288",
+    "url": "https://github.com/vstakhov/libucl/issues/288",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Segmentation fault in ucl_parser.c"
+  },
+  {
+    "id": "Libucl #289",
+    "url": "https://github.com/vstakhov/libucl/issues/289",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Segmentation Fault in ucl_parser.c at line 1903"
+  },
+  {
+    "id": "Libucl #290",
+    "url": "https://github.com/vstakhov/libucl/issues/290",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Segmentation fault in ucl_hash.c"
+  },
+  {
+    "id": "Libucl #291",
+    "url": "https://github.com/vstakhov/libucl/issues/291",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "heap-buffer overflow in ucl_hash.c"
+  },
+  {
+    "id": "Libucl #292",
+    "url": "https://github.com/vstakhov/libucl/issues/292",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "heap-buffer overflow in ucl_util.c"
+  },
+  {
+    "id": "Libucl #293",
+    "url": "https://github.com/vstakhov/libucl/issues/293",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Stack overflow on malformed input"
+  },
+  {
+    "id": "Pcre2 #561",
+    "url": "https://github.com/PCRE2Project/pcre2/issues/561",
+    "lead": "Gabe Sherman",
+    "date": "2024-11-13",
+    "desc": "Several heap-BoF crashes from pcre2_compile related to parsed_pattern"
+  },
+  {
+    "id": "Pikepdf #652",
+    "url": "https://github.com/pikepdf/pikepdf/issues/652",
+    "lead": "Gabe Sherman",
+    "date": "2025-05-06",
+    "desc": "UnicodeDecodeError when calling check() on an opened file"
+  },
+  {
+    "id": "Pillow #8597",
+    "url": "https://github.com/python-pillow/Pillow/issues/8597",
+    "lead": "Gabe Sherman",
+    "date": "2024-12-13",
+    "desc": "ZeroDivisionError occurs when calling Image.open"
+  },
+  {
+    "id": "Pillow #8956",
+    "url": "https://github.com/python-pillow/Pillow/issues/8956",
+    "lead": "Gabe Sherman",
+    "date": "2025-05-14",
+    "desc": "Unanticipated UnicodeDecodeError raised during call to PIL.Image.open"
+  },
+  {
+    "id": "Pyjson5 #90",
+    "url": "https://github.com/dpranke/pyjson5/issues/90",
+    "lead": "Gabe Sherman",
+    "date": "2025-03-27",
+    "desc": "Unhandled exceptions when calling load with malformed data"
+  },
+  {
+    "id": "Pyyaml #862",
+    "url": "https://github.com/yaml/pyyaml/issues/862",
+    "lead": "Gabe Sherman",
+    "date": "2025-05-10",
+    "desc": "TypeError raised from ord() call in yaml.emit"
+  },
+  {
+    "id": "Raylib #3924",
+    "url": "https://github.com/raysan5/raylib/issues/3924",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-19",
+    "desc": "Segmentation fault in rtextures.c"
+  },
+  {
+    "id": "Stormlib #327",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/327",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-20",
+    "desc": "ladislav-zezula/StormLib"
+  },
+  {
+    "id": "Stormlib #328",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/328",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-20",
+    "desc": "stack-buffer overflow at line 138 in SBaseFileTable.cpp"
+  },
+  {
+    "id": "Stormlib #329",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/329",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-20",
+    "desc": "allocation-size-too-big in STORM_ALLOC"
+  },
+  {
+    "id": "Stormlib #330",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/330",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-20",
+    "desc": "heap-buffer overflow at line 1158 in SBaseFileTable.cpp"
+  },
+  {
+    "id": "Stormlib #331",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/331",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-20",
+    "desc": "heap-buffer overflow at line 1807 in SBaseFileTable.cpp"
+  },
+  {
+    "id": "Stormlib #332",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/332",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-20",
+    "desc": "heap-buffer overflow at line 3103 in SBaseFileTable.cpp"
+  },
+  {
+    "id": "Stormlib #333",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/333",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-20",
+    "desc": "heap-buffer overflow in FileStream.cpp"
+  },
+  {
+    "id": "Stormlib #334",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/334",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-20",
+    "desc": "FPE in FileStream.cpp"
+  },
+  {
+    "id": "Stormlib #335",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/335",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-20",
+    "desc": "FPE in SBaseCommon.cpp"
+  },
+  {
+    "id": "Stormlib #336",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/336",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-20",
+    "desc": "heap-buffer oveflow in huff.cpp"
+  },
+  {
+    "id": "Stormlib #337",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/337",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-20",
+    "desc": "heap-buffer overflow in sparse.cpp"
+  },
+  {
+    "id": "Stormlib #338",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/338",
+    "lead": "Gabe Sherman",
+    "date": "2024-04-20",
+    "desc": "heap-buffer overflow in SBaseCommon.cpp"
+  },
+  {
+    "id": "TidyHtml5 #1120",
+    "url": "https://github.com/htacg/tidy-html5/issues/1120",
+    "lead": "Gabe Sherman",
+    "date": "2024-07-30",
+    "desc": "Segfault when calling tidyParseString with malformed input"
+  }
+]

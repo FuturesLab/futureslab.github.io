@@ -1,5 +1,4 @@
 # GUIFuzz++
-https://gitlab.gnome.org/GNOME/dia/-/issues/568
 https://invent.kde.org/graphics/glaxnimate/-/issues/703
 https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1059230.html
 https://www.mail-archive.com/kde-bugs-dist@kde.org/msg1011862.html

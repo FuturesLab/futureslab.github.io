@@ -292,7 +292,7 @@ def fetch_qcad(session, url: str, lead: str):
 
     tid = parse_qs(urlparse(url).query).get("t", [""])[0] or os.path.basename(url)
     return {
-        "id": f"QCADForum {tid}",
+        "id": f"QCAD #{tid}",
         "url": url,
         "lead": lead,
         "date": date_str,

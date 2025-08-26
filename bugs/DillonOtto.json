@@ -1,12 +1,5 @@
 [
   {
-    "id": "Dia #568",
-    "url": "https://gitlab.gnome.org/GNOME/dia/-/issues/568",
-    "lead": "Dillon Otto",
-    "date": "2025-05-29",
-    "desc": "Transient segfault while using dia"
-  },
-  {
     "id": "Glaxnimate #703",
     "url": "https://invent.kde.org/graphics/glaxnimate/-/issues/703",
     "lead": "Dillon Otto",
@@ -98,7 +91,7 @@
     "desc": "Plot Docker Toolbar Close (\"X\") Button can cause a Seg Fault"
   },
   {
-    "id": "QCADForum 11668",
+    "id": "QCAD #11668",
     "url": "https://qcad.org/rsforum/viewtopic.php?f=33&t=11668",
     "lead": "Dillon Otto",
     "date": "2025-05-26",

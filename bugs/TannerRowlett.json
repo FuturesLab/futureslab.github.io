@@ -1,5 +1,12 @@
 [
   {
+    "id": "Dia #568",
+    "url": "https://gitlab.gnome.org/GNOME/dia/-/issues/568",
+    "lead": "Dillon Otto",
+    "date": "2025-05-29",
+    "desc": "Transient segfault while using dia"
+  },
+  {
     "id": "Glaxnimate #707",
     "url": "https://invent.kde.org/graphics/glaxnimate/-/issues/707",
     "lead": "Tanner Rowlett",

@@ -2,7 +2,7 @@
   {
     "id": "Dia #568",
     "url": "https://gitlab.gnome.org/GNOME/dia/-/issues/568",
-    "lead": "Dillon Otto",
+    "lead": "Tanner Rowlett",
     "date": "2025-05-29",
     "desc": "Transient segfault while using dia"
   },

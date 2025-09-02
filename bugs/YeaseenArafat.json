@@ -7,11 +7,11 @@
     "desc": "Babel incorrectly transpiles BigInt exponentiation (`**`) into `Math.pow()`, causing a TypeError"
   },
   {
-    "id": "Babel #17199",
-    "url": "https://github.com/babel/babel/issues/17199",
+    "id": "Babel #17502",
+    "url": "https://github.com/babel/babel/issues/17502",
     "lead": "Yeaseen Arafat",
-    "date": "2025-03-21",
-    "desc": "Babel Fails to Preserve Implicit Globals, causing ReferenceError"
+    "date": "2025-09-01",
+    "desc": "Destructuring ...rest produces subclass instance instead of plain Array"
   },
   {
     "id": "C2Rust #1165",
@@ -26,6 +26,13 @@
     "lead": "Yeaseen Arafat",
     "date": "2024-11-23",
     "desc": "c2rust generates invalid Rust code for compound literals with pointers requiring mutability"
+  },
+  {
+    "id": "C2Rust #1168",
+    "url": "https://github.com/immunant/c2rust/issues/1168",
+    "lead": "Yeaseen Arafat",
+    "date": "2024-11-24",
+    "desc": "c2rust Translation Failure with Enums in Compound Literals"
   },
   {
     "id": "C2Rust #1171",
@@ -371,6 +378,90 @@
     "desc": "Incorrect Value Assignment with Blank Identifier in Tuple Unpacking"
   },
   {
+    "id": "Go2Hx #276",
+    "url": "https://github.com/go2hx/go2hx/issues/276",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-09-01",
+    "desc": "Incorrect goto handling causes wrong loop exit value in Go2Hx translation"
+  },
+  {
+    "id": "Go2Hx #277",
+    "url": "https://github.com/go2hx/go2hx/issues/277",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-09-02",
+    "desc": "Struct keys in Go maps not matching correctly after Go2Hx translation"
+  },
+  {
+    "id": "Swc #11039",
+    "url": "https://github.com/swc-project/swc/issues/11039",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-08-29",
+    "desc": "Object rest over Proxy loses properties due to extra getOwnPropertyDescriptor on excluded keys"
+  },
+  {
+    "id": "Swc #11040",
+    "url": "https://github.com/swc-project/swc/issues/11040",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-08-29",
+    "desc": "ES5 target: object assignment with rest evaluates rest before listed properties"
+  },
+  {
+    "id": "Swc #11045",
+    "url": "https://github.com/swc-project/swc/issues/11045",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-09-01",
+    "desc": "ES5 target breaks TDZ semantics: missing ReferenceError for let access before initialization"
+  },
+  {
+    "id": "Swc #11046",
+    "url": "https://github.com/swc-project/swc/issues/11046",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-09-01",
+    "desc": "ES5 generator transform produces extra function values when yielding nested object"
+  },
+  {
+    "id": "Swc #11047",
+    "url": "https://github.com/swc-project/swc/issues/11047",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-09-01",
+    "desc": "ES5 destructuring transform drops array hole and shifts default value assignment"
+  },
+  {
+    "id": "Swc #11048",
+    "url": "https://github.com/swc-project/swc/issues/11048",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-09-01",
+    "desc": "Default values in async function array destructuring miscompiled in ES5 target"
+  },
+  {
+    "id": "Swc #11049",
+    "url": "https://github.com/swc-project/swc/issues/11049",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-09-01",
+    "desc": "ES5 async array destructuring awaited value replaced with pending Promise"
+  },
+  {
+    "id": "Swc #11050",
+    "url": "https://github.com/swc-project/swc/issues/11050",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-09-01",
+    "desc": "ES5 async short-circuit assignment and labeled break miscompiled causing wrong control flow"
+  },
+  {
+    "id": "Swc #11051",
+    "url": "https://github.com/swc-project/swc/issues/11051",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-09-01",
+    "desc": "ES5 object destructuring assignment in conditional miscompiled returns wrong property value"
+  },
+  {
+    "id": "Swc #11052",
+    "url": "https://github.com/swc-project/swc/issues/11052",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-09-01",
+    "desc": "ES5 async method transform drops write-back for compound assignment to this property across await"
+  },
+  {
     "id": "Tinygo #4786",
     "url": "https://github.com/tinygo-org/tinygo/issues/4786",
     "lead": "Yeaseen Arafat",
@@ -378,18 +469,18 @@
     "desc": "Inconsistent Behavior with `len` on Nil Array Pointer in tinygo"
   },
   {
-    "id": "Tinygo #4816",
-    "url": "https://github.com/tinygo-org/tinygo/issues/4816",
-    "lead": "Yeaseen Arafat",
-    "date": "2025-03-18",
-    "desc": "TinyGo Panics on Nil Pointer Dereference in Map Lookup, Unlike Standard Go"
-  },
-  {
     "id": "Tinygo #4819",
     "url": "https://github.com/tinygo-org/tinygo/issues/4819",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-19",
     "desc": "TinyGo Panics on Generic Type Aliases"
+  },
+  {
+    "id": "Tinygo #5024",
+    "url": "https://github.com/tinygo-org/tinygo/issues/5024",
+    "lead": "Yeaseen Arafat",
+    "date": "2025-09-02",
+    "desc": "TinyGo slice capacity after append diverges from Go runtime behavior"
   },
   {
     "id": "TmuxRs #48",
@@ -481,13 +572,6 @@
     "lead": "Yeaseen Arafat",
     "date": "2025-02-21",
     "desc": "Casting `bool` to `pointer` type results in invalid zig"
-  },
-  {
-    "id": "Zig #23031",
-    "url": "https://github.com/ziglang/zig/issues/23031",
-    "lead": "Yeaseen Arafat",
-    "date": "2025-02-28",
-    "desc": "Zig translate-c fails to translate switch-based loop unrolling"
   },
   {
     "id": "Zig #23283",

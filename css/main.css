@@ -441,7 +441,7 @@ table {
 }
 
 /* Fixed width for the counter, driven by a CSS var you’ll set from JS */
-.bug-counter {
+.counter {
     display: inline-block;
     min-width: calc(var(--bug-digits, 3) * 1ch); /* fall back to 3 digits */
     text-align: left;

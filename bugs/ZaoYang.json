@@ -63,6 +63,20 @@
     "desc": "Typecasted value becomes 0"
   },
   {
+    "id": "Bento4 #1038",
+    "url": "https://github.com/axiomatic-systems/Bento4/issues/1038",
+    "lead": "Zao Yang",
+    "date": "2025-09-15",
+    "desc": "memory leak at Source/C++/Core/Ap4Array.h:172:25"
+  },
+  {
+    "id": "Bento4 #1039",
+    "url": "https://github.com/axiomatic-systems/Bento4/issues/1039",
+    "lead": "Zao Yang",
+    "date": "2025-09-15",
+    "desc": "memory leak at Source/C++/System/StdC/Ap4StdCFileByteStream.cpp:279:14"
+  },
+  {
     "id": "BinaryninjaApi #5199",
     "url": "https://github.com/Vector35/binaryninja-api/issues/5199",
     "lead": "Zao Yang",
@@ -103,6 +117,55 @@
     "lead": "Zao Yang",
     "date": "2024-04-22",
     "desc": "Floating point type propagation failure"
+  },
+  {
+    "id": "GpmfParser #201",
+    "url": "https://github.com/gopro/gpmf-parser/issues/201",
+    "lead": "Zao Yang",
+    "date": "2025-09-13",
+    "desc": "Segmentation fault and memory leak in OpenMP4Source"
+  },
+  {
+    "id": "GpmfParser #202",
+    "url": "https://github.com/gopro/gpmf-parser/issues/202",
+    "lead": "Zao Yang",
+    "date": "2025-09-13",
+    "desc": "Floating point exception in OpenMP4Source"
+  },
+  {
+    "id": "GpmfParser #203",
+    "url": "https://github.com/gopro/gpmf-parser/issues/203",
+    "lead": "Zao Yang",
+    "date": "2025-09-13",
+    "desc": "Segmentation fault in OpenMP4Source"
+  },
+  {
+    "id": "Hdf5 #5831",
+    "url": "https://github.com/HDFGroup/hdf5/issues/5831",
+    "lead": "Zao Yang",
+    "date": "2025-09-15",
+    "desc": "allocation-size-too-big at H5Centry.c:1018"
+  },
+  {
+    "id": "Hdf5 #5832",
+    "url": "https://github.com/HDFGroup/hdf5/issues/5832",
+    "lead": "Zao Yang",
+    "date": "2025-09-15",
+    "desc": "double-free at H5MM.c:201"
+  },
+  {
+    "id": "Hdf5 #5833",
+    "url": "https://github.com/HDFGroup/hdf5/issues/5833",
+    "lead": "Zao Yang",
+    "date": "2025-09-15",
+    "desc": "Stack overflow at H5Gnode.c:415"
+  },
+  {
+    "id": "Hdf5 #5834",
+    "url": "https://github.com/HDFGroup/hdf5/issues/5834",
+    "lead": "Zao Yang",
+    "date": "2025-09-15",
+    "desc": "heap-buffer-overflow at H5Faccum.c:570"
   },
   {
     "id": "R2Ghidra #134",
@@ -194,5 +257,19 @@
     "lead": "Zao Yang",
     "date": "2024-04-29",
     "desc": "Error when decompiling binary (2)"
+  },
+  {
+    "id": "Stormlib #397",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/397",
+    "lead": "Zao Yang",
+    "date": "2025-09-14",
+    "desc": "heap-overflow at StormLib/src/SBaseCommon.cpp:512:42"
+  },
+  {
+    "id": "Stormlib #398",
+    "url": "https://github.com/ladislav-zezula/StormLib/issues/398",
+    "lead": "Zao Yang",
+    "date": "2025-09-14",
+    "desc": "allocation-size-too-big at StormLib/src/SBaseFileTable.cpp:1184:38"
   }
 ]

@@ -27,3 +27,16 @@ https://github.com/revng/revng/issues/380
 https://github.com/revng/revng/issues/381
 https://github.com/revng/revng/issues/383
 https://github.com/revng/revng-c/issues/15
+
+# Binvariants
+https://github.com/ladislav-zezula/StormLib/issues/397
+https://github.com/ladislav-zezula/StormLib/issues/398
+https://github.com/axiomatic-systems/Bento4/issues/1038
+https://github.com/axiomatic-systems/Bento4/issues/1039
+https://github.com/gopro/gpmf-parser/issues/201
+https://github.com/gopro/gpmf-parser/issues/202
+https://github.com/gopro/gpmf-parser/issues/203
+https://github.com/HDFGroup/hdf5/issues/5831
+https://github.com/HDFGroup/hdf5/issues/5832
+https://github.com/HDFGroup/hdf5/issues/5833
+https://github.com/HDFGroup/hdf5/issues/5834

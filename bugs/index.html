@@ -1,192 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <title>FuTURES³ Lab</title>
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FuTURES³ Lab</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- Bootstrap 3 + jQuery -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
-    <link href="../css/main.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <!-- Icons + Fonts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work Sans" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <!-- DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
-    <!-- XSS Protection with DOMPurify -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+  <!-- DOMPurify (XSS protection for query params) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
 
-    <script>
-        function getSanitizedQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            let query = urlParams.get(param);
-            return query ? DOMPurify.sanitize(query) : null; // Prevents XSS
+  <style>
+    body { font-family: 'Work Sans', sans-serif; }
+    .main-container { margin-top: 1.15em; }
+    .counter { transition: opacity .25s ease; opacity: 0; color: #BE0000; }
+
+    /* Top bar (search left, summary right) */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .top-left { display: flex; align-items: center;}
+    .top-right { font-size: 0.95em; color: #555; white-space: normal; flex-wrap: wrap;}
+    /* make the DataTables search input a bit wider */
+    div.dataTables_filter label input { width: 220px; }
+  </style>
+
+  <script>
+    // Accept both ?q= and ?search= (sanitized)
+    function getSanitizedQueryParamAny() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const names = ['q', 'search'];
+      for (const n of names) {
+        const v = urlParams.get(n);
+        if (v) return DOMPurify.sanitize(v);
+      }
+      return null;
+    }
+
+    function animateCounter(element, targetValue, duration) {
+      let startValue = 0;
+      const increment = Math.ceil(targetValue / (duration / 20));
+      const interval = setInterval(() => {
+        startValue += increment;
+        if (startValue >= targetValue) {
+          element.textContent = targetValue;
+          clearInterval(interval);
+        } else {
+          element.textContent = startValue;
+        }
+      }, 20);
+    }
+
+    async function loadBugData() {
+      const jsonFiles = [
+        'ZaoYang.json',
+        'YeaseenArafat.json',
+        'GabeSherman.json',
+        'DillonOtto.json',
+        'TannerRowlett.json'
+      ];
+
+      const tableBody = document.getElementById("table-body");
+      const loadingRow = document.getElementById("loading");
+      const bugCountElement = document.getElementById("bug-count");
+      const counterContainer = document.querySelector('.counter');
+
+      let allBugs = [];
+
+      try {
+        // Fetch & merge all JSON files
+        for (const file of jsonFiles) {
+          const resp = await fetch(file);
+          if (!resp.ok) throw new Error("Failed to fetch " + file + ": " + resp.statusText);
+          const bugs = await resp.json();
+          allBugs = allBugs.concat(bugs);
         }
 
-        async function loadBugData() {
-            const jsonFiles = [
-                'ZaoYang.json', 
-                'YeaseenArafat.json', 
-                'GabeSherman.json', 
-                'DillonOtto.json',
-                'TannerRowlett.json'
-            ];
-            const tableBody = document.getElementById("table-body");
-            const loadingRow = document.getElementById("loading");
-            const bugCountElement = document.getElementById("bug-count");
-            const counterContainer = document.querySelector('.counter');
+        // Render rows
+        loadingRow.remove();
+        allBugs.forEach(bug => {
+          const row = `<tr>
+            <td>${bug.date}</td>
+            <td><a href="${bug.url}" target="_blank" rel="noopener noreferrer">${bug.id}</a>: ${bug.desc}</td>
+            <td>${bug.lead}</td>
+          </tr>`;
+          tableBody.insertAdjacentHTML('beforeend', row);
+        });
 
-            let allBugs = [];
+        // Animate big counter
+        animateCounter(bugCountElement, allBugs.length, 1000);
+        counterContainer.style.opacity = 1;
 
-            try {
-                for (const file of jsonFiles) {
-                    const response = await fetch(file);
-                    if (!response.ok) {
-                        throw new Error(`Failed to fetch ${file}: ${response.statusText}`);
-                    }
-                    const bugs = await response.json();
-                    allBugs = allBugs.concat(bugs);
-                }
+        // Initialize DataTable with custom top bar (search left, summary right)
+        const table = $('#security-bugs').DataTable({
+          order: [[0, "desc"]],
+          paging: true,
+          searching: true,
+          responsive: true,
+          pageLength: 25,
+          lengthChange: false,
+          info: false,
+          dom: '<"top-bar"<"top-left"f><"top-right"i>>t<"bottom"p>',
+          columnDefs: [
+            { type: "date", targets: 0 },
+            { orderable: false, targets: 2 }
+          ]
+        });
 
-                loadingRow.remove();
+        // Custom summary span
+        $('.top-right').html('<span id="results-banner"></span>');
+        const bannerEl = document.getElementById('results-banner');
+        const totalCount = allBugs.length;
 
-                allBugs.forEach(bug => {
-                    const row = `<tr>
-                        <td>${bug.date}</td>
-                        <td><a href="${bug.url}" target="_blank">${bug.id}</a>: ${bug.desc}</td>
-                        <td>${bug.lead}</td>
-                    </tr>`;
-                    tableBody.innerHTML += row;
-                });
-
-                animateCounter(bugCountElement, allBugs.length, 1000);
-                counterContainer.style.opacity = 1;
-
-                // Initialize DataTables (default search box remains)
-                const table = $('#security-bugs').DataTable({
-                    "order": [[0, "desc"]],
-                    "paging": true,
-                    "searching": true,
-                    "responsive": true,
-                    "pageLength": 25,
-                    "lengthMenu": [10, 25, 50, 100],
-                    "columnDefs": [
-                        { "type": "date", "targets": 0 },
-                        { "orderable": false, "targets": 2 }
-                    ]
-                });
-
-                // Apply search query from URL if present
-                const searchQuery = getSanitizedQueryParam('search');
-                if (searchQuery) {
-                    table.search(searchQuery).draw();
-                }
-
-                // Update URL dynamically when search box is used
-                $('#security-bugs_filter input').on('input', function () {
-                    const newQuery = this.value.trim();
-                    const newUrl = newQuery ? `?search=${encodeURIComponent(newQuery)}` : window.location.pathname;
-
-                    // Update URL without reloading the page
-                    window.history.replaceState(null, '', newUrl);
-                });
-
-            } catch (error) {
-                console.error("Error loading bug data:", error);
-                loadingRow.innerHTML = `<td colspan="4" style="text-align:center;color:red;">Failed to load data.</td>`;
-            }
+        function renderBanner() {
+          const query = ($('#security-bugs_filter input').val() || '').trim();
+          const filtered = table.rows({ search: 'applied' }).count();
+          bannerEl.textContent = query
+            ? `Showing ${filtered} results for “${query}” (out of ${totalCount} total).`
+            : `Showing all ${totalCount} entries.`;
         }
 
-        function animateCounter(element, targetValue, duration) {
-            let startValue = 0;
-            let increment = Math.ceil(targetValue / (duration / 20));
-            let interval = setInterval(() => {
-                startValue += increment;
-                if (startValue >= targetValue) {
-                    element.textContent = targetValue;
-                    clearInterval(interval);
-                } else {
-                    element.textContent = startValue;
-                }
-            }, 20);
+        table.on('draw', renderBanner);
+
+        // Apply query from URL (supports ?q= and ?search=)
+        const searchQuery = getSanitizedQueryParamAny();
+        if (searchQuery) {
+          table.search(searchQuery).draw();
+        } else {
+          table.draw();
         }
 
-        document.addEventListener("DOMContentLoaded", loadBugData);
-    </script>
+        // Keep URL in sync
+        $('#security-bugs_filter input').on('input', function () {
+          const newQuery = this.value.trim();
+          const newUrl = newQuery ? `?search=${encodeURIComponent(newQuery)}` : window.location.pathname;
+          window.history.replaceState(null, '', newUrl);
+        });
+
+      } catch (err) {
+        console.error("Error loading bug data:", err);
+        if (loadingRow) {
+          loadingRow.innerHTML = `<td colspan="4" style="text-align:center;color:red;">Failed to load data.</td>`;
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadBugData);
+  </script>
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse">
-        <a class="navbar-brand" href="http://cs.utah.edu">
-            <img class="button" width="185px" src="../img/logos/ksoclogo_white.png" style="margin-top:1.3%">
-        </a>
+  <nav class="navbar navbar-inverse">
+    <a class="navbar-brand" href="http://cs.utah.edu">
+      <img class="button" width="185" src="../img/logos/ksoclogo_white.png" style="margin-top:1.3%">
+    </a>
 
-        <div class="ml-auto">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+    <div class="ml-auto">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
 
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav" style="margin-top: 1px;">
-                    <li><a href=".././">Home</a></li>
-                    <li><a href=".././#news">News</a></li>
-                    <li><a href="../people">People</a></li>
-                    <li><a href="../publications">Publications</a></li>
-                    <li><a href="../bugs">Reported Bugs</a></li>
-                    <li><a href="https://github.com/FuturesLab">Software</a></li>
-                    <li><a href="../#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav" style="margin-top: 1px;">
+          <li><a href=".././">Home</a></li>
+          <li><a href=".././#news">News</a></li>
+          <li><a href="../people">People</a></li>
+          <li><a href="../publications">Publications</a></li>
+          <li><a href="../bugs">Reported Bugs</a></li>
+          <li><a href="https://github.com/FuturesLab">Software</a></li>
+          <li><a href="../#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <div class="container main-container" style="margin-top:1.15em">
-        <div class="col-md-12 text-center" style="margin-bottom:10px">
-            <h1>FuTURES³ Lab <br class="on-narrow"> Reported Bugs: 
-                <span class="counter" id="bug-count" style="color:#BE0000;">0</span>
-            </h1>
-        </div>
-
-        <div class="col-md-12" style="margin-bottom:15px">
-            <h4><p align="justify">We regularly report new software logic bugs and security vulnerabilities as part of our research. Below is a continually updated list:</p></h4>
-        </div>
-
-        <div class="col-md-12 table-responsive">
-            <table id="security-bugs" class="display table table-striped table-bordered" style="width:100%">
-                <thead>
-                    <tr>
-                        <th style="width:12%">Date</th>
-                        <th style="width:68%">Description</th>
-                        <th style="width:20%">Lead</th>
-                    </tr>
-                </thead>
-                <tbody id="table-body">
-                    <tr id="loading">
-                        <td colspan="4" style="text-align:center;">Loading data, please wait...</td>
-                    </tr>
-                </tbody>                        
-            </table>
-        </div>
+  <div class="container main-container">
+    <div class="col-md-12 text-center" style="margin-bottom:10px">
+      <h1>FuTURES³ Lab <br class="on-narrow"> Reported Bugs:
+        <span class="counter" id="bug-count">0</span>
+      </h1>
     </div>
 
-    <br>
+    <div class="col-md-12" style="margin-bottom:15px">
+      <h4><p align="justify">
+        We regularly report new software logic bugs and security vulnerabilities as part of our research.
+        Below is a continually updated list:
+      </p></h4>
+    </div>
 
-    <footer class="bg-light text-center text-lg-start">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.75em;">
-            Copyright © Stefan Nagy. All rights reserved.
-        </div>
-    </footer>
+    <div class="col-md-12 table-responsive">
+      <table id="security-bugs" class="display table table-striped table-bordered" style="width:100%">
+        <thead>
+          <tr>
+            <th style="width:12%">Date</th>
+            <th style="width:68%">Description</th>
+            <th style="width:20%">Lead</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <tr id="loading">
+            <td colspan="4" style="text-align:center;">Loading data, please wait...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
+  <br>
+
+  <footer class="bg-light text-center text-lg-start">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.75em;">
+      Copyright © Stefan Nagy. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>

@@ -40,3 +40,14 @@ https://github.com/HDFGroup/hdf5/issues/5831
 https://github.com/HDFGroup/hdf5/issues/5832
 https://github.com/HDFGroup/hdf5/issues/5833
 https://github.com/HDFGroup/hdf5/issues/5834
+https://github.com/vbwagner/catdoc/issues/6
+https://github.com/vbwagner/catdoc/issues/7
+https://github.com/vbwagner/catdoc/issues/8
+https://github.com/vbwagner/catdoc/issues/9
+https://github.com/vbwagner/catdoc/issues/10
+https://github.com/vbwagner/catdoc/issues/11
+https://github.com/vbwagner/catdoc/issues/12
+https://github.com/vbwagner/catdoc/issues/13
+https://github.com/johnwhitington/camlpdf/issues/75
+https://github.com/mpruett/audiofile/issues/73
+https://newsgroup.xnview.com/viewtopic.php?t=49598

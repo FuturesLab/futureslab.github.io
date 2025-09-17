@@ -63,6 +63,13 @@
     "desc": "Typecasted value becomes 0"
   },
   {
+    "id": "Audiofile #73",
+    "url": "https://github.com/mpruett/audiofile/issues/73",
+    "lead": "Zao Yang",
+    "date": "2025-09-16",
+    "desc": "allocation-size-too-big at sfcommands/sfconvert.c:327"
+  },
+  {
     "id": "Bento4 #1038",
     "url": "https://github.com/axiomatic-systems/Bento4/issues/1038",
     "lead": "Zao Yang",
@@ -117,6 +124,69 @@
     "lead": "Zao Yang",
     "date": "2024-04-22",
     "desc": "Floating point type propagation failure"
+  },
+  {
+    "id": "CamlPDF #75",
+    "url": "https://github.com/johnwhitington/camlpdf/issues/75",
+    "lead": "Zao Yang",
+    "date": "2025-09-12",
+    "desc": "johnwhitington/camlpdf"
+  },
+  {
+    "id": "Catdoc #10",
+    "url": "https://github.com/vbwagner/catdoc/issues/10",
+    "lead": "Zao Yang",
+    "date": "2025-09-16",
+    "desc": "AccessViolation at xlsparse.c:438"
+  },
+  {
+    "id": "Catdoc #11",
+    "url": "https://github.com/vbwagner/catdoc/issues/11",
+    "lead": "Zao Yang",
+    "date": "2025-09-16",
+    "desc": "heap-buffer-overflow(read) at numutils.c:22"
+  },
+  {
+    "id": "Catdoc #12",
+    "url": "https://github.com/vbwagner/catdoc/issues/12",
+    "lead": "Zao Yang",
+    "date": "2025-09-16",
+    "desc": "global-buffer-overflow(write) at xlsparse.c:608"
+  },
+  {
+    "id": "Catdoc #13",
+    "url": "https://github.com/vbwagner/catdoc/issues/13",
+    "lead": "Zao Yang",
+    "date": "2025-09-16",
+    "desc": "global-buffer-overflow(write) at xlsparse.c:716"
+  },
+  {
+    "id": "Catdoc #6",
+    "url": "https://github.com/vbwagner/catdoc/issues/6",
+    "lead": "Zao Yang",
+    "date": "2025-09-16",
+    "desc": "AccessViolation at ole.c:450"
+  },
+  {
+    "id": "Catdoc #7",
+    "url": "https://github.com/vbwagner/catdoc/issues/7",
+    "lead": "Zao Yang",
+    "date": "2025-09-16",
+    "desc": "AccessViolation at xlsparse.c:679"
+  },
+  {
+    "id": "Catdoc #8",
+    "url": "https://github.com/vbwagner/catdoc/issues/8",
+    "lead": "Zao Yang",
+    "date": "2025-09-16",
+    "desc": "heap-buffer-overflow(read) at xlsparse.c:493"
+  },
+  {
+    "id": "Catdoc #9",
+    "url": "https://github.com/vbwagner/catdoc/issues/9",
+    "lead": "Zao Yang",
+    "date": "2025-09-16",
+    "desc": "AccessViolation at fileutil.c:124"
   },
   {
     "id": "GPMF-Parser #201",
@@ -271,5 +341,12 @@
     "lead": "Zao Yang",
     "date": "2025-09-14",
     "desc": "allocation-size-too-big at StormLib/src/SBaseFileTable.cpp:1184:38"
+  },
+  {
+    "id": "XnView #49598",
+    "url": "https://newsgroup.xnview.com/viewtopic.php?t=49598",
+    "lead": "Zao Yang",
+    "date": "2025-09-16",
+    "desc": "Several inputs causing NConvert crash - XnView Software"
   }
 ]

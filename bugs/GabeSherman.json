@@ -133,7 +133,7 @@
     "desc": "stack-buffer-overflow related to non-DE9IM argument for GEOSRelatePatternMatch_r"
   },
   {
-    "id": "H5py #2581",
+    "id": "H5Py #2581",
     "url": "https://github.com/h5py/h5py/issues/2581",
     "lead": "Gabe Sherman",
     "date": "2025-05-12",
@@ -403,7 +403,7 @@
     "url": "https://github.com/ladislav-zezula/StormLib/issues/328",
     "lead": "Gabe Sherman",
     "date": "2024-04-20",
-    "desc": "ladislav-zezula/StormLib"
+    "desc": "stack-buffer overflow at line 138 in SBaseFileTable.cpp"
   },
   {
     "id": "StormLib #329",
@@ -476,7 +476,7 @@
     "desc": "heap-buffer overflow in SBaseCommon.cpp"
   },
   {
-    "id": "Tidy-Html5 #1120",
+    "id": "Tidy-HTML5 #1120",
     "url": "https://github.com/htacg/tidy-html5/issues/1120",
     "lead": "Gabe Sherman",
     "date": "2024-07-30",

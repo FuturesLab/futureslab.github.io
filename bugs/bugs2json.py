@@ -231,15 +231,16 @@ def humanize_repo_display_name(session: requests.Session, owner: str, repo_canon
     Derive a human-friendly repo display name without a hard-coded map.
 
     Per token (split on '-' and '_'):
-      1) Use _most_common_casing from README prose/headings (handles LibreCAD, CPython, Zig, SWC).
-      2) If none:
-         - If token has digits:
-             • If matches 'letters+digits' and letters <= 4 → UPPERCASE letters, keep digits (hdf5 -> HDF5).
-             • Else TitleCase alphabetic segments around digits (go2hx -> Go2Hx).
-         - If no digits:
-             • Short (len <= 4): keep ALL-CAPS as-is (SWC), else capitalize first letter (zig -> Zig).
-             • Long  (> 4): uppercase first letter, preserve the rest as-is (librecad -> Librecad).
-      3) Join tokens with '-'.
+      1) Use _most_common_casing from README prose/headings when available.
+      2) Regardless of source (README or canonical), if the token contains digits:
+           • If 'letters+digits' and letters <= 4 → UPPERCASE letters, keep digits (hdf5 -> HDF5).
+           • If 'letters+digits+letters' → Capitalize both letter segments (c4go -> C4Go).
+           • Else split by digit runs; Capitalize each alpha segment (c4go2java -> C4Go2Java).
+      3) If no digits and no README signal:
+           • Short (len <= 4): keep ALL-CAPS as-is (SWC), else capitalize first letter (zig -> Zig).
+           • Long  (> 4): uppercase first letter, preserve the rest as-is (librecad -> Librecad).
+      4) Final safeguard: if any token is still all-lowercase, capitalize its first letter.
+      5) Join tokens with '-'.
     """
     tokens = re.split(r"[-_]", repo_canonical)
     readme = _fetch_readme_text(session, owner, repo_canonical)
@@ -249,35 +250,44 @@ def humanize_repo_display_name(session: requests.Session, owner: str, repo_canon
         if not ct:
             continue
 
+        # Prefer README/prose casing when present
         observed = _most_common_casing(readme, ct)
-        if observed:
-            out.append(observed)
-            continue
+        token = observed if observed else ct  # <- we will still normalize around digits below
 
-        if any(ch.isdigit() for ch in ct):
-            m = re.match(r"^([a-z]+)(\d+)$", ct)
-            if m and len(m.group(1)) <= 4:
-                out.append(m.group(1).upper() + m.group(2))  # hdf5 -> HDF5
+        if any(ch.isdigit() for ch in token):
+            # Keep hdf5 behavior for short alpha prefix
+            m_end = re.match(r"^([A-Za-z]+)(\d+)$", token)
+            if m_end and len(m_end.group(1)) <= 4:
+                out.append(m_end.group(1).upper() + m_end.group(2))
                 continue
-            parts = re.split(r"(\d+)", ct)
-            segs = [(p.capitalize() if p.isalpha() else p) for p in parts if p]
-            out.append("".join(segs))  # go2hx -> Go2Hx
+
+            # Capitalize both sides for letters+digits+letters
+            m_mid = re.match(r"^([A-Za-z]+)(\d+)([A-Za-z]+)$", token)
+            if m_mid:
+                left, digits, right = m_mid.group(1), m_mid.group(2), m_mid.group(3)
+                out.append(left[0].upper() + left[1:] + digits + right[0].upper() + right[1:])
+                continue
+
+            # General: split by digit runs; capitalize alpha segments, keep digits
+            parts = re.split(r"(\d+)", token)
+            segs = [(p[0].upper() + p[1:] if p and p.isalpha() else p) for p in parts if p]
+            out.append("".join(segs))
             continue
 
-        # Pure alphabetic fallback
-        if len(ct) <= 4:
-            out.append(ct if ct.isupper() else (ct[0].upper() + ct[1:]))  # SWC stays SWC; zig -> Zig
-        else:
-            out.append(ct[0].upper() + ct[1:])  # librecad -> Librecad
+        # No digits path
+        if observed:
+            # README gave us a non-digit token; trust it
+            out.append(token)
+            continue
 
-    # After building tokens, fix any all-lowercase results by capitalizing the first letter
-    fixed_tokens = []
-    for t in out:
-        if t.islower():
-            fixed_tokens.append(t[0].upper() + t[1:])
+        # Fallbacks when README had no signal
+        if len(token) <= 4:
+            out.append(token if token.isupper() else (token[0].upper() + token[1:]))  # SWC stays SWC; zig -> Zig
         else:
-            fixed_tokens.append(t)
+            out.append(token[0].upper() + token[1:])  # librecad -> Librecad
 
+    # Final safeguard: capitalize first letter of any all-lowercase token
+    fixed_tokens = [t[0].upper() + t[1:] if t and t.islower() else t for t in out]
     return "-".join(fixed_tokens)
 
 def canonical_github_repo_name(session: requests.Session, owner: str, repo: str, issue_soup: Optional[BeautifulSoup] = None) -> str:

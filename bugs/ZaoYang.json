@@ -168,21 +168,21 @@
     "desc": "heap-buffer-overflow at H5Faccum.c:570"
   },
   {
-    "id": "R2ghidra #134",
+    "id": "R2Ghidra #134",
     "url": "https://github.com/radareorg/r2ghidra/issues/134",
     "lead": "Zao Yang",
     "date": "2024-04-19",
     "desc": "operation result dereferenced by memory address"
   },
   {
-    "id": "R2ghidra #135",
+    "id": "R2Ghidra #135",
     "url": "https://github.com/radareorg/r2ghidra/issues/135",
     "lead": "Zao Yang",
     "date": "2024-04-19",
     "desc": "SBORROW4 wrongly used in condition"
   },
   {
-    "id": "R2ghidra #136",
+    "id": "R2Ghidra #136",
     "url": "https://github.com/radareorg/r2ghidra/issues/136",
     "lead": "Zao Yang",
     "date": "2024-04-19",

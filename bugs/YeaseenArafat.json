@@ -116,24 +116,24 @@
     "url": "https://github.com/immunant/c2rust/issues/1240",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-09",
-    "desc": "immunant/c2rust"
+    "desc": "Compound Literal Assigned to `volatile int*` Triggers Invalid Pointer Cast in Transpiled Rust"
   },
   {
-    "id": "C4go #515",
+    "id": "C4Go #515",
     "url": "https://github.com/Konstantin8105/c4go/issues/515",
     "lead": "Yeaseen Arafat",
     "date": "2024-08-24",
     "desc": "Failure at Union Initialization in the converted Go code"
   },
   {
-    "id": "C4go #516",
+    "id": "C4Go #516",
     "url": "https://github.com/Konstantin8105/c4go/issues/516",
     "lead": "Yeaseen Arafat",
     "date": "2024-08-24",
     "desc": "Failure at Converting Boolean Expression to Integer in Struct Initialization"
   },
   {
-    "id": "C4go #517",
+    "id": "C4Go #517",
     "url": "https://github.com/Konstantin8105/c4go/issues/517",
     "lead": "Yeaseen Arafat",
     "date": "2024-08-31",
@@ -480,7 +480,7 @@
     "url": "https://github.com/tinygo-org/tinygo/issues/5024",
     "lead": "Yeaseen Arafat",
     "date": "2025-09-02",
-    "desc": "tinygo-org/tinygo"
+    "desc": "TinyGo slice capacity after append diverges from Go runtime behavior"
   },
   {
     "id": "Tmux-Rs #48",

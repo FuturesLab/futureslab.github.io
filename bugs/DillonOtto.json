@@ -63,28 +63,28 @@
     "desc": "Invalid insert column left crashes lab plot with index out of range"
   },
   {
-    "id": "Librecad #2093",
+    "id": "LibreCAD #2093",
     "url": "https://github.com/LibreCAD/LibreCAD/issues/2093",
     "lead": "Dillon Otto",
     "date": "2025-04-02",
     "desc": "Same Properties > Angle > Two Points crashes with a Segfault"
   },
   {
-    "id": "Librecad #2161",
+    "id": "LibreCAD #2161",
     "url": "https://github.com/LibreCAD/LibreCAD/issues/2161",
     "lead": "Dillon Otto",
     "date": "2025-05-26",
     "desc": "Transient Segfault when placing many points consecutively"
   },
   {
-    "id": "MateCalc #226",
+    "id": "Mate-Calc #226",
     "url": "https://github.com/mate-desktop/mate-calc/issues/226",
     "lead": "Dillon Otto",
     "date": "2024-08-13",
     "desc": "Inverse trig functions with no arguments crash the calculator"
   },
   {
-    "id": "Plotjuggler #1052",
+    "id": "PlotJuggler #1052",
     "url": "https://github.com/facontidavide/PlotJuggler/issues/1052",
     "lead": "Dillon Otto",
     "date": "2025-03-12",

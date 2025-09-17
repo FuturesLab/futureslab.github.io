@@ -116,143 +116,143 @@
     "url": "https://github.com/immunant/c2rust/issues/1240",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-09",
-    "desc": "Compound Literal Assigned to `volatile int*` Triggers Invalid Pointer Cast in Transpiled Rust"
+    "desc": "immunant/c2rust"
   },
   {
-    "id": "C4Go #515",
+    "id": "C4go #515",
     "url": "https://github.com/Konstantin8105/c4go/issues/515",
     "lead": "Yeaseen Arafat",
     "date": "2024-08-24",
     "desc": "Failure at Union Initialization in the converted Go code"
   },
   {
-    "id": "C4Go #516",
+    "id": "C4go #516",
     "url": "https://github.com/Konstantin8105/c4go/issues/516",
     "lead": "Yeaseen Arafat",
     "date": "2024-08-24",
     "desc": "Failure at Converting Boolean Expression to Integer in Struct Initialization"
   },
   {
-    "id": "C4Go #517",
+    "id": "C4go #517",
     "url": "https://github.com/Konstantin8105/c4go/issues/517",
     "lead": "Yeaseen Arafat",
     "date": "2024-08-31",
     "desc": "Failure at 2D Array Initialization"
   },
   {
-    "id": "Cxgo #100",
+    "id": "CxGo #100",
     "url": "https://github.com/gotranspile/cxgo/issues/100",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
     "desc": "`cxgo` Misses Declared Variables Inside `switch` Blocks in C"
   },
   {
-    "id": "Cxgo #101",
+    "id": "CxGo #101",
     "url": "https://github.com/gotranspile/cxgo/issues/101",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-07",
     "desc": "`cxgo` Mistranslates C Function Pointer causing Runtime Crash in Transpiled Go Code"
   },
   {
-    "id": "Cxgo #75",
+    "id": "CxGo #75",
     "url": "https://github.com/gotranspile/cxgo/issues/75",
     "lead": "Yeaseen Arafat",
     "date": "2024-08-24",
     "desc": "Bug: Testing Boolean to Float Conversions in CxGo: Implicit Conversion Success, Explicit Conversion Error"
   },
   {
-    "id": "Cxgo #76",
+    "id": "CxGo #76",
     "url": "https://github.com/gotranspile/cxgo/issues/76",
     "lead": "Yeaseen Arafat",
     "date": "2024-08-24",
     "desc": "Bug: Implicit Bool to Float Conversion Fails When Added with a Float in C"
   },
   {
-    "id": "Cxgo #77",
+    "id": "CxGo #77",
     "url": "https://github.com/gotranspile/cxgo/issues/77",
     "lead": "Yeaseen Arafat",
     "date": "2024-08-24",
     "desc": "Bug: CxGo translated go code giving different output from gcc and clang"
   },
   {
-    "id": "Cxgo #78",
+    "id": "CxGo #78",
     "url": "https://github.com/gotranspile/cxgo/issues/78",
     "lead": "Yeaseen Arafat",
     "date": "2024-08-31",
     "desc": "Bug: Invalid Pointer Dereference for 3D Arrays;  for 2D arrays Pointer Dereference is ok"
   },
   {
-    "id": "Cxgo #80",
+    "id": "CxGo #80",
     "url": "https://github.com/gotranspile/cxgo/issues/80",
     "lead": "Yeaseen Arafat",
     "date": "2024-10-17",
     "desc": "panic: runtime error: index out of range [-1]"
   },
   {
-    "id": "Cxgo #81",
+    "id": "CxGo #81",
     "url": "https://github.com/gotranspile/cxgo/issues/81",
     "lead": "Yeaseen Arafat",
     "date": "2024-10-30",
     "desc": "cxgo fails to handle compound literals in C code"
   },
   {
-    "id": "Cxgo #90",
+    "id": "CxGo #90",
     "url": "https://github.com/gotranspile/cxgo/issues/90",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-17",
     "desc": "`cxgo` Generates Invalid Address-Taking Operation for String Literal Array"
   },
   {
-    "id": "Cxgo #91",
+    "id": "CxGo #91",
     "url": "https://github.com/gotranspile/cxgo/issues/91",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-17",
     "desc": "`cxgo` fails to translate switch-based loop unrolling"
   },
   {
-    "id": "Cxgo #92",
+    "id": "CxGo #92",
     "url": "https://github.com/gotranspile/cxgo/issues/92",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-17",
     "desc": "`cxgo` Fails to Print Integer Value with `%zu` Format Specifier"
   },
   {
-    "id": "Cxgo #93",
+    "id": "CxGo #93",
     "url": "https://github.com/gotranspile/cxgo/issues/93",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
     "desc": "`cxgo` Fails to Recognize `max_align_t` from `<stddef.h>`"
   },
   {
-    "id": "Cxgo #95",
+    "id": "CxGo #95",
     "url": "https://github.com/gotranspile/cxgo/issues/95",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
     "desc": "`cxgo` Crashes When Translating `_Complex int` Type"
   },
   {
-    "id": "Cxgo #96",
+    "id": "CxGo #96",
     "url": "https://github.com/gotranspile/cxgo/issues/96",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
     "desc": "`cxgo` Generates Out-of-Bounds Pointer for One-Past-the-End Array Access for C"
   },
   {
-    "id": "Cxgo #97",
+    "id": "CxGo #97",
     "url": "https://github.com/gotranspile/cxgo/issues/97",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
     "desc": "`cxgo` Incorrectly Converts Char Array Initialization, Causing Go Type Mismatch"
   },
   {
-    "id": "Cxgo #98",
+    "id": "CxGo #98",
     "url": "https://github.com/gotranspile/cxgo/issues/98",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
     "desc": "`cxgo` Fails to Preserve `const` for External Constant Variables"
   },
   {
-    "id": "Cxgo #99",
+    "id": "CxGo #99",
     "url": "https://github.com/gotranspile/cxgo/issues/99",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
@@ -392,133 +392,133 @@
     "desc": "Struct keys in Go maps not matching correctly after Go2Hx translation"
   },
   {
-    "id": "Swc #11039",
+    "id": "SWC #11039",
     "url": "https://github.com/swc-project/swc/issues/11039",
     "lead": "Yeaseen Arafat",
     "date": "2025-08-29",
     "desc": "Object rest over Proxy loses properties due to extra getOwnPropertyDescriptor on excluded keys"
   },
   {
-    "id": "Swc #11040",
+    "id": "SWC #11040",
     "url": "https://github.com/swc-project/swc/issues/11040",
     "lead": "Yeaseen Arafat",
     "date": "2025-08-29",
     "desc": "ES5 target: object assignment with rest evaluates rest before listed properties"
   },
   {
-    "id": "Swc #11045",
+    "id": "SWC #11045",
     "url": "https://github.com/swc-project/swc/issues/11045",
     "lead": "Yeaseen Arafat",
     "date": "2025-09-01",
     "desc": "ES5 target breaks TDZ semantics: missing ReferenceError for let access before initialization"
   },
   {
-    "id": "Swc #11046",
+    "id": "SWC #11046",
     "url": "https://github.com/swc-project/swc/issues/11046",
     "lead": "Yeaseen Arafat",
     "date": "2025-09-01",
     "desc": "ES5 generator transform produces extra function values when yielding nested object"
   },
   {
-    "id": "Swc #11047",
+    "id": "SWC #11047",
     "url": "https://github.com/swc-project/swc/issues/11047",
     "lead": "Yeaseen Arafat",
     "date": "2025-09-01",
     "desc": "ES5 destructuring transform drops array hole and shifts default value assignment"
   },
   {
-    "id": "Swc #11048",
+    "id": "SWC #11048",
     "url": "https://github.com/swc-project/swc/issues/11048",
     "lead": "Yeaseen Arafat",
     "date": "2025-09-01",
     "desc": "Default values in async function array destructuring miscompiled in ES5 target"
   },
   {
-    "id": "Swc #11049",
+    "id": "SWC #11049",
     "url": "https://github.com/swc-project/swc/issues/11049",
     "lead": "Yeaseen Arafat",
     "date": "2025-09-01",
     "desc": "ES5 async array destructuring awaited value replaced with pending Promise"
   },
   {
-    "id": "Swc #11050",
+    "id": "SWC #11050",
     "url": "https://github.com/swc-project/swc/issues/11050",
     "lead": "Yeaseen Arafat",
     "date": "2025-09-01",
     "desc": "ES5 async short-circuit assignment and labeled break miscompiled causing wrong control flow"
   },
   {
-    "id": "Swc #11051",
+    "id": "SWC #11051",
     "url": "https://github.com/swc-project/swc/issues/11051",
     "lead": "Yeaseen Arafat",
     "date": "2025-09-01",
     "desc": "ES5 object destructuring assignment in conditional miscompiled returns wrong property value"
   },
   {
-    "id": "Swc #11052",
+    "id": "SWC #11052",
     "url": "https://github.com/swc-project/swc/issues/11052",
     "lead": "Yeaseen Arafat",
     "date": "2025-09-01",
     "desc": "ES5 async method transform drops write-back for compound assignment to this property across await"
   },
   {
-    "id": "Tinygo #4786",
+    "id": "TinyGo #4786",
     "url": "https://github.com/tinygo-org/tinygo/issues/4786",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-07",
     "desc": "Inconsistent Behavior with `len` on Nil Array Pointer in tinygo"
   },
   {
-    "id": "Tinygo #4819",
+    "id": "TinyGo #4819",
     "url": "https://github.com/tinygo-org/tinygo/issues/4819",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-19",
     "desc": "TinyGo Panics on Generic Type Aliases"
   },
   {
-    "id": "Tinygo #5024",
+    "id": "TinyGo #5024",
     "url": "https://github.com/tinygo-org/tinygo/issues/5024",
     "lead": "Yeaseen Arafat",
     "date": "2025-09-02",
-    "desc": "TinyGo slice capacity after append diverges from Go runtime behavior"
+    "desc": "tinygo-org/tinygo"
   },
   {
-    "id": "TmuxRs #48",
+    "id": "Tmux-Rs #48",
     "url": "https://github.com/richardscollin/tmux-rs/issues/48",
     "lead": "Yeaseen Arafat",
     "date": "2025-07-08",
     "desc": "`rename-window` and `rename-session` add trailing garbage bytes"
   },
   {
-    "id": "TmuxRs #50",
+    "id": "Tmux-Rs #50",
     "url": "https://github.com/richardscollin/tmux-rs/issues/50",
     "lead": "Yeaseen Arafat",
     "date": "2025-07-08",
     "desc": "`resize-pane` directions `-D` and `-U` do not work as expected"
   },
   {
-    "id": "TmuxRs #51",
+    "id": "Tmux-Rs #51",
     "url": "https://github.com/richardscollin/tmux-rs/issues/51",
     "lead": "Yeaseen Arafat",
     "date": "2025-07-08",
     "desc": "`synchronize-panes` does not work correctly in `tmux-rs`"
   },
   {
-    "id": "TmuxRs #52",
+    "id": "Tmux-Rs #52",
     "url": "https://github.com/richardscollin/tmux-rs/issues/52",
     "lead": "Yeaseen Arafat",
     "date": "2025-07-08",
     "desc": "`display-message` shows `%s-invalid-utf8` for pane index/title expansions"
   },
   {
-    "id": "TmuxRs #53",
+    "id": "Tmux-Rs #53",
     "url": "https://github.com/richardscollin/tmux-rs/issues/53",
     "lead": "Yeaseen Arafat",
     "date": "2025-07-08",
     "desc": "Parsing Issue: `tmux-rs` rejects `-s` but accepts `-S` for `new-session`, unlike real `tmux`"
   },
   {
-    "id": "TmuxRs #64",
+    "id": "Tmux-Rs #64",
     "url": "https://github.com/richardscollin/tmux-rs/issues/64",
     "lead": "Yeaseen Arafat",
     "date": "2025-07-10",

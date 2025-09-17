@@ -77,112 +77,112 @@
     "desc": "memory leak at Source/C++/System/StdC/Ap4StdCFileByteStream.cpp:279:14"
   },
   {
-    "id": "BinaryninjaApi #5199",
+    "id": "Binaryninja-API #5199",
     "url": "https://github.com/Vector35/binaryninja-api/issues/5199",
     "lead": "Zao Yang",
     "date": "2024-03-20",
     "desc": "PseudoC fails to render HLIL_STRUCT_FIELD correctly."
   },
   {
-    "id": "BinaryninjaApi #5200",
+    "id": "Binaryninja-API #5200",
     "url": "https://github.com/Vector35/binaryninja-api/issues/5200",
     "lead": "Zao Yang",
     "date": "2024-03-20",
     "desc": "PseudoC fails to add cast to signed comparisons"
   },
   {
-    "id": "BinaryninjaApi #5201",
+    "id": "Binaryninja-API #5201",
     "url": "https://github.com/Vector35/binaryninja-api/issues/5201",
     "lead": "Zao Yang",
     "date": "2024-03-20",
     "desc": "Issue with soundness of HLIL control flow structuring"
   },
   {
-    "id": "BinaryninjaApi #5202",
+    "id": "Binaryninja-API #5202",
     "url": "https://github.com/Vector35/binaryninja-api/issues/5202",
     "lead": "Zao Yang",
     "date": "2024-03-20",
     "desc": "`truncf`, `fsqrt`, `fabs` incorrectly rendered in PseudoC"
   },
   {
-    "id": "BinaryninjaApi #5205",
+    "id": "Binaryninja-API #5205",
     "url": "https://github.com/Vector35/binaryninja-api/issues/5205",
     "lead": "Zao Yang",
     "date": "2024-03-20",
     "desc": "Division deoptimization bug"
   },
   {
-    "id": "BinaryninjaApi #5309",
+    "id": "Binaryninja-API #5309",
     "url": "https://github.com/Vector35/binaryninja-api/issues/5309",
     "lead": "Zao Yang",
     "date": "2024-04-22",
     "desc": "Floating point type propagation failure"
   },
   {
-    "id": "GpmfParser #201",
+    "id": "GPMF-Parser #201",
     "url": "https://github.com/gopro/gpmf-parser/issues/201",
     "lead": "Zao Yang",
     "date": "2025-09-13",
     "desc": "Segmentation fault and memory leak in OpenMP4Source"
   },
   {
-    "id": "GpmfParser #202",
+    "id": "GPMF-Parser #202",
     "url": "https://github.com/gopro/gpmf-parser/issues/202",
     "lead": "Zao Yang",
     "date": "2025-09-13",
     "desc": "Floating point exception in OpenMP4Source"
   },
   {
-    "id": "GpmfParser #203",
+    "id": "GPMF-Parser #203",
     "url": "https://github.com/gopro/gpmf-parser/issues/203",
     "lead": "Zao Yang",
     "date": "2025-09-13",
     "desc": "Segmentation fault in OpenMP4Source"
   },
   {
-    "id": "Hdf5 #5831",
+    "id": "HDF5 #5831",
     "url": "https://github.com/HDFGroup/hdf5/issues/5831",
     "lead": "Zao Yang",
     "date": "2025-09-15",
     "desc": "allocation-size-too-big at H5Centry.c:1018"
   },
   {
-    "id": "Hdf5 #5832",
+    "id": "HDF5 #5832",
     "url": "https://github.com/HDFGroup/hdf5/issues/5832",
     "lead": "Zao Yang",
     "date": "2025-09-15",
     "desc": "double-free at H5MM.c:201"
   },
   {
-    "id": "Hdf5 #5833",
+    "id": "HDF5 #5833",
     "url": "https://github.com/HDFGroup/hdf5/issues/5833",
     "lead": "Zao Yang",
     "date": "2025-09-15",
     "desc": "Stack overflow at H5Gnode.c:415"
   },
   {
-    "id": "Hdf5 #5834",
+    "id": "HDF5 #5834",
     "url": "https://github.com/HDFGroup/hdf5/issues/5834",
     "lead": "Zao Yang",
     "date": "2025-09-15",
     "desc": "heap-buffer-overflow at H5Faccum.c:570"
   },
   {
-    "id": "R2Ghidra #134",
+    "id": "R2ghidra #134",
     "url": "https://github.com/radareorg/r2ghidra/issues/134",
     "lead": "Zao Yang",
     "date": "2024-04-19",
     "desc": "operation result dereferenced by memory address"
   },
   {
-    "id": "R2Ghidra #135",
+    "id": "R2ghidra #135",
     "url": "https://github.com/radareorg/r2ghidra/issues/135",
     "lead": "Zao Yang",
     "date": "2024-04-19",
     "desc": "SBORROW4 wrongly used in condition"
   },
   {
-    "id": "R2Ghidra #136",
+    "id": "R2ghidra #136",
     "url": "https://github.com/radareorg/r2ghidra/issues/136",
     "lead": "Zao Yang",
     "date": "2024-04-19",
@@ -224,20 +224,6 @@
     "desc": "No string literals are generated"
   },
   {
-    "id": "Revng #379",
-    "url": "https://github.com/revng/revng/issues/379",
-    "lead": "Zao Yang",
-    "date": "2024-04-18",
-    "desc": "Order of memory accesses not preserved upon emission of `if` statements"
-  },
-  {
-    "id": "Revng #380",
-    "url": "https://github.com/revng/revng/issues/380",
-    "lead": "Zao Yang",
-    "date": "2024-04-18",
-    "desc": "`SimplifyDualSwitch` incorrectly handles `switch` with two cases and `default`"
-  },
-  {
     "id": "Revng #381",
     "url": "https://github.com/revng/revng/issues/381",
     "lead": "Zao Yang",
@@ -252,21 +238,35 @@
     "desc": "Crash when an instruction is partially out a segment"
   },
   {
-    "id": "RevngC #15",
+    "id": "Revng-C #15",
     "url": "https://github.com/revng/revng-c/issues/15",
     "lead": "Zao Yang",
     "date": "2024-04-29",
     "desc": "Error when decompiling binary (2)"
   },
   {
-    "id": "Stormlib #397",
+    "id": "Revng-C #379",
+    "url": "https://github.com/revng/revng/issues/379",
+    "lead": "Zao Yang",
+    "date": "2024-04-18",
+    "desc": "Order of memory accesses not preserved upon emission of `if` statements"
+  },
+  {
+    "id": "Revng-C #380",
+    "url": "https://github.com/revng/revng/issues/380",
+    "lead": "Zao Yang",
+    "date": "2024-04-18",
+    "desc": "`SimplifyDualSwitch` incorrectly handles `switch` with two cases and `default`"
+  },
+  {
+    "id": "StormLib #397",
     "url": "https://github.com/ladislav-zezula/StormLib/issues/397",
     "lead": "Zao Yang",
     "date": "2025-09-14",
     "desc": "heap-overflow at StormLib/src/SBaseCommon.cpp:512:42"
   },
   {
-    "id": "Stormlib #398",
+    "id": "StormLib #398",
     "url": "https://github.com/ladislav-zezula/StormLib/issues/398",
     "lead": "Zao Yang",
     "date": "2025-09-14",

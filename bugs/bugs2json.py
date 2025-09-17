@@ -505,14 +505,68 @@ def fetch_qcad(session, url: str, lead: str):
     tid = parse_qs(urlparse(url).query).get("t", [""])[0] or os.path.basename(url)
     return {"id": "QCAD #%s" % tid, "url": url, "lead": lead, "date": date_str, "desc": title}
 
+def fetch_xnview_forum(session, url: str, lead: str):
+    """
+    XnView (phpBB) forum thread:
+      - ID: XnView #<topic id>
+      - Title: page <title> or h2/h3 topic title
+      - Date: from <time datetime="...">, meta tags, or '» Mon Sep 16, 2024 10:20 am' style text
+    """
+    html = http_get(session, url).text
+    soup = BeautifulSoup(html, "html.parser")
+
+    # Title
+    title_el = soup.find("title") or soup.find("h2") or soup.find("h3")
+    title = title_el.get_text(" ", strip=True) if title_el else url
+
+    # Date candidates
+    date_str = ""
+    # a) <time datetime="...">
+    t_el = soup.find("time")
+    if t_el and t_el.get("datetime"):
+        date_str = iso_date(t_el["datetime"])
+
+    # b) meta[name=date] or meta[property=article:published_time]
+    if not date_str:
+        meta = soup.find("meta", {"name": "date"}) or soup.find("meta", {"property": "article:published_time"})
+        if meta and meta.get("content"):
+            date_str = iso_date(meta["content"])
+
+    # c) visible phpBB "» Mon Sep 16, 2024 10:20 am" style
+    if not date_str:
+        txt = soup.get_text(" ", strip=True)
+        m = re.search(r"»\s+(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+[A-Z][a-z]{2}\s+\d{1,2},\s+\d{4}(?:\s+\d{1,2}:\d{2}\s*(?:am|pm))?", txt, flags=re.IGNORECASE)
+        if m:
+            date_str = find_any_date_text(m.group(0))
+    if not date_str:
+        # Any date-like text anywhere
+        date_str = find_any_date_text(soup.get_text(" ", strip=True))
+
+    # Topic id from query param t=49598
+    tid = parse_qs(urlparse(url).query).get("t", [""])[0] or os.path.basename(url)
+
+    return {
+        "id": f"XnView #{tid}",
+        "url": url,
+        "lead": lead,
+        "date": date_str,
+        "desc": title,
+    }
+
 # ------------------ Dispatcher ------------------
 def process_link(session, url: str, lead: str):
     host = urlparse(url).netloc.lower()
     try:
-        if "github.com" in host: return fetch_github(session, url, lead)
-        if "gitlab" in host or "invent.kde.org" in host: return fetch_gitlab(session, url, lead)
-        if "mail-archive.com" in host: return fetch_mailarchive(session, url, lead)
-        if "qcad.org" in host: return fetch_qcad(session, url, lead)
+        if "github.com" in host:
+            return fetch_github(session, url, lead)
+        if "gitlab" in host or "invent.kde.org" in host:
+            return fetch_gitlab(session, url, lead)
+        if "mail-archive.com" in host:
+            return fetch_mailarchive(session, url, lead)
+        if "qcad.org" in host:
+            return fetch_qcad(session, url, lead)
+        if "xnview.com" in host:
+            return fetch_xnview_forum(session, url, lead)
         raise ValueError("Unsupported host: %s" % host)
     except requests.exceptions.RequestException as e:
         raise RuntimeError("%s: %s" % (url, e))

@@ -84,42 +84,42 @@
     "desc": "memory leak at Source/C++/System/StdC/Ap4StdCFileByteStream.cpp:279:14"
   },
   {
-    "id": "Binaryninja-API #5199",
+    "id": "BinaryNinja-API #5199",
     "url": "https://github.com/Vector35/binaryninja-api/issues/5199",
     "lead": "Zao Yang",
     "date": "2024-03-20",
     "desc": "PseudoC fails to render HLIL_STRUCT_FIELD correctly."
   },
   {
-    "id": "Binaryninja-API #5200",
+    "id": "BinaryNinja-API #5200",
     "url": "https://github.com/Vector35/binaryninja-api/issues/5200",
     "lead": "Zao Yang",
     "date": "2024-03-20",
     "desc": "PseudoC fails to add cast to signed comparisons"
   },
   {
-    "id": "Binaryninja-API #5201",
+    "id": "BinaryNinja-API #5201",
     "url": "https://github.com/Vector35/binaryninja-api/issues/5201",
     "lead": "Zao Yang",
     "date": "2024-03-20",
     "desc": "Issue with soundness of HLIL control flow structuring"
   },
   {
-    "id": "Binaryninja-API #5202",
+    "id": "BinaryNinja-API #5202",
     "url": "https://github.com/Vector35/binaryninja-api/issues/5202",
     "lead": "Zao Yang",
     "date": "2024-03-20",
     "desc": "`truncf`, `fsqrt`, `fabs` incorrectly rendered in PseudoC"
   },
   {
-    "id": "Binaryninja-API #5205",
+    "id": "BinaryNinja-API #5205",
     "url": "https://github.com/Vector35/binaryninja-api/issues/5205",
     "lead": "Zao Yang",
     "date": "2024-03-20",
     "desc": "Division deoptimization bug"
   },
   {
-    "id": "Binaryninja-API #5309",
+    "id": "BinaryNinja-API #5309",
     "url": "https://github.com/Vector35/binaryninja-api/issues/5309",
     "lead": "Zao Yang",
     "date": "2024-04-22",
@@ -130,7 +130,7 @@
     "url": "https://github.com/johnwhitington/camlpdf/issues/75",
     "lead": "Zao Yang",
     "date": "2025-09-12",
-    "desc": "johnwhitington/camlpdf"
+    "desc": "Segmentation fault in camlpdf_rijndaelDecrypt"
   },
   {
     "id": "Catdoc #10",

@@ -149,37 +149,24 @@ def _strip_code_blocks(markdown: str) -> str:
 def _most_common_casing(text: str, token: str) -> Optional[str]:
     """
     Pick preferred casing for `token` from README prose (ignoring code).
-    Priority order for variants found in prose/headings:
-      mixed-case (≥2 uppercase, not all-caps)  >  TitleCase  >  ALL-CAPS  >  lowercase
-    - Headings are boosted (×3) since they usually carry brand styling.
-    - For short alpha tokens (len <= 4): if the exact TitleCase form exists (e.g., 'Zig'),
-      prefer it over ALL-CAPS even if ALL-CAPS is more frequent.
-    Returns None if token isn't found at all.
+    Ranking: MixedCase > TitleCase > ALL-CAPS > lowercase.
+    For short words (<=4 letters): if TitleCase appears at all, prefer it over ALL-CAPS.
     """
     if not text:
         return None
 
-    # Strip code blocks to avoid lowercase bias from command examples
-    def _strip_code_blocks(md: str) -> str:
-        if not md:
-            return ""
-        md = re.sub(r"```.*?```", "", md, flags=re.DOTALL)          # fenced blocks
-        md = re.sub(r"(^|\n)(?:[ \t]{4,}.*(?:\n|$))+", r"\1", md)   # indented blocks
-        return md
+    cleaned = _strip_code_blocks(text)
+    cleaned = re.sub(r"`[^`\n]+`", "", cleaned)  # drop inline `code`
 
-    hay = _strip_code_blocks(text)
-
-    # Separate headings vs prose; headings get a boost
-    heading_lines, prose_lines = [], []
-    for line in hay.splitlines():
+    heading_lines = []
+    prose_lines = []
+    for line in cleaned.splitlines():
         if re.match(r'^\s{0,3}#{1,6}\s+', line):
             heading_lines.append(line)
         else:
             prose_lines.append(line)
-    prose = "\n".join(prose_lines)
-    headings = "\n".join(heading_lines)
+    prose, headings = "\n".join(prose_lines), "\n".join(heading_lines)
 
-    # Collect variants
     pattern = re.compile(rf"\b{re.escape(token)}\b", re.IGNORECASE)
 
     def collect_counts(s: str) -> Dict[str, int]:
@@ -191,104 +178,212 @@ def _most_common_casing(text: str, token: str) -> Optional[str]:
 
     counts = collect_counts(prose)
     for v, c in collect_counts(headings).items():
-        counts[v] = counts.get(v, 0) + c * 3  # boost headings
+        counts[v] = counts.get(v, 0) + c * 3
 
     if not counts:
         return None
 
-    # Helpers to classify variants
     def is_allcaps(s: str) -> bool:
         letters = [ch for ch in s if ch.isalpha()]
         return bool(letters) and all(ch.isupper() for ch in letters)
 
     def is_titlecase(s: str) -> bool:
-        letters = "".join(ch for ch in s if ch.isalpha())
-        return bool(letters) and letters[0].isupper() and letters[1:].lower() == letters[1:]
+        return s.isalpha() and len(s) >= 2 and s[0].isupper() and s[1:].islower()
 
     def is_mixedcase(s: str) -> bool:
-        # Has at least two uppercase letters but not all-caps (e.g., LibreCAD, CPython)
         uppers = sum(1 for ch in s if ch.isupper())
         return uppers >= 2 and not is_allcaps(s)
 
-    # Special case: short alpha tokens — prefer exact TitleCase if present (e.g., "Zig")
+    # Short-token preference: if TitleCase exists for short alpha tokens, take it immediately.
     if token.isalpha() and len(token) <= 4:
-        desired = token.lower().capitalize()
-        if desired in counts:
-            return desired
+        for v in counts:
+            if is_titlecase(v):
+                return v
 
-    # Rank: mixed-case > titlecase > all-caps > lowercase
     def rank(variant: str) -> int:
         if is_mixedcase(variant): return 3
         if is_titlecase(variant): return 2
         if is_allcaps(variant):   return 1
-        return 0  # lowercase or other
+        return 0
 
-    best = max(counts.items(), key=lambda kv: (rank(kv[0]), kv[1]))[0]
-    return best
+    return max(counts.items(), key=lambda kv: (rank(kv[0]), kv[1]))[0]
+
+
+def _build_casing_dict_from_readme(text: str) -> Dict[str, str]:
+    """
+    From README prose/headings, build a dict mapping lowercase tokens (incl. digits) → best-cased variant.
+    We collect A/Z/0-9 strings length>=2 that have at least one uppercase (i.e., not all-lowercase),
+    and keep the variant with the most uppercase letters; tiebreaker by length, then frequency.
+    """
+    if not text:
+        return {}
+    # Reuse the code-block stripper from your _most_common_casing or inline a simple one:
+    def _strip_code_blocks(md: str) -> str:
+        if not md:
+            return ""
+        md = re.sub(r"```.*?```", "", md, flags=re.DOTALL)
+        md = re.sub(r"(^|\n)(?:[ \t]{4,}.*(?:\n|$))+", r"\1", md)
+        return md
+
+    prose = _strip_code_blocks(text)
+    # Whole tokens like JSON5, OpenCL, CPython; allow digits inside
+    candidates = re.findall(r"[A-Za-z0-9]{2,}", prose)
+
+    stats: Dict[str, Dict[str, int]] = {}  # lower -> { 'upper': count, 'len': len, 'freq': freq, 'best': variant }
+    for v in candidates:
+        if v.islower():
+            continue  # ignore plain lowercase
+        key = v.lower()
+        upper_cnt = sum(1 for ch in v if ch.isupper())
+        d = stats.get(key)
+        if not d:
+            stats[key] = {'upper': upper_cnt, 'len': len(v), 'freq': 1, 'best': v}
+        else:
+            d['freq'] += 1
+            # prefer more uppercase, then longer, then more frequent
+            cur = d['best']
+            cur_upper = d['upper']
+            cur_len = d['len']
+            if (upper_cnt, len(v), d['freq']) > (cur_upper, cur_len, d['freq'] - 1):
+                d['upper'] = upper_cnt
+                d['len'] = len(v)
+                d['best'] = v
+
+    return {k: v['best'] for k, v in stats.items()}
+
+def _apply_subtoken_casing(token: str, casing_dict: Dict[str, str]) -> str:
+    """
+    Replace substrings in `token` using `casing_dict` (longest-first, case-insensitive).
+
+    Safeguards:
+      - Do NOT replace a full-token short TitleCase (e.g., 'Zig') with an ALL-CAPS mapping (e.g., 'ZIG').
+      - Only upgrade substrings that are "substantial":
+          • length >= 3, OR
+          • contain any digit, OR
+          • map to ALL-CAPS with at least 2 letters (e.g., 'PDF', 'CPU').
+    """
+    if not token or not casing_dict:
+        return token
+
+    def is_titlecase_word(s: str) -> bool:
+        return s.isalpha() and len(s) >= 2 and s[0].isupper() and s[1:].islower()
+
+    def is_allcaps_word(s: str) -> bool:
+        letters = [ch for ch in s if ch.isalpha()]
+        return bool(letters) and all(ch.isupper() for ch in letters)
+
+    # Guard: don't turn short TitleCase full token into ALL-CAPS
+    repl_full = casing_dict.get(token.lower())
+    if (
+        repl_full
+        and len(token) <= 4
+        and is_titlecase_word(token)
+        and is_allcaps_word(repl_full)
+    ):
+        return token
+
+    def substantial(k: str) -> bool:
+        if any(ch.isdigit() for ch in k):
+            return True
+        if len(k) >= 3:
+            return True
+        # allow short ALL-CAPS like 'PDF', 'CPU' (>=2 letters)
+        mapped = casing_dict[k]
+        return is_allcaps_word(mapped) and sum(1 for ch in mapped if ch.isalpha()) >= 2
+
+    # Build candidate keys, excluding the forbidden full-token Zig->ZIG case
+    keys = [
+        k for k in casing_dict.keys()
+        if substantial(k) and not (
+            len(token) <= 4 and token.lower() == k and is_titlecase_word(token) and is_allcaps_word(casing_dict[k])
+        )
+    ]
+    if not keys:
+        return token
+    keys.sort(key=len, reverse=True)
+
+    i, n = 0, len(token)
+    low = token.lower()
+    out: List[str] = []
+
+    while i < n:
+        replaced = False
+        for k in keys:
+            L = len(k)
+            if i + L <= n and low[i:i+L] == k:
+                out.append(casing_dict[k])
+                i += L
+                replaced = True
+                break
+        if not replaced:
+            out.append(token[i])
+            i += 1
+
+    return "".join(out)
+
 
 def humanize_repo_display_name(session: requests.Session, owner: str, repo_canonical: str) -> str:
     """
     Derive a human-friendly repo display name without a hard-coded map.
 
     Per token (split on '-' and '_'):
-      1) Use _most_common_casing from README prose/headings when available.
-      2) Regardless of source (README or canonical), if the token contains digits:
-           • If 'letters+digits' and letters <= 4 → UPPERCASE letters, keep digits (hdf5 -> HDF5).
-           • If 'letters+digits+letters' → Capitalize both letter segments (c4go -> C4Go).
-           • Else split by digit runs; Capitalize each alpha segment (c4go2java -> C4Go2Java).
-      3) If no digits and no README signal:
-           • Short (len <= 4): keep ALL-CAPS as-is (SWC), else capitalize first letter (zig -> Zig).
-           • Long  (> 4): uppercase first letter, preserve the rest as-is (librecad -> Librecad).
-      4) Final safeguard: if any token is still all-lowercase, capitalize its first letter.
+      1) Use _most_common_casing from README prose/headings if available (handles LibreCAD, CPython, Zig, SWC).
+      2) If none:
+         - If token has digits:
+             • If matches 'letters+digits' and letters <= 4 → UPPERCASE letters, keep digits (hdf5 -> HDF5).
+             • If matches 'letters+digits+letters' → Capitalize both letter segments (c4go -> C4Go).
+             • Else split by digit runs and capitalize alpha segments (go2hx -> Go2Hx, c4go2java -> C4Go2Java).
+         - If no digits:
+             • Short (len <= 4): keep ALL-CAPS as-is (SWC), else capitalize first letter (zig -> Zig).
+             • Long  (> 4): uppercase first letter, preserve the rest as-is (librecad -> Librecad).
+      3) After assembly, if any token is still completely lowercase, capitalize its first letter.
+      4) Apply subtoken casing upgrades from README (e.g., 'json5' -> 'JSON5' inside 'pyjson5' -> 'PyJSON5').
       5) Join tokens with '-'.
     """
     tokens = re.split(r"[-_]", repo_canonical)
     readme = _fetch_readme_text(session, owner, repo_canonical)
+    casing_dict = _build_casing_dict_from_readme(readme)
     out: List[str] = []
 
     for ct in tokens:
         if not ct:
             continue
 
-        # Prefer README/prose casing when present
         observed = _most_common_casing(readme, ct)
-        token = observed if observed else ct  # <- we will still normalize around digits below
+        token_display = observed if observed else ct
 
-        if any(ch.isdigit() for ch in token):
-            # Keep hdf5 behavior for short alpha prefix
-            m_end = re.match(r"^([A-Za-z]+)(\d+)$", token)
+        if any(ch.isdigit() for ch in token_display):
+            # hdf5-style
+            m_end = re.match(r"^([A-Za-z]+)(\d+)$", token_display)
             if m_end and len(m_end.group(1)) <= 4:
-                out.append(m_end.group(1).upper() + m_end.group(2))
-                continue
-
-            # Capitalize both sides for letters+digits+letters
-            m_mid = re.match(r"^([A-Za-z]+)(\d+)([A-Za-z]+)$", token)
-            if m_mid:
-                left, digits, right = m_mid.group(1), m_mid.group(2), m_mid.group(3)
-                out.append(left[0].upper() + left[1:] + digits + right[0].upper() + right[1:])
-                continue
-
-            # General: split by digit runs; capitalize alpha segments, keep digits
-            parts = re.split(r"(\d+)", token)
-            segs = [(p[0].upper() + p[1:] if p and p.isalpha() else p) for p in parts if p]
-            out.append("".join(segs))
-            continue
-
-        # No digits path
-        if observed:
-            # README gave us a non-digit token; trust it
-            out.append(token)
-            continue
-
-        # Fallbacks when README had no signal
-        if len(token) <= 4:
-            out.append(token if token.isupper() else (token[0].upper() + token[1:]))  # SWC stays SWC; zig -> Zig
+                token_display = m_end.group(1).upper() + m_end.group(2)
+            else:
+                # c4go or more complex
+                m_mid = re.match(r"^([A-Za-z]+)(\d+)([A-Za-z]+)$", token_display)
+                if m_mid:
+                    left, digits, right = m_mid.group(1), m_mid.group(2), m_mid.group(3)
+                    token_display = left[0].upper() + left[1:] + digits + right[0].upper() + right[1:]
+                else:
+                    parts = re.split(r"(\d+)", token_display)
+                    segs = [(p[0].upper() + p[1:] if p and p.isalpha() else p) for p in parts if p]
+                    token_display = "".join(segs)
         else:
-            out.append(token[0].upper() + token[1:])  # librecad -> Librecad
+            if not observed:
+                if len(token_display) <= 4:
+                    token_display = token_display if token_display.isupper() else (token_display[0].upper() + token_display[1:])
+                else:
+                    token_display = token_display[0].upper() + token_display[1:]
 
-    # Final safeguard: capitalize first letter of any all-lowercase token
-    fixed_tokens = [t[0].upper() + t[1:] if t and t.islower() else t for t in out]
-    return "-".join(fixed_tokens)
+        # Final safeguard: capitalize first letter if all lowercase
+        if token_display.islower():
+            token_display = token_display[0].upper() + token_display[1:]
+
+        # Subtoken casing upgrade from README (e.g., json5 -> JSON5)
+        token_display = _apply_subtoken_casing(token_display, casing_dict)
+
+        out.append(token_display)
+
+    return "-".join(out)
 
 def canonical_github_repo_name(session: requests.Session, owner: str, repo: str, issue_soup: Optional[BeautifulSoup] = None) -> str:
     """Return GitHub repo's canonical 'name' using API, with HTML fallbacks."""

@@ -182,14 +182,14 @@
     "desc": "allocation-size-too-big error in H5Centry.c"
   },
   {
-    "id": "Hiredis-Py #205",
+    "id": "HiRedis-Py #205",
     "url": "https://github.com/redis/hiredis-py/issues/205",
     "lead": "Gabe Sherman",
     "date": "2025-05-03",
     "desc": "Segmentation fault in Reader.gets()"
   },
   {
-    "id": "Hiredis-Py #206",
+    "id": "HiRedis-Py #206",
     "url": "https://github.com/redis/hiredis-py/issues/206",
     "lead": "Gabe Sherman",
     "date": "2025-05-03",
@@ -224,56 +224,56 @@
     "desc": "heap-buffer overflow in str.c"
   },
   {
-    "id": "Libfyaml #107",
+    "id": "LibfYAML #107",
     "url": "https://github.com/pantoniou/libfyaml/issues/107",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
     "desc": "Segmentation Fault in list_empty upon malformed input"
   },
   {
-    "id": "Libfyaml #108",
+    "id": "LibfYAML #108",
     "url": "https://github.com/pantoniou/libfyaml/issues/108",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
     "desc": "Unknown crash in fy_utf8_get in fy-utf8.h"
   },
   {
-    "id": "Libfyaml #118",
+    "id": "LibfYAML #118",
     "url": "https://github.com/pantoniou/libfyaml/issues/118",
     "lead": "Gabe Sherman",
     "date": "2024-08-09",
     "desc": "Seg fault in fy-atom.c on malformed input"
   },
   {
-    "id": "Libfyaml #119",
+    "id": "LibfYAML #119",
     "url": "https://github.com/pantoniou/libfyaml/issues/119",
     "lead": "Gabe Sherman",
     "date": "2024-08-09",
     "desc": "Seg fault in fy-walk.h"
   },
   {
-    "id": "Libfyaml #120",
+    "id": "LibfYAML #120",
     "url": "https://github.com/pantoniou/libfyaml/issues/120",
     "lead": "Gabe Sherman",
     "date": "2024-08-09",
     "desc": "heap-use-after-free in fy-walk.c"
   },
   {
-    "id": "Libfyaml #121",
+    "id": "LibfYAML #121",
     "url": "https://github.com/pantoniou/libfyaml/issues/121",
     "lead": "Gabe Sherman",
     "date": "2024-08-16",
     "desc": "heap-use-after-free in fy_path_parser_cleanup"
   },
   {
-    "id": "Libfyaml #122",
+    "id": "LibfYAML #122",
     "url": "https://github.com/pantoniou/libfyaml/issues/122",
     "lead": "Gabe Sherman",
     "date": "2024-08-16",
     "desc": "segmentation fault in fy-doc.c"
   },
   {
-    "id": "Libfyaml #123",
+    "id": "LibfYAML #123",
     "url": "https://github.com/pantoniou/libfyaml/issues/123",
     "lead": "Gabe Sherman",
     "date": "2024-08-16",
@@ -301,42 +301,42 @@
     "desc": "munmap_chunk(): invalid pointer error due to memcpy with negative size param in pg_query_normalize.c"
   },
   {
-    "id": "Libucl #288",
+    "id": "LibUCL #288",
     "url": "https://github.com/vstakhov/libucl/issues/288",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
     "desc": "Segmentation fault in ucl_parser.c"
   },
   {
-    "id": "Libucl #289",
+    "id": "LibUCL #289",
     "url": "https://github.com/vstakhov/libucl/issues/289",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
     "desc": "Segmentation Fault in ucl_parser.c at line 1903"
   },
   {
-    "id": "Libucl #290",
+    "id": "LibUCL #290",
     "url": "https://github.com/vstakhov/libucl/issues/290",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
     "desc": "Segmentation fault in ucl_hash.c"
   },
   {
-    "id": "Libucl #291",
+    "id": "LibUCL #291",
     "url": "https://github.com/vstakhov/libucl/issues/291",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
     "desc": "heap-buffer overflow in ucl_hash.c"
   },
   {
-    "id": "Libucl #292",
+    "id": "LibUCL #292",
     "url": "https://github.com/vstakhov/libucl/issues/292",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
     "desc": "heap-buffer overflow in ucl_util.c"
   },
   {
-    "id": "Libucl #293",
+    "id": "LibUCL #293",
     "url": "https://github.com/vstakhov/libucl/issues/293",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
@@ -350,7 +350,7 @@
     "desc": "Several heap-BoF crashes from pcre2_compile related to parsed_pattern"
   },
   {
-    "id": "Pikepdf #652",
+    "id": "PikePDF #652",
     "url": "https://github.com/pikepdf/pikepdf/issues/652",
     "lead": "Gabe Sherman",
     "date": "2025-05-06",
@@ -371,7 +371,7 @@
     "desc": "Unanticipated UnicodeDecodeError raised during call to PIL.Image.open"
   },
   {
-    "id": "Pyjson5 #90",
+    "id": "PyJSON5 #90",
     "url": "https://github.com/dpranke/pyjson5/issues/90",
     "lead": "Gabe Sherman",
     "date": "2025-03-27",

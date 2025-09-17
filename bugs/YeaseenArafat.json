@@ -235,7 +235,7 @@
     "url": "https://github.com/gotranspile/cxgo/issues/96",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
-    "desc": "`cxgo` Generates Out-of-Bounds Pointer for One-Past-the-End Array Access for C"
+    "desc": "gotranspile/cxgo"
   },
   {
     "id": "CxGo #97",

@@ -42,7 +42,8 @@
     .top-left { display: flex; align-items: center;}
     .top-right { font-size: 0.95em; color: #555; white-space: normal; flex-wrap: wrap;}
     /* make the DataTables search input a bit wider */
-    div.dataTables_filter label input { width: 220px; }
+    div.dataTables_filter label input { width: 220px; margin-left: 0.75em !important; font-weight: normal; }
+    div.dataTables_filter { overflow: visible; padding-top: 4px; }
 
     /* Row hover highlight */
     #security-bugs tbody tr:hover td { background-color: #d9edf7 !important; }
@@ -149,9 +150,9 @@
         function renderBanner() {
           const query = ($('#security-bugs_filter input').val() || '').trim();
           const filtered = table.rows({ search: 'applied' }).count();
-          bannerEl.textContent = query
-            ? `Showing ${filtered} results for "${query}" (out of ${totalCount} total).`
-            : `Showing all ${totalCount} entries.`;
+          bannerEl.innerHTML = query
+            ? `Showing <b>${filtered}</b> results for "${query}" (out of ${totalCount} total).`
+            : `Showing all <b>${totalCount}</b> entries.`;
         }
 
         table.on('draw', renderBanner);

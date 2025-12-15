@@ -1,0 +1,193 @@
+[
+    {
+        "year": "2025",
+        "title": "TeTRIS: General-purpose Fuzzing for Translation Bugs in Source-to-Source Code Transpilers",
+        "url": "https://futures.cs.utah.edu/papers/25ACSAC.pdf",
+        "authors": "<u>Yeaseen Arafat</u> and <b>Stefan Nagy</b>.",
+        "venue": "Annual Computer Security Applications Conference (<b>ACSAC'25</b>).",
+        "links": [
+            {"type": "slides", "url": "papers/25ACSAC_slides.pdf"},
+            {"type": "code", "url": "https://github.com/FuturesLab/TeTRIS"}
+        ]
+    },
+    {
+        "year": "2025",
+        "title": "GUIFuzz++: Unleashing Grey-box Fuzzing on Desktop Graphical User Interfacing Applications",
+        "url": "https://futures.cs.utah.edu/papers/25ASE.pdf",
+        "authors": "<u>Dillon Otto</u>, <u>Tanner Rowlett</u>, and <b>Stefan Nagy</b>.",
+        "venue": "IEEE/ACM International Conference on Automated Software Engineering (<b>ASE'25</b>).",
+        "links": [
+            {"type": "slides", "url": "papers/25ASE_slides.pdf"},
+            {"type": "code", "url": "https://github.com/FuturesLab/GUIFuzzPlusPlus"}
+        ]
+    },
+    {
+        "year": "2025",
+        "title": "Bin2Wrong: a Unified Fuzzing Framework for Uncovering Semantic Errors in Binary-to-C Decompilers",
+        "url": "papers/25ATC.pdf",
+        "authors": "<u>Zao Yang</u> and <b>Stefan Nagy</b>.",
+        "venue": "USENIX Annual Technical Conference (<b>ATC'25</b>).",
+        "links": [
+            {"type": "video", "url": "https://www.youtube.com/watch?v=FhyAO3IGtM4"},
+            {"type": "slides", "url": "papers/25ATC_slides.pdf"},
+            {"type": "code", "url": "https://github.com/FuturesLab/Bin2Wrong"}
+        ]
+    },
+    {
+        "year": "2025",
+        "title": "WildSync: Automated Fuzzing Harness Synthesis via Wild API Usage Recovery",
+        "url": "papers/25ISSTA.pdf",
+        "authors": "Wei-Cheng Wu, <b>Stefan Nagy</b>, and Christophe Hauser.",
+        "venue": "ACM International Symposium on Software Testing and Analysis (<b>ISSTA'25</b>).",
+        "links": [
+            {"type": "code", "url": "https://github.com/spencerwuwu"}
+        ]
+    },
+    {
+        "year": "2025",
+        "title": "No Harness, No Problem: Oracle-guided Harnessing for Auto-generating C API Fuzzing Harnesses",
+        "url": "papers/25ICSE-b.pdf",
+        "authors": "<u>Gabriel Sherman</u> and <b>Stefan Nagy</b>.",
+        "venue": "IEEE/ACM International Conference on Software Engineering (<b>ICSE'25</b>).",
+        "links": [
+            {"type": "slides", "url": "papers/25ICSE-b_slides.pdf"},
+            {"type": "code", "url": "https://github.com/FuturesLab/OGHarn"}
+        ]
+    },
+    {
+        "year": "2025",
+        "title": "A Little Goes a Long Way: Tuning Configuration Selection for Continuous Kernel Fuzzing",
+        "url": "papers/25ICSE-a.pdf",
+        "authors": "Sanan Hasanov, <b>Stefan Nagy</b>, and Paul Gazzillo.",
+        "venue": "IEEE/ACM International Conference on Software Engineering (<b>ICSE'25</b>).",
+        "links": [
+            {"type": "code", "url": "https://github.com/appleseedlab/icse25/"}
+        ]
+    },
+    {
+        "year": "2023",
+        "title": "No Linux, No Problem: Fast and Correct Windows Binary Fuzzing via Target-embedded Snapshotting",
+        "url": "papers/23SEC.pdf",
+        "authors": "Leo Stone, Rishi Ranjan, <b>Stefan Nagy</b>, and Matthew Hicks.",
+        "venue": "USENIX Security Symposium (<b>USENIX'23</b>).",
+        "links": [
+            {"type": "video", "url": "https://www.youtube.com/watch?v=JjbNrNsuaF4"},
+            {"type": "slides", "url": "https://www.usenix.org/system/files/sec23_slides_stone-leo.pdf"},
+            {"type": "code", "url": "https://github.com/FoRTE-Research/WinFuzz/"}
+        ]
+    },
+    {
+        "year": "2023",
+        "title": "Profile-guided System Optimizations for Accelerated Greybox Fuzzing",
+        "url": "papers/23CCS.pdf",
+        "authors": "Yunhang Zhang, Chengbin Pang, <b>Stefan Nagy</b>, Xun Chen, and Jun Xu.",
+        "venue": "ACM Conference on Computer and Communications Security (<b>CCS'23</b>).",
+        "links": [
+            {"type": "code", "url": "https://github.com/emptyiscolor/Profile-guided-Fuzzing"}
+        ]
+    },
+    {
+        "year": "2023",
+        "title": "The Fun in Fuzzing: The Debugging Technique Comes into Its Own",
+        "url": "https://dl.acm.org/doi/10.1145/3580504",
+        "authors": "<b>Stefan Nagy</b>, Peter Alvaro.",
+        "venue": "ACM Queue Magazine.",
+        "links": []
+    },
+    {
+        "year": "2022",
+        "title": "One Fuzz Doesn't Fit All: Optimizing Directed Fuzzing via Target-tailored Program State Restriction",
+        "url": "papers/22ACSAC.pdf",
+        "authors": "Prashast Srivastava, <b>Stefan Nagy</b>, Matthew Hicks, Antonio Bianchi, and Mathias Payer.",
+        "venue": "Annual Computer Security Applications Conference (<b>ACSAC'22</b>).",
+        "links": [
+            {"type": "code", "url": "https://github.com/HexHive/SieveFuzz"}
+        ]
+    },
+    {
+        "year": "2022",
+        "title": "Practical Feedback and Instrumentation Enhancements for Performant Security Testing of Closed-source Executables",
+        "url": "files/StefanNagy-PhDThesis.pdf",
+        "authors": "<b>Stefan Nagy</b>.",
+        "venue": "Virginia Polytechnic Institute and State University (<b>Ph.D. Thesis</b>).",
+        "links": []
+    },
+    {
+        "year": "2021",
+        "title": "Same Coverage, Less Bloat: Accelerating Binary-only Fuzzing with Coverage-preserving Coverage-guided Tracing",
+        "url": "papers/21CCS.pdf",
+        "authors": "<b>Stefan Nagy</b>, Anh Nguyen-Tuong, Jason Hiser, Jack Davidson, and Matthew Hicks.",
+        "venue": "ACM Conference on Computer and Communications Security (<b>CCS'21</b>).",
+        "links": [
+            {"type": "video", "url": "https://drive.google.com/file/d/1XDIHbESZkjry0d0k_gQgpg4ztCo7_O_j/view?usp=sharing"},
+            {"type": "slides", "url": "papers/21CCS-slides.pdf"},
+            {"type": "code", "url": "https://github.com/FoRTE-Research/HeXcite"}
+        ]
+    },
+    {
+        "year": "2021",
+        "title": "Breaking Through Binaries: Compiler-quality Instrumentation for Better Binary-only Fuzzing",
+        "url": "papers/21SEC.pdf",
+        "authors": "<b>Stefan Nagy</b>, Anh Nguyen-Tuong, Jason Hiser, Jack Davidson, and Matthew Hicks.",
+        "venue": "USENIX Security Symposium (<b>USENIX'21</b>).",
+        "links": [
+            {"type": "video", "url": "https://www.usenix.org/conference/usenixsecurity21/presentation/nagy"},
+            {"type": "slides", "url": "papers/21SEC-slides.pdf"},
+            {"type": "code", "url": "https://git.zephyr-software.com/opensrc/zafl"}
+        ]
+    },
+    {
+        "year": "2019",
+        "title": "A Case Study on a Sustainable Framework for Ethically Aware Predictive Modeling",
+        "url": "papers/19ISTAS.pdf",
+        "authors": "Thomas Lux, <b>Stefan Nagy</b>, Mohammed Almanaa, Sirui Yao, Reid Bixler.",
+        "venue": "IEEE International Symposium on Technology and Society (<b>ISTAS'19</b>).",
+        "links": [
+            {"type": "video", "url": "https://www.youtube.com/watch?v=L0WA9pcMMUw"}
+        ]
+    },
+    {
+        "year": "2019",
+        "title": "Full-speed Fuzzing: Reducing Fuzzing Overhead through Coverage-guided Tracing",
+        "url": "papers/19SP.pdf",
+        "authors": "<b>Stefan Nagy</b>, Matthew Hicks.",
+        "venue": "IEEE Symposium on Security and Privacy (<b>Oakland'19</b>).",
+        "links": [
+            {"type": "video", "url": "https://www.youtube.com/watch?v=2Rg8wtccCNA"},
+            {"type": "slides", "url": "papers/19SP-slides.pdf"},
+            {"type": "code", "url": "https://github.com/FoRTE-Research/UnTracer-AFL"}
+        ]
+    },
+    {
+        "year": "2018",
+        "title": "Secure Coding Practices in Java: Challenges and Vulnerabilities",
+        "url": "papers/18ICSE.pdf",
+        "authors": "Na Meng, <b>Stefan Nagy</b>, Danfeng Yao, Wenjie Zhuang, Gustavo Argoty.",
+        "venue": "International Conference on Software Engineering (<b>ICSE'18</b>).",
+        "links": []
+    },
+    {
+        "year": "2015",
+        "title": "Digital Forensics Education: A Multidisciplinary Curriculum Model",
+        "url": "papers/15ICDF2C.pdf",
+        "authors": "Imani Palmer, Elaine Wood, <b>Stefan Nagy</b>, Gabriela Garcia, Masooda Bashir, Roy Campbell.",
+        "venue": "International Conference on Digital Forensics & Cyber Crime (<b>ICDF2C'15</b>).",
+        "links": []
+    },
+    {
+        "year": "2015",
+        "title": "Schedule-Based Side-Channel Attack in Fixed-Priority Real-time Systems",
+        "url": "papers/15IDEALS.pdf",
+        "authors": "Chien-Ying Chen, Amiremad Ghassami, <b>Stefan Nagy</b>, Man-Ki Yoon, Sibin Mohan, Negar Kiyavash, Rakesh B Bobba, Rodolfo Pellizzoni.",
+        "venue": "Illinois Digital Environment for Access to Learning and Scholarship.",
+        "links": []
+    },
+    {
+        "year": "2015",
+        "title": "An Empirical Study on Current Models for Reasoning about Digital Evidence",
+        "url": "papers/15SADFE.pdf",
+        "authors": "<b>Stefan Nagy</b>, Imani Palmer, Sathya Sundaramurthy, Xinming Ou, Roy Campbell.",
+        "venue": "Intl. Conf. on Systematic Approaches to Digital Forensic Engineering (<b>SADFE'15</b>).",
+        "links": []
+    }
+]

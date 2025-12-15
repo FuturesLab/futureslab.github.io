@@ -207,13 +207,13 @@ div.col-sm-1{
 
 .badge-button{
     background-color: transparent;
-    color: /*#4AB4D0*/ #5592cf;
-    border: 1.5px solid /*#4AB4D0*/ #5592cf;
+    color: #3171a8;
+    border: 1.5px solid #3171a8;
     box-shadow:0 2.1px 4px rgba(0,0,0,0.19), 0 0.5px 0.5px rgba(0,0,0,0.23);
 }
     .badge-button:hover{
-        color: /*#4AB4D0*/ #5592cf;
-        background-color: /*#4AB4D0*/ #5592cf;
+        color: #fff;
+        background-color: #3171a8;
     }
     .badge-button:active {
         text-decoration: underline;
@@ -221,13 +221,13 @@ div.col-sm-1{
 
 .badge-info{
     background-color: transparent;
-    color: /*#4AB4D0*/ #5592cf;
-    border: 1.5px solid /*#4AB4D0*/ #5592cf;
+    color: #3171a8;
+    border: 1.5px solid #3171a8;
     box-shadow:0 2.1px 4px rgba(0,0,0,0.19), 0 0.5px 0.5px rgba(0,0,0,0.23);
 }
     .badge-info:hover{
-        color: /*#4AB4D0*/ #5592cf;
-        background-color: /*#4AB4D0*/ #5592cf;
+        color: #fff;
+        background-color: #3171a8;
     }
     .badge-info:active {
         text-decoration: underline;
@@ -344,7 +344,7 @@ b {
 }
 
 a {
-    color: /*4AB4D0 2AA0D0*/ #5592cf;
+    color: #3171a8; /* Muted navy blue - 5.3:1 contrast, matches navbar theme */
     font-weight: 600;
     -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
     -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
@@ -629,4 +629,292 @@ table {
     -webkit-box-shadow: 0px 10px 20px 0px rgba(84,117,145,.1), 0px -10px 20px 0px rgba(84,117,145,.1);
     -moz-box-shadow:    0px 10px 20px 0px rgba(84,117,145,.1), 0px -10px 20px 0px rgba(84,117,145,.1);
     box-shadow:         0px 10px 20px 0px rgba(84,117,145,.1), 0px -10px 20px 0px rgba(84,117,145,.1);
+}
+
+/* ------------------------------- */
+/* Accessibility Improvements
+/* ------------------------------- */
+
+/* Skip link - visually hidden until focused */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1F273f;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 9999;
+    text-decoration: none;
+    font-weight: 600;
+    transition: top 0.3s;
+}
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid #3171a8;
+    outline-offset: 2px;
+}
+
+/* Focus styles for better keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+    outline: 2px solid #3171a8;
+    outline-offset: 2px;
+}
+
+/* Remove default outline but keep custom focus */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: none;
+}
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #3171a8;
+    outline-offset: 2px;
+}
+
+/* Screen reader only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Publication links styling with icons */
+.pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.pub-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background-color: transparent;
+    color: #3171a8;
+    border: 1.5px solid #3171a8;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2.1px 4px rgba(0,0,0,0.19), 0 0.5px 0.5px rgba(0,0,0,0.23);
+}
+.pub-link:hover {
+    background-color: #3171a8;
+    color: #fff;
+    text-decoration: none;
+}
+.pub-link:focus {
+    outline: 2px solid #3171a8;
+    outline-offset: 2px;
+}
+.pub-link i {
+    font-size: 1.1em;
+}
+
+/* Ensure navbar toggle is accessible */
+.navbar-toggle:focus {
+    outline: 2px solid #3171a8;
+    outline-offset: 2px;
+}
+
+/* Improve carousel accessibility */
+.carousel-control:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    a, .pub-link {
+        text-decoration: underline;
+    }
+    .badge, .pub-link {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .carousel-inner > .item {
+        transition: none;
+    }
+}
+
+/* ------------------------------- */
+/* News Section Scrollable
+/* ------------------------------- */
+
+.news-container {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 1em;
+}
+
+.news-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.news-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.news-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.news-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.news-container ul {
+    padding-left: 1.5em;
+    margin: 0.5em 0;
+}
+
+.news-container li {
+    margin-bottom: 0.4em;
+}
+
+.news-date {
+    font-weight: 800;
+    display: inline-block;
+    width: 5em;
+    font-variant-numeric: tabular-nums;
+}
+
+.news-date::after {
+    content: ":";
+}
+
+/* ------------------------------- */
+/* Publications Layout - Compact
+/* ------------------------------- */
+
+.publication {
+    margin-bottom: 1em;
+    padding-bottom: 0.6em;
+    border-bottom: 1px solid #eee;
+    min-height: 5.75em;
+}
+
+.publication:last-child {
+    border-bottom: none;
+}
+
+.pub-year {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.pub-title {
+    display: block;
+    margin-bottom: 0.15em;
+    font-size: 0.95em;
+    line-height: 1.3;
+}
+
+.pub-authors {
+    display: block;
+    margin-bottom: 0.1em;
+    color: #444;
+}
+
+.pub-venue {
+    display: block;
+    margin-bottom: 0.25em;
+    color: #555;
+}
+
+/* On larger screens, keep authors on their own line */
+@media (min-width: 768px) {
+    .pub-title,
+    .pub-authors,
+    .pub-venue {
+        display: block;
+    }
+}
+
+/* On smaller screens, allow inline flow */
+@media (max-width: 767px) {
+    .pub-title,
+    .pub-authors,
+    .pub-venue {
+        display: inline;
+    }
+    .pub-title::after {
+        content: " ";
+    }
+    .pub-authors::after {
+        content: " ";
+    }
+}
+
+/* Publication layout with links on right */
+.publication .col-sm-11 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.pub-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.pub-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-left: 1em;
+    margin-top: -0.2em;
+    align-items: flex-end;
+}
+
+.pub-link {
+    padding: 1px 6px;
+    font-size: 0.65em;
+    white-space: nowrap;
+    width: 5.75em;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* On smaller screens, links go below content */
+@media (max-width: 767px) {
+    .publication .col-sm-11 {
+        display: block;
+    }
+    .pub-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 0;
+        margin-top: 0.5em;
+        align-items: flex-start;
+    }
 }

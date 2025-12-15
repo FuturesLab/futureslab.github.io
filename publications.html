@@ -1,372 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>FuTURES&#179; Lab</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Publications | FuTURES³ Lab</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FuTURES Lab publications - Research papers on software security, testing, program analysis, and automated bug repair.">
 
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+
+    <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
-    <!--<link rel="stylesheet" href="css/main.css"/>
-    <link href="css/utah-main.css" rel="stylesheet">-->
-    <link href="css/main.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+    <script src="includes/load-includes.js"></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse">
-        <a class="navbar-brand" href="http://cs.utah.edu">
-            <img class="button" width="185px" src="img/logos/ksoclogo_white.png" style="margin-top:1.3%">
-        </a>
+    <div id="navbar-placeholder"></div>
 
-        <div class="ml-auto">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav" style="margin-top: 1px;">
-                    <li><a href="./">Home</a></li>
-                    <li><a href="./#news">News</a></li>
-                    <li><a href="people">People</a></li>
-                    <li><a href="publications">Publications</a></li>
-                    <li><a href="bugs">Reported Bugs</a></li>
-                    <li><a href="https://github.com/FuturesLab">Software</a></li>
-                    <!--<li><a href="./">Visiting</a></li>-->
-                    <li><a href="./#contact">Contact</a></li>
-                </ul>
+    <main id="main-content" role="main">
+        <div class="container main-container" style="margin-top:1.15em">
+            <div class="col-md-12">
+                <h2 id="publications">Publications</h2>
+
+                <p><small>Names of FuTURES&#179; Lab student researchers are <u>underlined</u>.</small></p>
+                <div class="row"><div class="col-sm-12" style="border-bottom: 1px solid #eee; margin-top: 0.5em; margin-bottom: 0;"></div></div>
+                <div id="publications-list"></div>
             </div>
         </div>
-    </nav>
+    </main>
 
-    <div class="container main-container" style="margin-top:1.15em">
-        <div class="col-md-12">
-            <h2 id="publications">Publications</h2>
+    <script>
+        const linkIcons = {
+            video: '<i class="fa-solid fa-video"></i> Video',
+            slides: '<i class="fa-solid fa-display"></i> Slides',
+            code: '<i class="fa-brands fa-github"></i> Code'
+        };
 
-            <small>Names of FuTURES&#179; Lab student researchers are <u>underlined</u>.</small><br><br>
+        fetch('papers.json')
+            .then(response => response.json())
+            .then(papers => {
+                const container = document.getElementById('publications-list');
+                
+                papers.forEach(paper => {
+                    const linksHtml = paper.links.length > 0 
+                        ? `<div class="pub-links">
+                            ${paper.links.map(link => 
+                                `<a href="${link.url}" class="pub-link" aria-label="${link.type} for ${paper.title}">${linkIcons[link.type]}</a>`
+                            ).join('')}
+                           </div>`
+                        : '';
 
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2025</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="https://futures.cs.utah.edu/papers/25ACSAC.pdf">TeTRIS: General-purpose Fuzzing for Translation Bugs in Source-to-Source Code Transpilers.</a><br class="on-wide">
-                    <small><u>Yeaseen Arafat</u> and <b>Stefan Nagy</b>.<br class="on-wide">
-                    Annual Computer Security Applications Conference (<b>ACSAC'25</b>).</small></p>
-                </div>
-                <div class="col-sm-1">
-                    <p>
-                        <a class="badge badge-info" href="papers/25ACSAC_slides.pdf">slides</a>
-                        <a class="badge badge-info" href="https://github.com/FuturesLab/TeTRIS">code</a>
-                    </p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2025</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="https://futures.cs.utah.edu/papers/25ASE.pdf">GUIFuzz++: Unleashing Grey-box Fuzzing on Desktop Graphical User Interfacing Applications.</a><br class="on-wide">
-                    <small><u>Dillon Otto</u>, <u>Tanner Rowlett</u>, and <b>Stefan Nagy</b>.<br class="on-wide">
-                    IEEE/ACM International Conference on Automated Software Engineering (<b>ASE'25</b>).</small></p>
-                </div>
-                <div class="col-sm-1">
-                    <p>
-                        <a class="badge badge-info" href="papers/25ASE_slides.pdf">slides</a>
-                        <a class="badge badge-info" href="https://github.com/FuturesLab/GUIFuzzPlusPlus">code</a>
-                    </p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2025</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="papers/25ATC.pdf">Bin2Wrong: a Unified Fuzzing Framework for Uncovering Semantic Errors in Binary-to-C Decompilers.</a><br class="on-wide">
-                    <small><u>Zao Yang</u> and <b>Stefan Nagy</b>.<br class="on-wide">
-                    USENIX Annual Technical Conference (<b>ATC'25</b>).</small></p>
-                </div>
-                <div class="col-sm-1">
-                    <p><a class="badge badge-info" href="https://www.youtube.com/watch?v=FhyAO3IGtM4">video</a>
-                    <a class="badge badge-info" href="papers/25ATC_slides.pdf">slides</a>
-                    <a class="badge badge-info" href="https://github.com/FuturesLab/Bin2Wrong">code</a></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2025</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="papers/25ISSTA.pdf">WildSync: Automated Fuzzing Harness Synthesis via Wild API Usage Recovery.</a><br class="on-wide">
-                    <small>Wei-Cheng Wu, <b>Stefan Nagy</b>, and Christophe Hauser.<br class="on-wide">
-                    ACM International Symposium on Software Testing and Analysis (<b>ISSTA'25</b>).</small></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2025</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="papers/25ICSE-b.pdf">No Harness, No Problem: Oracle-guided Harnessing for Auto-generating C API Fuzzing Harnesses.</a><br class="on-wide">
-                    <small><u>Gabriel Sherman</u> and <b>Stefan Nagy</b>.<br class="on-wide">
-                    IEEE/ACM International Conference on Software Engineering (<b>ICSE'25</b>).</small></p>
-                </div>
-                <div class="col-sm-1">
-                    <p>
-                        <a class="badge badge-info" href="papers/25ICSE-b_slides.pdf">slides</a>
-                        <a class="badge badge-info" href="https://github.com/FuturesLab/OGHarn">code</a>
-                    </p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2025</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="papers/25ICSE-a.pdf">A Little Goes a Long Way: Tuning Configuration Selection for Continuous Kernel Fuzzing.</a><br class="on-wide">
-                    <small>Sanan Hasanov, <b>Stefan Nagy</b>, and Paul Gazzillo.<br class="on-wide">
-                    IEEE/ACM International Conference on Software Engineering (<b>ICSE'25</b>).</small></p>
-                </div>
-                <div class="col-sm-1">
-                    <p><a class="badge badge-info" href="https://github.com/appleseedlab/icse25/">code</a></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2023</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="papers/23SEC.pdf">No Linux, No Problem: Fast and Correct Windows Binary Fuzzing via Target-embedded Snapshotting.</a><br class="on-wide">
-                    <small>Leo Stone, Rishi Ranjan, <b>Stefan Nagy</b>, and Matthew Hicks.<br class="on-wide">
-                    USENIX Security Symposium (<b>USENIX'23</b>).</small></p>
-                </div>
-                <div class="col-sm-1">
-                    <p><a class="badge badge-info" href="https://www.youtube.com/watch?v=JjbNrNsuaF4">video</a>
-                    <a class="badge badge-info" href="https://www.usenix.org/system/files/sec23_slides_stone-leo.pdf">slides</a>
-                    <a class="badge badge-info" href="https://github.com/FoRTE-Research/WinFuzz/">code</a></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2023</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="papers/23CCS.pdf">Profile-guided System Optimizations for Accelerated Greybox Fuzzing.</a><br class="on-wide">
-                    <small>Yunhang Zhang, Chengbin Pang, <b>Stefan Nagy</b>, Xun Chen, and Jun Xu.<br class="on-wide">
-                    ACM Conference on Computer and Communications Security (<b>CCS'23</b>).</small></p>
-                </div>
-                <div class="col-sm-1">
-                    <p><a class="badge badge-info" href="https://github.com/emptyiscolor/Profile-guided-Fuzzing">code</a></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2023</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="https://dl.acm.org/doi/10.1145/3580504">The Fun in Fuzzing: The Debugging Technique Comes into Its Own.</a><br class="on-wide">
-                    <small><b>Stefan Nagy</b>, Peter Alvaro.<br class="on-wide">
-                    ACM Queue Magazine.</small></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2022</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="papers/22ACSAC.pdf">One Fuzz Doesn’t Fit All: Optimizing Directed Fuzzing via Target-tailored Program State Restriction.</a><br class="on-wide">
-                    <small>Prashast Srivastava, <b>Stefan Nagy</b>, Matthew Hicks, Antonio Bianchi, and Mathias Payer.<br class="on-wide">
-                    Annual Computer Security Applications Conference (<b>ACSAC'22</b>).</small></p>
-                </div>
-                <div class="col-sm-1">
-                    <p><a class="badge badge-info" href="https://github.com/HexHive/SieveFuzz">code</a></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2022</b></h5>
-                </div>
-                <div class="col-sm-11">
-                    <p><a href="files/StefanNagy-PhDThesis.pdf">Practical Feedback and Instrumentation Enhancements for Performant Security Testing of Closed-source Executables.</a><br class="on-wide">
-                    <small>Virginia Polytechnic Institute and State University (<b>Ph.D. Thesis</b>).</small></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2021</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="papers/21CCS.pdf">Same Coverage, Less Bloat: Accelerating Binary-only Fuzzing with Coverage-preserving Coverage-guided Tracing.</a><br class="on-wide">
-                    <small><b>Stefan Nagy</b>, Anh Nguyen-Tuong, Jason Hiser, Jack Davidson, and Matthew Hicks.<br class="on-wide">
-                    ACM Conference on Computer and Communications Security (<b>CCS'21</b>).</small></p>
-                </div>
-                <div class="col-sm-1">
-                    <p><a class="badge badge-info" href="https://drive.google.com/file/d/1XDIHbESZkjry0d0k_gQgpg4ztCo7_O_j/view?usp=sharing">video</a>
-                    <a class="badge badge-info" href="papers/21CCS-slides.pdf">slides</a>
-                    <a class="badge badge-info" href="https://github.com/FoRTE-Research/HeXcite">code</a></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2021</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="papers/21SEC.pdf">Breaking Through Binaries: Compiler-quality Instrumentation for Better Binary-only Fuzzing.</a><br class="on-wide">
-                    <small><b>Stefan Nagy</b>, Anh Nguyen-Tuong, Jason Hiser, Jack Davidson, and Matthew Hicks.<br class="on-wide">
-                    USENIX Security Symposium (<b>USENIX'21</b>).</small></p>
-                </div>
-                <div class="col-sm-1">
-                    <p><a class="badge badge-info" href="https://www.usenix.org/conference/usenixsecurity21/presentation/nagy">video</a>
-                    <a class="badge badge-info" href="papers/21SEC-slides.pdf">slides</a>
-                    <a class="badge badge-info" href="https://git.zephyr-software.com/opensrc/zafl">code</a></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2019</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="papers/19ISTAS.pdf">A Case Study on a Sustainable Framework for Ethically Aware Predictive Modeling.</a><br class="on-wide">
-                    <small>Thomas Lux, <b>Stefan Nagy</b>, Mohammed Almanaa, Sirui Yao, Reid Bixler.<br class="on-wide">
-                    IEEE International Symposium on Technology and Society (<b>ISTAS'19</b>).</small></p>
-                </div>
-                <div class="col-sm-1">
-                    <p><a class="badge badge-info" href="https://www.youtube.com/watch?v=L0WA9pcMMUw">video</a></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2019</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="papers/19SP.pdf">Full-speed Fuzzing: Reducing Fuzzing Overhead through Coverage-guided Tracing.</a><br class="on-wide">
-                    <small><b>Stefan Nagy</b>, Matthew Hicks.<br class="on-wide">
-                    IEEE Symposium on Security and Privacy (<b>Oakland'19</b>).</small></p>
-                </div>
-                <div class="col-sm-1">
-                    <p><a class="badge badge-info" href="https://www.youtube.com/watch?v=2Rg8wtccCNA">video</a>
-                    <a class="badge badge-info" href="papers/19SP-slides.pdf">slides</a>
-                    <a class="badge badge-info" href="https://github.com/FoRTE-Research/UnTracer-AFL">code</a></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2018</b></h5>
-                </div>
-                <div class="col-sm-10">
-                    <p><a href="papers/18ICSE.pdf">Secure Coding Practices in Java: Challenges and Vulnerabilities.</a><br class="on-wide">
-                    <small>Na Meng, <b>Stefan Nagy</b>, Danfeng Yao, Wenjie Zhuang, Gustavo Argoty.<br class="on-wide">
-                    International Conference on Software Engineering (<b>ICSE'18</b>).</small></p>
-                </div>
-                <div class="col-sm-1">
-                    <p><a class="badge badge-info" href="http://www.theregister.co.uk/2017/09/29/java_security_plagued_stack_overflow/">news1</a>
-                    <a class="badge badge-info" href="https://developers.slashdot.org/story/17/10/07/022216/java-coders-are-getting-bad-security-advice-from-stack-overflow">news2</a>
-                    <a class="badge badge-info" href="https://www.helpnetsecurity.com/2017/10/03/secure-coding-java/">news3</a></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2015</b></h5>
-                </div>
-                <div class="col-sm-11">
-                    <p><a href="papers/15ICDF2C.pdf">Digital Forensics Education: A Multidisciplinary Curriculum Model.</a><br class="on-wide">
-                    <small>Imani Palmer, Elaine Wood, <b>Stefan Nagy</b>, Gabriela Garcia, Masooda Bashir, Roy Campbell.<br class="on-wide">
-                    International Conference on Digital Forensics & Cyber Crime (<b>ICDF2C'15</b>).</small></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2015</b></h5>
-                </div>
-                <div class="col-sm-11">
-                    <p><a href="papers/15IDEALS.pdf">Schedule-Based Side-Channel Attack in Fixed-Priority Real-time Systems.</a><br class="on-wide">
-                    <small>Chien-Ying Chen, Amiremad Ghassami, <b>Stefan Nagy</b>, Man-Ki Yoon, Sibin Mohan, Negar Kiyavash, Rakesh B Bobba, Rodolfo Pellizzoni.<br class="on-wide">
-                    Illinois Digital Environment for Access to Learning and Scholarship.</small></p>
-                </div>
-            </div>
-
-            <br class="on-narrow">
-
-            <div class="row">
-                <div class="col-sm-1">
-                    <h5><b>2015</b></h5>
-                </div>
-                <div class="col-sm-11">
-                    <p><a href="papers/15SADFE.pdf">An Empirical Study on Current Models for Reasoning about Digital Evidence.</a><br class="on-wide">
-                    <small><b>Stefan Nagy</b>, Imani Palmer, Sathya Sundaramurthy, Xinming Ou, Roy Campbell.<br class="on-wide">
-                    Intl. Conf. on Systematic Approaches to Digital Forensic Engineering (<b>SADFE'15</b>).</small></p>
-                </div>
-            </div>
-        </div>
-    </div>
+                    const html = `
+                        <article class="row publication" role="article">
+                            <div class="col-sm-1">
+                                <span class="pub-year"><b>${paper.year}</b></span>
+                            </div>
+                            <div class="col-sm-11">
+                                <div class="pub-content">
+                                    <p class="pub-title"><a href="${paper.url}">${paper.title}</a></p>
+                                    <p class="pub-authors"><small>${paper.authors}</small></p>
+                                    <p class="pub-venue"><small>${paper.venue}</small></p>
+                                </div>
+                                ${linksHtml}
+                            </div>
+                        </article>
+                    `;
+                    container.insertAdjacentHTML('beforeend', html);
+                });
+            })
+            .catch(err => console.error('Error loading papers:', err));
+    </script>
 
     <br>
 
-    <footer class="bg-light text-center text-lg-start">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.75em;">
-            Copyright © Stefan Nagy. All rights reserved.
-        </div>
-    </footer>
-
+    <div id="footer-placeholder"></div>
 </body>
 </html>

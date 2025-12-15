@@ -1,0 +1,19 @@
+[
+    {"date": "11/2025", "text": "Our transpiler fuzzing framework <em>TeTRIS</em> is <a href=\"https://github.com/FuturesLab/TeTRIS\">now available</a>. Happy fuzzing!"},
+    {"date": "10/2025", "text": "Our GUI fuzzer <em>GUIFuzz++</em> is <a href=\"https://github.com/AFLplusplus/AFLplusplus/pull/2566\">now fully integrated</a> into AFL++. Happy fuzzing!"},
+    {"date": "09/2025", "text": "Our GUI fuzzing framework <em>GUIFuzz++</em> is <a href=\"https://github.com/FuturesLab/GUIFuzzPlusPlus\">now available</a>. Happy GUI fuzzing!"},
+    {"date": "09/2025", "text": "Yeaseen's work on fuzzing source-to-source transpilers is accepted to <a href=\"https://www.acsac.org/\">ACSAC'25</a>!"},
+    {"date": "08/2025", "text": "Dillon and Tanner's work on fuzzing graphical user interfaces is accepted to <a href=\"https://conf.researchr.org/track/ase-2025\">ASE'25</a>!"},
+    {"date": "06/2025", "text": "Our decompiler fuzzing framework <em>Bin2Wrong</em> is <a href=\"https://github.com/FuturesLab/Bin2Wrong\">now available</a>. Happy fuzzing!"},
+    {"date": "04/2025", "text": "Zao's work on multi-dimensional decompiler fuzzing is accepted to <a href=\"https://www.usenix.org/conference/atc25\">ATC'25</a>!"},
+    {"date": "04/2025", "text": "Our work on wild API usage recovery for fuzzing harnessing is accepted to <a href=\"https://conf.researchr.org/home/issta-2025\">ISSTA'25</a>!"},
+    {"date": "03/2025", "text": "Our automated fuzzing harness generator <em>OGHarn</em> is <a href=\"https://github.com/FuturesLab/OGHarn\">now available</a>. Happy fuzzing!"},
+    {"date": "01/2025", "text": "Gabe's paper on automated fuzzing harness generation is accepted to <a href=\"https://conf.researchr.org/home/icse-2025/\">ICSE'25</a>!"},
+    {"date": "07/2024", "text": "Our work on kernel configuration tuning for kernel fuzzing is accepted to <a href=\"https://conf.researchr.org/home/icse-2025/\">ICSE'25</a>!"},
+    {"date": "06/2024", "text": "Zao's work on decompiler fuzzing featured in a <a href=\"https://binary.ninja/2024/06/19/restructuring-the-decompiler.html\">blog post</a> by the Binary Ninja team!"},
+    {"date": "05/2024", "text": "Congratulations to our student researchers <a href=\"https://candrewlee14.github.io/\">Andrew</a>, <a href=\"https://www.linkedin.com/in/david-clark-1434891b6/\">David</a>, and <a href=\"https://www.linkedin.com/in/gabe-sherman-891200/\">Gabe</a> for graduating!"},
+    {"date": "06/2023", "text": "Our paper on target-embedded Windows fuzzing snapshotting is accepted to <a href=\"https://www.usenix.org/conference/usenixsecurity23\">USENIX'23</a>!"},
+    {"date": "05/2023", "text": "Our paper on profile-guided system optimizations for fuzzing is accepted to <a href=\"https://www.sigsac.org/ccs/CCS2023/\">CCS'23</a>!"},
+    {"date": "02/2023", "text": "Stefan's guest article for ACM Queue magazine <em>The Fun in Fuzzing</em> is <a href=\"https://queue.acm.org/detail.cfm?id=3580504\">now available</a>!"},
+    {"date": "09/2022", "text": "Our paper on directed fuzzing optimization <em>SieveFuzz</em> is accepted to <a href=\"https://www.acsac.org/\">ACSAC'22</a>."}
+]

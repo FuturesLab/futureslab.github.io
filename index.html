@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>FuTURES&#179; Lab</title>
+    <title>FuTURES³ Lab</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="description" content="FuTURES³ Lab at University of Utah - Research in software security, testing, and automated bug repair">
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
-    <!--<link rel="stylesheet" href="css/main.css"/>
-    <link href="css/utah-main.css" rel="stylesheet">-->
     <link href="css/main.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+    
+    <!-- Preload carousel images -->
+    <link rel="preload" as="image" href="img/slideshow/arch.jpg">
+    <link rel="preload" as="image" href="img/slideshow/yeaseen.jpg">
+    <link rel="preload" as="image" href="img/slideshow/dinner.jpg">
+    <link rel="preload" as="image" href="img/slideshow/david.jpg">
+    <link rel="preload" as="image" href="img/slideshow/utahsec.jpg">
 </head>
-
-<link rel="preload" as="image" href="img/slideshow/arch.jpg">
-<link rel="preload" as="image" href="img/slideshow/yeaseen.jpg">
-<link rel="preload" as="image" href="img/slideshow/dinner.jpg">
-<link rel="preload" as="image" href="img/slideshow/david.jpg">
-<link rel="preload" as="image" href="img/slideshow/utahsec.jpg">
 
 <script>
   window.addEventListener('load', function () {
@@ -42,191 +42,148 @@
 </script>
 
 <body>
-    <nav class="navbar navbar-inverse">
-        <a class="navbar-brand" href="http://cs.utah.edu">
-            <img class="button" width="185px" src="img/logos/ksoclogo_white.png" style="margin-top:1.3%">
-        </a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div id="navbar-placeholder"></div>
 
-        <div class="ml-auto">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav" style="margin-top: 1px;">
-                    <li><a href="./">Home</a></li>
-                    <li><a href="./#news">News</a></li>
-                    <li><a href="people">People</a></li>
-                    <li><a href="publications">Publications</a></li>
-                    <li><a href="bugs">Reported Bugs</a></li>
-                    <li><a href="https://github.com/FuturesLab">Software</a></li>
-                    <!--<li><a href="./">Visiting</a></li>-->
-                    <li><a href="./#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <main id="main-content" role="main">
+        <h1 class="sr-only">FuTURES³ Lab - Software Security Research</h1>
+        
+        <div class="container main-container">
+            <div class="col-md-12">
+                <div id="photos" class="carousel slide" data-ride="carousel" role="region" aria-label="Lab photos slideshow" style="border-radius: 55px; filter: drop-shadow(0 0 0.5rem black);">
+                    <ol class="carousel-indicators">
+                        <li data-target="#photos" data-slide-to="0" class="active"></li>
+                        <li data-target="#photos" data-slide-to="1"></li>
+                        <li data-target="#photos" data-slide-to="2"></li>
+                        <li data-target="#photos" data-slide-to="3"></li>
+                        <li data-target="#photos" data-slide-to="4"></li>
+                        <li data-target="#photos" data-slide-to="5"></li>
+                    </ol>
 
-    <div class="container main-container">
-        <div class="col-md-12">
-            <div id="photos" class="carousel slide" data-ride="carousel" style="border-radius: 55px; filter: drop-shadow(0 0 0.5rem black);">
-                <ol class="carousel-indicators">
-                    <li data-target="#photos" data-slide-to="0" class="active"></li>
-                    <li data-target="#photos" data-slide-to="1"></li>
-                    <li data-target="#photos" data-slide-to="2"></li>
-                    <li data-target="#photos" data-slide-to="3"></li>
-                    <li data-target="#photos" data-slide-to="4"></li>
-                    <li data-target="#photos" data-slide-to="5"></li>
-                </ol>
-
-                <div class="carousel-wrapper">
-                    <div class="carousel-inner" style="border-radius: 15px;">
-                        <div class="item active" style="position: relative;">
-                            <img src="img/slideshow/arch.jpg">
-                            <img src="img/logos/lablogo-plain_white_path.svg" class="overlay-logo">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-inner" style="border-radius: 15px;">
+                            <div class="item active" style="position: relative;">
+                                <img src="img/slideshow/arch.jpg" alt="Delicate Arch in Utah with lab members">
+                                <img src="img/logos/lablogo-plain_white_path.svg" class="overlay-logo" alt="FuTURES³ Lab logo">
+                            </div>
+                            
+                            <div class="item"><img src="img/slideshow/tanner.png" alt="Lab member Tanner"></div>
+                           	<div class="item"><img src="img/slideshow/zao.jpg" alt="Lab member Zao"></div>
+                           	<div class="item"><img src="img/slideshow/dinner.jpg" alt="Lab dinner gathering"></div>
+                            <div class="item"><img src="img/slideshow/yeaseen.jpg" alt="Lab member Yeaseen"></div>
+                            <div class="item"><img src="img/slideshow/gabe.jpg" alt="Lab member Gabe"></div>
                         </div>
-                        
-                        <div class="item"><img src="img/slideshow/tanner.png"></div>
-                       	<div class="item"><img src="img/slideshow/zao.jpg"></div>
-                       	<div class="item"><img src="img/slideshow/dinner.jpg"></div>
-                        <div class="item"><img src="img/slideshow/yeaseen.jpg"></div>
-                        <div class="item"><img src="img/slideshow/gabe.jpg"></div>
+                    </div>
+                    <a class="carousel-control left" href="#photos" data-slide="prev" style="border-radius: 15px;" aria-label="Previous slide"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+                    <a class="carousel-control right" href="#photos" data-slide="next" style="border-radius: 15px;" aria-label="Next slide"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-md-12">
+              <div class="row middle-align">
+                <div class="col-md-6">
+                  <div style="text-align: center;">
+                    <img class="button sponsor" src="img/logos/lablogo-full_blue_path.svg" alt="FuTURES³ Lab full logo" style="width: 100%; max-width: 575px;">
+                  </div>
+                </div>
+
+                <br class="on-narrow">
+
+                <div class="col-md-6" style="margin-top:1.5%">
+                  <p style="text-align: justify;">We are a team of researchers who build practical systems with the aim of improving <b>real-world software security and robustness</b>.</p>
+                  <p style="text-align: justify;">We routinely <a href="bugs">find software bugs</a> and publish our work in <b>security</b> and <b>software engineering</b> venues like ACM CCS and ICSE.</p>
+                  <p style="text-align: justify;">Our group currently focuses on the following research areas: <b>software testing</b>, <b>program analysis</b>, and <b>automated bug repair</b>.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- News (e.g., papers, talks, etc.) -->
+            <section class="col-md-12" style="margin-top:10pt;" aria-labelledby="news">
+                <br><hr><h2 id="news" style="text-align: left;">Recent News</h2>
+                <div class="news-container" role="feed" aria-label="Lab news updates">
+                    <ul id="news-list"></ul>
+                </div>
+            </section>
+            <script>
+                fetch('news.json')
+                    .then(response => response.json())
+                    .then(news => {
+                        const list = document.getElementById('news-list');
+                        news.forEach(item => {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<span class="news-date">${item.date}</span> ${item.text}`;
+                            list.appendChild(li);
+                        });
+                    })
+                    .catch(err => console.error('Error loading news:', err));
+            </script>
+
+            <div class="col-md-12" style="margin-top:10pt;">
+                <hr><h2 id="contact" style="text-align: left;">Contact</h2>
+
+                <div class="col-md-5 text-left">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td width="10%"  style="padding-left:0em;">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            </td>
+                            <td>
+                                3446 Merrill Engineering (MEB) <br>
+                                50 Central Campus Drive <br>
+                                Salt Lake City, UT 84112
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10%"  style="padding-left:0em;">
+                                <i class="fa fa-envelope" aria-hidden="true"></i> 
+                            </td>
+                            <td>
+                                snagy@cs.utah.edu
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10%"  style="padding-left:0em;">
+                                <i class="fa fa-phone" aria-hidden="true"></i> 
+                            </td>
+                            <td> 
+                                +1 801-581-8224 
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <br class="on-narrow">
+
+                <div class="col-md-7 text-center">
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.6947593760556!2d-111.84924788810584!3d40.76873783402054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87525f8e1b9c7d31%3A0x914548c9f976bce5!2sUniversity%20of%20Utah%20School%20of%20Computing!5e0!3m2!1sen!2sus!4v1686075330489!5m2!1sen!2sus" scrolling="no" style="border:0; /*height:20%*/ width:100%; max-height:125px;" allowfullscreen="" loading="lazy" class="rounded" title="Map showing University of Utah School of Computing location"></iframe>
+                        <div class="map-overlay"></div>
                     </div>
                 </div>
-                <a class="carousel-control left" href="#photos" data-slide="prev" style="border-radius: 15px;"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                <a class="carousel-control right" href="#photos" data-slide="next" style="border-radius: 15px;"><span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-            <br>
-        </div>
-
-        <div class="col-md-12">
-          <div class="row middle-align">
-            <div class="col-md-6">
-              <h1 align=center>
-                <img class="button sponsor" src="img/logos/lablogo-full_blue_path.svg" style="width: 100%; max-width: 575px;">
-              </h1>
             </div>
 
-            <br class="on-narrow">
-
-            <div class="col-md-6" style="margin-top:1.5%">
-              <p align="justify">We are a team of researchers who build practical systems with the aim of improving <b>real-world software security and robustness</b>.</p>
-              <p align="justify">We routinely <a href="bugs">find software bugs</a> and publish our work in <b>security</b> and <b>software engineering</b> venues like ACM CCS and ICSE.</p>
-              <p align="justify">Our group currently focuses on the following research areas: <b>software testing</b>, <b>program analysis</b>, and <b>automated bug repair</b>.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- News (e.g., papers, talks, etc.) -->
-        <div class="col-md-12" style="margin-top:10pt;">
-            <br><hr><h2 id="news" align="left">Recent News</h2>
-            <ul style="padding-left:2pt; margin-top:10pt; margin-bottom:10pt;">   
-                <li><b>11/2025</b>: Our transpiler fuzzing framework <em>TeTRIS</em> is <a href="https://github.com/FuturesLab/TeTRIS">now available</a>. Happy fuzzing!
-
-                <li><b>10/2025</b>: Our GUI fuzzer <em>GUIFuzz++</em> is <a href="https://github.com/AFLplusplus/AFLplusplus/pull/2566">now fully integrated</a> into AFL++. Happy fuzzing!
-
-                <li><b>09/2025</b>: Our GUI fuzzing framework <em>GUIFuzz++</em> is <a href="https://github.com/FuturesLab/GUIFuzzPlusPlus">now available</a>. Happy GUI fuzzing!
-
-                <li><b>09/2025</b>: Yeaseen's work on fuzzing source-to-source transpilers is accepted to <a href="https://www.acsac.org/">ACSAC'25</a>!
-
-                <li><b>08/2025</b>: Dillon and Tanner's work on fuzzing graphical user interfaces is accepted to <a href="https://conf.researchr.org/track/ase-2025">ASE'25</a>!
-
-                <li><b>06/2025</b>: Our decompiler fuzzing framework <em>Bin2Wrong</em> is <a href="https://github.com/FuturesLab/Bin2Wrong">now available</a>. Happy fuzzing!
-
-                <li><b>04/2025</b>: Zao's work on multi-dimensional decompiler fuzzing is accepted to <a href="https://www.usenix.org/conference/atc25">ATC'25</a>!
-
-                <li><b>04/2025</b>: Our work on wild API usage recovery for fuzzing harnessing is accepted to <a href="https://conf.researchr.org/home/issta-2025">ISSTA'25</a>!
-
-                <li><b>03/2025</b>: Our automated fuzzing harness generator <em>OGHarn</em> is <a href="https://github.com/FuturesLab/OGHarn">now available</a>. Happy fuzzing!
-
-                <li><b>01/2025</b>: Gabe's paper on automated fuzzing harness generation is accepted to <a href="https://conf.researchr.org/home/icse-2025/">ICSE'25</a>!
-
-                <li><b>07/2024</b>: Our work on kernel configuration tuning for kernel fuzzing is accepted to <a href="https://conf.researchr.org/home/icse-2025/">ICSE'25</a>!
-
-                <li><b>06/2024</b>: Zao's work on decompiler fuzzing featured in a <a href="https://binary.ninja/2024/06/19/restructuring-the-decompiler.html">blog post</a> by the Binary Ninja team!
-
-                <li><b>05/2024</b>: Congratulations to our student researchers <a href="https://candrewlee14.github.io/">Andrew</a>, <a href="https://www.linkedin.com/in/david-clark-1434891b6/">David</a>, and <a href="https://www.linkedin.com/in/gabe-sherman-891200/">Gabe</a> for graduating!</li>
-
-                <li><b>06/2023</b>: Our paper on target-embedded Windows fuzzing snapshotting is accepted to <a href="https://www.usenix.org/conference/usenixsecurity23">USENIX'23</a>!</li>
-
-                <li><b>05/2023</b>: Our paper on profile-guided system optimizations for fuzzing is accepted to <a href="https://www.sigsac.org/ccs/CCS2023/">CCS'23</a>!</li>
-
-                <li><b>02/2023</b>: Stefan's guest article for ACM Queue magazine <em>The Fun in Fuzzing</em> is <a href="https://queue.acm.org/detail.cfm?id=3580504">now available</a>!</li>
-
-                <li><b>09/2022</b>: Our paper on directed fuzzing optimization <em>SieveFuzz</em> is accepted to <a href="https://www.acsac.org/">ACSAC'22</a>.</li>
-            </ul>
-        </div>
-
-        <div class="col-md-12" style="margin-top:10pt;">
-            <hr><h2 id="contact" align="left">Contact</h2>
-
-            <div class="col-md-5 text-left">
-                <table>
-                    <tbody>
-                    <tr>
-                        <td width="10%"  style="padding-left:0em;">
-                            <i class="fa fa-map-marker"></i>
-                        </td>
-                        <td>
-                            3446 Merrill Engineering (MEB) <br>
-                            50 Central Campus Drive <br>
-                            Salt Lake City, UT 84112
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="10%"  style="padding-left:0em;">
-                            <i class="fa fa-envelope-o"></i> 
-                        </td>
-                        <td>
-                            snagy@cs.utah.edu
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="10%"  style="padding-left:0em;">
-                            <i class="fa fa-phone"></i> 
-                        </td>
-                        <td> 
-                            +1 801-581-8224 
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <br class="on-narrow">
-
-            <div class="col-md-7 text-center">
-                <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.6947593760556!2d-111.84924788810584!3d40.76873783402054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87525f8e1b9c7d31%3A0x914548c9f976bce5!2sUniversity%20of%20Utah%20School%20of%20Computing!5e0!3m2!1sen!2sus!4v1686075330489!5m2!1sen!2sus" scrolling="no" style="border:0; /*height:20%*/ width:100%; max-height:125px;" allowfullscreen="" loading="lazy" class="rounded"></iframe>
-                    <div class="map-overlay"></div>
+            <div class="col-md-12" style="margin-top:10pt;">
+                <hr><h2 id="sponsors" style="text-align: left;">Our Sponsors</h2>
+                <div class="col-md-12" style="display:flex; justify-content:center; gap:20px;">
+                    <a href="https://www.nsf.gov" target="_blank" style="display:flex; justify-content:center;" aria-label="National Science Foundation website">
+                        <img class="img button sponsor" src="img/logos/nsf.png" alt="NSF Logo">
+                    </a>
+                    <a href="https://www.darpa.mil" target="_blank" style="display:flex; justify-content:center;" aria-label="DARPA website">
+                        <img class="img button sponsor" src="img/logos/darpa.png" alt="DARPA Logo">
+                    </a>
                 </div>
-            </div>
+            </div>        
         </div>
-
-        <div class="col-md-12" style="margin-top:10pt;">
-            <hr><h2 id="sponsors" align="left">Our Sponsors</h2>
-            <div class="col-md-12" style="display:flex; justify-content:center; gap:20px;">
-                <a href="https://www.nsf.gov" target="_blank" style="display:flex; justify-content:center;">
-                    <img class="img button sponsor" src="img/logos/nsf.png" alt="NSF Logo">
-                </a>
-                <a href="https://www.darpa.mil" target="_blank" style="display:flex; justify-content:center;">
-                    <img class="img button sponsor" src="img/logos/darpa.png" alt="DARPA Logo">
-                </a>
-            </div>
-        </div>        
-    </div>
+    </main>
 
     <br>
 
-    <footer class="bg-light text-center text-lg-start">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.75em;">
-            Copyright © Stefan Nagy. All rights reserved.
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script src="includes/load-includes.js"></script>
 </body>
 </html>

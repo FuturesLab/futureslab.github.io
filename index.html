@@ -52,14 +52,14 @@
         <div class="container main-container">
             <div class="col-md-12">
                 <div id="photos" class="carousel slide" data-ride="carousel" role="region" aria-label="Lab photos slideshow" style="border-radius: 55px; filter: drop-shadow(0 0 0.5rem black);">
-                    <ol class="carousel-indicators">
-                        <li data-target="#photos" data-slide-to="0" class="active"></li>
-                        <li data-target="#photos" data-slide-to="1"></li>
-                        <li data-target="#photos" data-slide-to="2"></li>
-                        <li data-target="#photos" data-slide-to="3"></li>
-                        <li data-target="#photos" data-slide-to="4"></li>
-                        <li data-target="#photos" data-slide-to="5"></li>
-                    </ol>
+                    <ul class="carousel-indicators" aria-label="Slide navigation">
+                        <li data-target="#photos" data-slide-to="0" class="active" aria-current="true"><span class="sr-only">Slide 1</span></li>
+                        <li data-target="#photos" data-slide-to="1"><span class="sr-only">Slide 2</span></li>
+                        <li data-target="#photos" data-slide-to="2"><span class="sr-only">Slide 3</span></li>
+                        <li data-target="#photos" data-slide-to="3"><span class="sr-only">Slide 4</span></li>
+                        <li data-target="#photos" data-slide-to="4"><span class="sr-only">Slide 5</span></li>
+                        <li data-target="#photos" data-slide-to="5"><span class="sr-only">Slide 6</span></li>
+                    </ul>
 
                     <div class="carousel-wrapper">
                         <div class="carousel-inner" style="border-radius: 15px;">
@@ -102,8 +102,8 @@
             <!-- News (e.g., papers, talks, etc.) -->
             <section class="col-md-12" style="margin-top: 1em;" aria-labelledby="news">
                 <hr><h2 id="news" style="text-align: left;">Recent News</h2>
-                <div class="news-container" role="feed" aria-label="Lab news updates">
-                    <ul id="news-list"></ul>
+                <div class="news-container">
+                    <ul id="news-list" aria-label="Lab news updates"></ul>
                 </div>
             </section>
             <script>
@@ -124,7 +124,7 @@
                 <hr><h2 id="contact" style="text-align: left;">Contact</h2>
 
                 <div class="col-md-5 text-left">
-                    <table>
+                    <table role="presentation">
                         <tbody>
                         <tr>
                             <td width="10%"  style="padding-left:0em;">

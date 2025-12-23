@@ -1,5 +1,5 @@
 [
-    {"date": "01/2026", "text": "Three new papers by Gabe, Yeaseen, and Zao are all accepted to <a href=\"https://conf.researchr.org/home/fse-2026\">FSE'26</a>!"},
+    {"date": "12/2025", "text": "Three new papers by Gabe, Yeaseen, and Zao are all accepted to <a href=\"https://conf.researchr.org/home/fse-2026\">FSE'26</a>!"},
     {"date": "11/2025", "text": "Our source-to-source transpiler fuzzing framework <em>TeTRIS</em> is <a href=\"https://github.com/FuturesLab/TeTRIS\">now available</a>."},
     {"date": "09/2025", "text": "Our GUI fuzzing framework <em>GUIFuzz++</em> is <a href=\"https://github.com/FuturesLab/GUIFuzzPlusPlus\">now available</a> and <a href=\"https://github.com/AFLplusplus/AFLplusplus/pull/2566\">integrated</a> in AFL++."},
     {"date": "09/2025", "text": "Yeaseen's work on source-to-source transpiler fuzzing is accepted to <a href=\"https://www.acsac.org/\">ACSAC'25</a>!"},

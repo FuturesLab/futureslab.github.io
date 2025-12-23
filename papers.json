@@ -1,5 +1,32 @@
 [
     {
+        "year": "2026",
+        "title": "SnakeCharmer: Automatic Fuzzing Harness Generation for Pure and Hybrid Python Libraries",
+        "url": "",
+        "authors": "<u>Gabriel Sherman</u> and <b>Stefan Nagy</b>.",
+        "venue": "ACM International Conference on the Foundations of Software Engineering (<b>FSE'26</b>).",
+        "links": [
+        ]    
+    },
+    {
+        "year": "2026",
+        "title": "PROGnosticator: Testing Source-to-Source Code Translators via Construct-oriented Fuzzing",
+        "url": "",
+        "authors": "<u>Yeaseen Arafat</u> and <b>Stefan Nagy</b>.",
+        "venue": "ACM International Conference on the Foundations of Software Engineering (<b>FSE'26</b>).",
+        "links": [
+        ]
+    },
+    {
+        "year": "2026",
+        "title": "Binvariants: Enhancing Fuzzing of Closed-source Binary Executables via Register-level Likely Invariants",
+        "url": "",
+        "authors": "<u>Zao Yang</u> and <b>Stefan Nagy</b>.",
+        "venue": "ACM International Conference on the Foundations of Software Engineering (<b>FSE'26</b>).",
+        "links": [
+        ]
+    },
+    {
         "year": "2025",
         "title": "TeTRIS: General-purpose Fuzzing for Translation Bugs in Source-to-Source Code Transpilers",
         "url": "https://futures.cs.utah.edu/papers/25ACSAC.pdf",

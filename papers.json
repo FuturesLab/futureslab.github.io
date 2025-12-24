@@ -117,7 +117,7 @@
         "year": "2023",
         "title": "The Fun in Fuzzing: The Debugging Technique Comes into Its Own",
         "url": "https://dl.acm.org/doi/10.1145/3580504",
-        "authors": "<b>Stefan Nagy</b>, Peter Alvaro.",
+        "authors": "<b>Stefan Nagy</b> and Peter Alvaro.",
         "venue": "ACM Queue Magazine.",
         "links": []
     },
@@ -167,7 +167,7 @@
         "year": "2019",
         "title": "A Case Study on a Sustainable Framework for Ethically Aware Predictive Modeling",
         "url": "papers/19ISTAS.pdf",
-        "authors": "Thomas Lux, <b>Stefan Nagy</b>, Mohammed Almanaa, Sirui Yao, Reid Bixler.",
+        "authors": "Thomas Lux, <b>Stefan Nagy</b>, Mohammed Almanaa, Sirui Yao, and Reid Bixler.",
         "venue": "IEEE International Symposium on Technology and Society (<b>ISTAS'19</b>).",
         "links": [
             {"type": "video", "url": "https://www.youtube.com/watch?v=L0WA9pcMMUw"}
@@ -177,7 +177,7 @@
         "year": "2019",
         "title": "Full-speed Fuzzing: Reducing Fuzzing Overhead through Coverage-guided Tracing",
         "url": "papers/19SP.pdf",
-        "authors": "<b>Stefan Nagy</b>, Matthew Hicks.",
+        "authors": "<b>Stefan Nagy</b> and Matthew Hicks.",
         "venue": "IEEE Symposium on Security and Privacy (<b>Oakland'19</b>).",
         "links": [
             {"type": "video", "url": "https://www.youtube.com/watch?v=2Rg8wtccCNA"},
@@ -189,7 +189,7 @@
         "year": "2018",
         "title": "Secure Coding Practices in Java: Challenges and Vulnerabilities",
         "url": "papers/18ICSE.pdf",
-        "authors": "Na Meng, <b>Stefan Nagy</b>, Danfeng Yao, Wenjie Zhuang, Gustavo Argoty.",
+        "authors": "Na Meng, <b>Stefan Nagy</b>, Danfeng Yao, Wenjie Zhuang, and Gustavo Argoty.",
         "venue": "International Conference on Software Engineering (<b>ICSE'18</b>).",
         "links": []
     },
@@ -197,7 +197,7 @@
         "year": "2015",
         "title": "Digital Forensics Education: A Multidisciplinary Curriculum Model",
         "url": "papers/15ICDF2C.pdf",
-        "authors": "Imani Palmer, Elaine Wood, <b>Stefan Nagy</b>, Gabriela Garcia, Masooda Bashir, Roy Campbell.",
+        "authors": "Imani Palmer, Elaine Wood, <b>Stefan Nagy</b>, Gabriela Garcia, Masooda Bashir, and Roy Campbell.",
         "venue": "International Conference on Digital Forensics & Cyber Crime (<b>ICDF2C'15</b>).",
         "links": []
     },
@@ -205,7 +205,7 @@
         "year": "2015",
         "title": "Schedule-Based Side-Channel Attack in Fixed-Priority Real-time Systems",
         "url": "papers/15IDEALS.pdf",
-        "authors": "Chien-Ying Chen, Amiremad Ghassami, <b>Stefan Nagy</b>, Man-Ki Yoon, Sibin Mohan, Negar Kiyavash, Rakesh B Bobba, Rodolfo Pellizzoni.",
+        "authors": "Chien-Ying Chen, Amiremad Ghassami, <b>Stefan Nagy</b>, Man-Ki Yoon, Sibin Mohan, Negar Kiyavash, Rakesh B Bobba, and Rodolfo Pellizzoni.",
         "venue": "Illinois Digital Environment for Access to Learning and Scholarship.",
         "links": []
     },
@@ -213,7 +213,7 @@
         "year": "2015",
         "title": "An Empirical Study on Current Models for Reasoning about Digital Evidence",
         "url": "papers/15SADFE.pdf",
-        "authors": "<b>Stefan Nagy</b>, Imani Palmer, Sathya Sundaramurthy, Xinming Ou, Roy Campbell.",
+        "authors": "<b>Stefan Nagy</b>, Imani Palmer, Sathya Sundaramurthy, Xinming Ou, and Roy Campbell.",
         "venue": "Intl. Conf. on Systematic Approaches to Digital Forensic Engineering (<b>SADFE'15</b>).",
         "links": []
     }

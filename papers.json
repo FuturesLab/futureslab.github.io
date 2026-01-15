@@ -67,7 +67,7 @@
         "authors": "Wei-Cheng Wu, <b>Stefan Nagy</b>, and Christophe Hauser",
         "venue": "ACM International Symposium on Software Testing and Analysis (<b>ISSTA'25</b>)",
         "links": [
-            {"type": "code", "url": "https://github.com/spencerwuwu"}
+            {"type": "code", "url": "https://github.com/spencerwuwu/WildSync"}
         ]
     },
     {

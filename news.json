@@ -1,5 +1,5 @@
 [
-    {"date": "04/2026", "text": "Gabe's FSE'26 paper on harnessing Python libraries for fuzzing <a href=\"https://futures.cs.utah.edu/papers/26FSE-c.pdf\">is now available</a>!"},    
+    {"date": "04/2026", "text": "Gabe's FSE'26 paper on harnessing Python libraries for fuzzing <a href=\"https://futures.cs.utah.edu/papers/26FSE-b.pdf\">is now available</a>!"},    
     {"date": "03/2026", "text": "Yeaseen's FSE'26 paper on construct-oriented transpiler fuzzing <a href=\"https://futures.cs.utah.edu/papers/26FSE-a.pdf\">is now available</a>!"},    
     {"date": "01/2026", "text": "Yeaseen's work on transpiler fuzzing featured by the <a href=\"https://community.haxe.org/t/go2hx-work-in-progress/2821/24#p-14532-research-paper-review-1\">Go2Hx dev community</a>!"},
     {"date": "12/2025", "text": "Three new papers by Gabe, Yeaseen, and Zao are all accepted to <a href=\"https://conf.researchr.org/home/fse-2026\">FSE'26</a>!"},

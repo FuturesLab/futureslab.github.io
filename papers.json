@@ -2,7 +2,7 @@
     {
         "year": "2026",
         "title": "Binvariants: Enhancing Fuzzing of Closed-source Binary Executables via Register-level Likely Invariants",
-        "url": "",
+        "url": "https://futures.cs.utah.edu/papers/26FSE-c.pdf",
         "authors": "<u>Zao Yang</u> and <b>Stefan Nagy</b>",
         "venue": "ACM International Conference on the Foundations of Software Engineering (<b>FSE'26</b>)",
         "links": [

@@ -25,9 +25,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="pt"
      showgrid="false"
-     inkscape:zoom="1.3584905"
-     inkscape:cx="193.22918"
-     inkscape:cy="28.708335"
+     inkscape:zoom="1.9004333"
+     inkscape:cx="152.33368"
+     inkscape:cy="41.043271"
      inkscape:window-width="1440"
      inkscape:window-height="847"
      inkscape:window-x="0"
@@ -718,14 +718,12 @@
          width="100%"
          height="100%" />
     </g>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.75,0,0,0.83982454,-2.6733742,-8.0924767)"
+    <path
+       d="M 16.05416,118.75832 V 99.491673 h -4.299996 v 23.299977 h 16.366651 v -4.03333 z M 44.620792,99.491673 H 38.987464 L 29.65414,122.79165 h 4.366662 l 2.099998,-5.23333 h 11.366656 l 2.099998,5.23333 h 4.333329 z m -6.933327,14.166657 4.099996,-10.29999 4.13333,10.29999 z m 36.86661,-3.13333 c 0.966666,-0.6 2.766664,-2.26667 2.766664,-4.7 0,-3.5 -2.833331,-6.333327 -6.333328,-6.333327 H 57.520758 v 23.299977 h 14.099986 c 3.666663,0 6.633327,-3 6.633327,-6.66666 0,-3.16666 -2.433331,-5 -3.699996,-5.59999 z m -1.666665,-4.36667 c 0,1.53333 -1.233332,2.73333 -2.766664,2.73333 H 61.68742 v -5.49999 h 8.433326 c 1.533332,0 2.766664,1.23333 2.766664,2.76666 z m -2.066665,12.73332 H 61.68742 v -6.23332 h 9.133325 c 1.733332,0 3.13333,1.36666 3.13333,3.09999 0,1.73334 -1.399998,3.13333 -3.13333,3.13333 z"
        id="text14177"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.3333px;line-height:1.25;font-family:'RM Connect';-inkscape-font-specification:'RM Connect';white-space:pre;shape-inside:url(#rect14179);display:inline;fill:#ffffff;fill-opacity:1"><tspan
-         x="8.6875"
-         y="122.79165"
-         id="tspan2">LAB</tspan></text>
+       style="font-size:33.3333px;line-height:1.25;font-family:'RM Connect';-inkscape-font-specification:'RM Connect';white-space:pre;fill:#ffffff"
+       transform="matrix(0.75,0,0,0.83982454,-2.6733742,-8.0924767)"
+       aria-label="LAB" />
     <g
        id="text14177-1"
        style="font-size:13.3333px;line-height:1.25;font-family:'RM Connect';-inkscape-font-specification:'RM Connect';text-align:justify;white-space:pre;fill:#ffffff"

@@ -115,9 +115,18 @@
         animateCounter(bugCountElement, allBugs.length, 1000);
         counterContainer.style.opacity = 1;
 
+        // Natural sort so e.g. "Panda3D #1819" comes before "Panda3D #1820"
+        // (plain string sort would put #1820 before #1819).
+        $.fn.dataTable.ext.type.order['natural-asc'] = (a, b) =>
+          String(a).localeCompare(String(b), undefined, { numeric: true, sensitivity: 'base' });
+        $.fn.dataTable.ext.type.order['natural-desc'] = (a, b) =>
+          String(b).localeCompare(String(a), undefined, { numeric: true, sensitivity: 'base' });
+
         // Initialize DataTable with custom top bar (search left, summary right)
         const table = $('#security-bugs').DataTable({
-          order: [[0, "desc"]],
+          // Sort by date descending; tie-break on bug ID (column 1) descending
+          // so the highest issue number appears at the top within the same day.
+          order: [[0, "desc"], [1, "desc"]],
           paging: true,
           searching: true,
           responsive: true,
@@ -127,6 +136,7 @@
           dom: '<"top-bar"<"top-left"f><"top-right"i>>t<"bottom"p>',
           columnDefs: [
             { type: "date", targets: 0 },
+            { type: "natural", targets: 1 },
             { orderable: false, targets: 2 }
           ],
           orderClasses: false

@@ -235,7 +235,7 @@
     "url": "https://github.com/gotranspile/cxgo/issues/96",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
-    "desc": "gotranspile/cxgo"
+    "desc": "`cxgo` Generates Out-of-Bounds Pointer for One-Past-the-End Array Access for C"
   },
   {
     "id": "CxGo #97",
@@ -389,7 +389,56 @@
     "url": "https://github.com/go2hx/go2hx/issues/277",
     "lead": "Yeaseen Arafat",
     "date": "2025-09-02",
-    "desc": "Struct keys in Go maps not matching correctly after Go2Hx translation"
+    "desc": "Issue"
+  },
+  {
+    "id": "Port-Cjson #6",
+    "url": "https://github.com/safelibs/port-cjson/issues/6",
+    "lead": "Yeaseen Arafat",
+    "date": "2026-06-14",
+    "desc": "BUG: `cJSON_ParseWithOpts(\"1e\", ..., 0)` differs between C and Rust port"
+  },
+  {
+    "id": "Port-Cjson #7",
+    "url": "https://github.com/safelibs/port-cjson/issues/7",
+    "lead": "Yeaseen Arafat",
+    "date": "2026-06-14",
+    "desc": "BUG: 64-digit number is accepted by C API but rejected by Rust port"
+  },
+  {
+    "id": "Port-Giflib #6",
+    "url": "https://github.com/safelibs/port-giflib/issues/6",
+    "lead": "Yeaseen Arafat",
+    "date": "2026-06-17",
+    "desc": "Rust port returns early for negative `x` in `GifDrawRectangle`"
+  },
+  {
+    "id": "Port-Giflib #7",
+    "url": "https://github.com/safelibs/port-giflib/issues/7",
+    "lead": "Yeaseen Arafat",
+    "date": "2026-06-17",
+    "desc": "Rust port returns early for negative `x` in `GifDrawBox`"
+  },
+  {
+    "id": "Port-Giflib #8",
+    "url": "https://github.com/safelibs/port-giflib/issues/8",
+    "lead": "Yeaseen Arafat",
+    "date": "2026-06-18",
+    "desc": "Rust port returns early for negative `x` in `GifDrawText8x8`"
+  },
+  {
+    "id": "Port-Libjson #5",
+    "url": "https://github.com/safelibs/port-libjson/issues/5",
+    "lead": "Yeaseen Arafat",
+    "date": "2026-06-16",
+    "desc": "Rust port misses upper-bound length check in `json_object_set_string_len` function"
+  },
+  {
+    "id": "Port-Libyaml #5",
+    "url": "https://github.com/safelibs/port-libyaml/issues/5",
+    "lead": "Yeaseen Arafat",
+    "date": "2026-06-18",
+    "desc": "BUG: Rust port checks max file size before libyaml EOF early return in `yaml_parser_update_buffer`"
   },
   {
     "id": "SWC #11039",
@@ -476,6 +525,41 @@
     "desc": "TinyGo Panics on Generic Type Aliases"
   },
   {
+    "id": "Tmux-Rs #141",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/141",
+    "lead": "Yeaseen Arafat",
+    "date": "2026-05-30",
+    "desc": "`attributes_tostring` leaves trailing comma unlike tmux C implementation"
+  },
+  {
+    "id": "Tmux-Rs #142",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/142",
+    "lead": "Yeaseen Arafat",
+    "date": "2026-06-18",
+    "desc": "Rust `utf8_strvis` processes the final UTF-8 continuation byte twice"
+  },
+  {
+    "id": "Tmux-Rs #143",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/143",
+    "lead": "Yeaseen Arafat",
+    "date": "2026-06-18",
+    "desc": "Rust `colour_byname` mishandles mixed-case gray/grey color names"
+  },
+  {
+    "id": "Tmux-Rs #144",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/144",
+    "lead": "Yeaseen Arafat",
+    "date": "2026-06-19",
+    "desc": "Rust `utf8_rpadcstr` writes too many leading spaces"
+  },
+  {
+    "id": "Tmux-Rs #145",
+    "url": "https://github.com/richardscollin/tmux-rs/issues/145",
+    "lead": "Yeaseen Arafat",
+    "date": "2026-06-19",
+    "desc": "Rust `cmd_template_replace` corrupts multi-byte replacement strings"
+  },
+  {
     "id": "Tmux-Rs #48",
     "url": "https://github.com/richardscollin/tmux-rs/issues/48",
     "lead": "Yeaseen Arafat",
@@ -518,77 +602,77 @@
     "desc": "`tmux-rs` does not expand `#(whoami)` in `status-right`"
   },
   {
-    "id": "Zig #21855",
+    "id": "Translate-C #21855",
     "url": "https://github.com/ziglang/zig/issues/21855",
     "lead": "Yeaseen Arafat",
     "date": "2024-10-30",
     "desc": "zig translate-c fails to translate compound literals like &(float){0.5}"
   },
   {
-    "id": "Zig #21876",
+    "id": "Translate-C #21876",
     "url": "https://github.com/ziglang/zig/issues/21876",
     "lead": "Yeaseen Arafat",
     "date": "2024-11-01",
     "desc": "Type Mismatch in Zig Translation of Pointer to 2D Array in C Code"
   },
   {
-    "id": "Zig #22045",
+    "id": "Translate-C #22045",
     "url": "https://github.com/ziglang/zig/issues/22045",
     "lead": "Yeaseen Arafat",
     "date": "2024-11-22",
     "desc": "zig translate-c Type Propagation Error for Nullable Pointer ([*c]) Dereferencing and Address Calculation in Zig"
   },
   {
-    "id": "Zig #22136",
+    "id": "Translate-C #22136",
     "url": "https://github.com/ziglang/zig/issues/22136",
     "lead": "Yeaseen Arafat",
     "date": "2024-12-03",
     "desc": "translate-c Runtime Divergence while comparing String Literals and Compound Literals"
   },
   {
-    "id": "Zig #22139",
+    "id": "Translate-C #22139",
     "url": "https://github.com/ziglang/zig/issues/22139",
     "lead": "Yeaseen Arafat",
     "date": "2024-12-04",
     "desc": "translate-c Misinterprets Address of Compound Literal for Struct as Immutable"
   },
   {
-    "id": "Zig #22148",
+    "id": "Translate-C #22148",
     "url": "https://github.com/ziglang/zig/issues/22148",
     "lead": "Yeaseen Arafat",
     "date": "2024-12-05",
     "desc": "translate-c Fails to Translate Anonymous Enum Usage"
   },
   {
-    "id": "Zig #22964",
+    "id": "Translate-C #22964",
     "url": "https://github.com/ziglang/zig/issues/22964",
     "lead": "Yeaseen Arafat",
     "date": "2025-02-21",
     "desc": "Casting `bool` to `pointer` type results in invalid zig"
   },
   {
-    "id": "Zig #23283",
+    "id": "Translate-C #23283",
     "url": "https://github.com/ziglang/zig/issues/23283",
     "lead": "Yeaseen Arafat",
     "date": "2025-03-18",
     "desc": "Zig translate-c Incorrectly Converts Function Pointers, Leading to Variadic Mismatch Error"
   },
   {
-    "id": "Zig #23975",
+    "id": "Translate-C #23975",
     "url": "https://github.com/ziglang/zig/issues/23975",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-24",
     "desc": "translate-c incorrectly lowers (expr1, bool_expr) as bool, causing assignment to int to fail"
   },
   {
-    "id": "Zig #23987",
+    "id": "Translate-C #23987",
     "url": "https://github.com/ziglang/zig/issues/23987",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-25",
     "desc": "translate-c applies bitwise NOT to bool, causing type error in Zig"
   },
   {
-    "id": "Zig #24010",
+    "id": "Translate-C #24010",
     "url": "https://github.com/ziglang/zig/issues/24010",
     "lead": "Yeaseen Arafat",
     "date": "2025-05-29",

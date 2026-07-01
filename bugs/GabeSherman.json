@@ -133,6 +133,41 @@
     "desc": "stack-buffer-overflow related to non-DE9IM argument for GEOSRelatePatternMatch_r"
   },
   {
+    "id": "GPAC #3568",
+    "url": "https://github.com/gpac/gpac/issues/3568",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-12",
+    "desc": "Segfault in `gf_isom_add_uuid` after opening a GF_ISOFile"
+  },
+  {
+    "id": "GPAC #3569",
+    "url": "https://github.com/gpac/gpac/issues/3569",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-12",
+    "desc": "Segfault in `gf_isom_reset_sample_count` after  `gf_isom_open`"
+  },
+  {
+    "id": "GPAC #3570",
+    "url": "https://github.com/gpac/gpac/issues/3570",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-12",
+    "desc": "Segfault in `gf_isom_reset_data_offset` after `gf_isom_open`"
+  },
+  {
+    "id": "GPAC #3571",
+    "url": "https://github.com/gpac/gpac/issues/3571",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-12",
+    "desc": "Segfault when deleting audio sample box during `gf_isom_close`"
+  },
+  {
+    "id": "GPAC #3572",
+    "url": "https://github.com/gpac/gpac/issues/3572",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-12",
+    "desc": "Segfault in `gf_isom_new_generic_sample_description` after `gf_isom_open`"
+  },
+  {
     "id": "H5Py #2581",
     "url": "https://github.com/h5py/h5py/issues/2581",
     "lead": "Gabe Sherman",
@@ -182,6 +217,13 @@
     "desc": "allocation-size-too-big error in H5Centry.c"
   },
   {
+    "id": "HDF5 #6403",
+    "url": "https://github.com/HDFGroup/hdf5/issues/6403",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-12",
+    "desc": "StackOverflow when calling `H5Gget_info`"
+  },
+  {
     "id": "HiRedis-Py #205",
     "url": "https://github.com/redis/hiredis-py/issues/205",
     "lead": "Gabe Sherman",
@@ -194,6 +236,20 @@
     "lead": "Gabe Sherman",
     "date": "2025-05-03",
     "desc": "Reads returns a result with an exception set, leading to a SystemError"
+  },
+  {
+    "id": "HOEXTDOWN #67",
+    "url": "https://github.com/kjdev/hoextdown/issues/67",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-13",
+    "desc": "`hoedown_document_render` leads to pointer underflow in `autolink.c`"
+  },
+  {
+    "id": "JANET #1750",
+    "url": "https://github.com/janet-lang/janet/issues/1750",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-13",
+    "desc": "heap-use-after-free in `janet_dostring`"
   },
   {
     "id": "Jinja #2092",
@@ -280,6 +336,20 @@
     "desc": "Segmentation fault in fy_path_expr_execute"
   },
   {
+    "id": "Libical #1305",
+    "url": "https://github.com/libical/libical/issues/1305",
+    "lead": "Gabe Sherman",
+    "date": "2026-04-17",
+    "desc": "Heap-buffer-overflow and bad free in `icalcomponent_merge_component`"
+  },
+  {
+    "id": "Libical #1322",
+    "url": "https://github.com/libical/libical/issues/1322",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-15",
+    "desc": "heap-buffer-overflow after calling `icalcomponent_merge_component`"
+  },
+  {
     "id": "Libical #677",
     "url": "https://github.com/libical/libical/issues/677",
     "lead": "Gabe Sherman",
@@ -294,6 +364,20 @@
     "desc": "Segmentation fault in icalcomponent.c"
   },
   {
+    "id": "Liblouis #1999",
+    "url": "https://github.com/liblouis/liblouis/issues/1999",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-13",
+    "desc": "SEGV in `lou_indexTables` when datapath is too long"
+  },
+  {
+    "id": "Liblouis #2000",
+    "url": "https://github.com/liblouis/liblouis/issues/2000",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-13",
+    "desc": "SEGV in `lou_translate` via `swapReplace`"
+  },
+  {
     "id": "Libpg-Query #254",
     "url": "https://github.com/pganalyze/libpg_query/issues/254",
     "lead": "Gabe Sherman",
@@ -301,46 +385,81 @@
     "desc": "munmap_chunk(): invalid pointer error due to memcpy with negative size param in pg_query_normalize.c"
   },
   {
-    "id": "LibUCL #288",
+    "id": "Libtiff #844",
+    "url": "https://gitlab.com/libtiff/libtiff/-/work_items/844",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-13",
+    "desc": "SEGV in `_TIFFReserveLargeEnoughWriteBuffer` as result of calling `TIFFWriteTile`"
+  },
+  {
+    "id": "Libucl #288",
     "url": "https://github.com/vstakhov/libucl/issues/288",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
     "desc": "Segmentation fault in ucl_parser.c"
   },
   {
-    "id": "LibUCL #289",
+    "id": "Libucl #289",
     "url": "https://github.com/vstakhov/libucl/issues/289",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
     "desc": "Segmentation Fault in ucl_parser.c at line 1903"
   },
   {
-    "id": "LibUCL #290",
+    "id": "Libucl #290",
     "url": "https://github.com/vstakhov/libucl/issues/290",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
     "desc": "Segmentation fault in ucl_hash.c"
   },
   {
-    "id": "LibUCL #291",
+    "id": "Libucl #291",
     "url": "https://github.com/vstakhov/libucl/issues/291",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
     "desc": "heap-buffer overflow in ucl_hash.c"
   },
   {
-    "id": "LibUCL #292",
+    "id": "Libucl #292",
     "url": "https://github.com/vstakhov/libucl/issues/292",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
     "desc": "heap-buffer overflow in ucl_util.c"
   },
   {
-    "id": "LibUCL #293",
+    "id": "Libucl #293",
     "url": "https://github.com/vstakhov/libucl/issues/293",
     "lead": "Gabe Sherman",
     "date": "2024-04-19",
     "desc": "Stack overflow on malformed input"
+  },
+  {
+    "id": "Libucl #383",
+    "url": "https://github.com/vstakhov/libucl/issues/383",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-13",
+    "desc": "`heap-buffer-overflow` in `ucl_parser_add_chunk`"
+  },
+  {
+    "id": "Libucl #384",
+    "url": "https://github.com/vstakhov/libucl/issues/384",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-13",
+    "desc": "SEGV occurs in call to `ucl_parser_insert_chunk`"
+  },
+  {
+    "id": "LibYANG #2517",
+    "url": "https://github.com/CESNET/libyang/issues/2517",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-13",
+    "desc": "heap-use-after-free in `lys_parse_path`"
+  },
+  {
+    "id": "LibYANG #2518",
+    "url": "https://github.com/CESNET/libyang/issues/2518",
+    "lead": "Gabe Sherman",
+    "date": "2026-05-13",
+    "desc": "SEGV in lyd_new_term after initializing a module"
   },
   {
     "id": "PCRE2 #561",

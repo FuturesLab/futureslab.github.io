@@ -70,3 +70,23 @@ https://github.com/python-pillow/Pillow/issues/8597
 https://github.com/python-pillow/Pillow/issues/8956
 https://github.com/dpranke/pyjson5/issues/90
 https://github.com/yaml/pyyaml/issues/862
+
+# New
+https://github.com/gpac/gpac/issues/3568
+https://github.com/gpac/gpac/issues/3569
+https://github.com/gpac/gpac/issues/3570
+https://github.com/gpac/gpac/issues/3571
+https://github.com/gpac/gpac/issues/3572
+https://github.com/HDFGroup/hdf5/issues/6403
+https://github.com/kjdev/hoextdown/issues/67
+https://github.com/liblouis/liblouis/issues/1999
+https://github.com/liblouis/liblouis/issues/2000
+https://github.com/vstakhov/libucl/issues/383
+https://github.com/vstakhov/libucl/issues/384
+https://github.com/CESNET/libyang/issues/2517
+https://github.com/CESNET/libyang/issues/2518
+https://github.com/janet-lang/janet/issues/1750
+https://gitlab.com/libtiff/libtiff/-/work_items/844
+https://github.com/libical/libical/issues/1305
+https://github.com/libical/libical/issues/1305
+https://github.com/libical/libical/issues/1322

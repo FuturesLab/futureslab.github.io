@@ -1,0 +1,23 @@
+[
+  {
+    "id": "NASM #260",
+    "url": "https://github.com/netwide-assembler/nasm/issues/260",
+    "lead": "Clark Parry",
+    "date": "2026-07-01",
+    "desc": "Unbounded-recursion stack overflow bug"
+  },
+  {
+    "id": "NITRO #633",
+    "url": "https://github.com/mdaus/nitro/issues/633",
+    "lead": "Clark Parry",
+    "date": "2026-07-01",
+    "desc": "5 memory-safety bugs in NITF header/TRE and image decode paths"
+  },
+  {
+    "id": "PocketSphinx #482",
+    "url": "https://github.com/cmusphinx/pocketsphinx/issues/482",
+    "lead": "Clark Parry",
+    "date": "2026-07-01",
+    "desc": "5 memory-safety bugs in pocketsphinx_lm_convert"
+  }
+]

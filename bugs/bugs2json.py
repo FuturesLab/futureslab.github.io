@@ -56,6 +56,7 @@ def try_parse_date(raw: str) -> str:
         "%a, %d %b %Y %H:%M:%S %z", "%a, %d %b %Y %H:%M:%S %Z",
         "%a %b %d, %Y %I:%M %p", "%a %b %d, %Y", "%b %d, %Y",
         "%d %b %Y", "%Y-%m-%d", "%a %b %d %H:%M:%S %Y", "%d %b %Y %H:%M",
+        "%a %d %b %Y %I:%M:%S %p %Z", "%a %d %b %Y %H:%M:%S %Z",
     ]
     for fmt in fmts:
         try: return datetime.strptime(s, fmt).date().isoformat()
@@ -448,13 +449,19 @@ def canonical_github_repo_name(session: requests.Session, owner: str, repo: str,
 def fetch_github(session, url: str, lead: str):
     parts = urlparse(url)
     seg = parts.path.strip("/").split("/")
-    if len(seg) < 4 or seg[2] != "issues":
-        raise ValueError("Unrecognized GitHub issue URL: %s" % url)
+    if len(seg) < 4 or seg[2] not in ("issues", "pull"):
+        raise ValueError("Unrecognized GitHub issue/PR URL: %s" % url)
     owner, repo, number = seg[0], seg[1], seg[3]
+    is_pr = (seg[2] == "pull")
 
     def clean_title(t: str) -> str:
         if not t: return ""
-        t = t.split("·", 1)[0].strip()
+        # GitHub PR page titles are "TITLE by AUTHOR · Pull Request #N · owner/repo".
+        if is_pr and "· Pull Request" in t:
+            t = t.split("·", 1)[0].strip()
+            t = re.sub(r"\s+by\s+\S+$", "", t).strip()
+        else:
+            t = t.split("·", 1)[0].strip()
         return "" if t in {"GitHub", "Page not found", "Sign in to GitHub"} else t
 
     title, created = "", ""
@@ -473,7 +480,7 @@ def fetch_github(session, url: str, lead: str):
     if not title or not created:
         resp = http_get(session, url, headers={"Accept": "text/html"})
         redirected = urlparse(resp.url).path.strip("/").split("/")
-        valid_issue_path = (len(redirected) >= 4 and redirected[2] == "issues")
+        valid_issue_path = (len(redirected) >= 4 and redirected[2] in ("issues", "pull"))
         issue_soup = BeautifulSoup(resp.text, "html.parser")
 
         t_el = issue_soup.select_one("span.js-issue-title")
@@ -510,8 +517,16 @@ def fetch_github(session, url: str, lead: str):
     }
 
 def parse_gitlab_path(parts: List[str]):
-    if "issues" not in parts: raise ValueError("No 'issues' in GitLab path")
-    i = parts.index("issues")
+    # GitLab issues appear as ".../issues/<n>" or as work items ".../work_items/<n>";
+    # both map to the same issue via the REST issues API.
+    kind = None
+    for k in ("issues", "work_items"):
+        if k in parts:
+            kind = k
+            break
+    if kind is None:
+        raise ValueError("No 'issues' or 'work_items' in GitLab path")
+    i = parts.index(kind)
     number = parts[i + 1]
     proj_parts = [p for p in parts[:i] if p != "-"]
     if len(proj_parts) < 2: raise ValueError("Unexpected GitLab project path")
@@ -648,6 +663,200 @@ def fetch_xnview_forum(session, url: str, lead: str):
         "desc": title,
     }
 
+def fetch_savannah(session, url: str, lead: str):
+    """
+    Savannah (Savane) bug tracker, e.g. https://savannah.gnu.org/bugs/?68391
+      - ID: <Project> #<bug id>  (project from ?group= links, e.g. gettext -> Gettext)
+      - Title: full item title from the <h1> ("bug #NNNNN: ...") minus the prefix
+      - Date: "Submitted:" field ("Fri 22 May 2026 06:10:10 PM UTC")
+    """
+    html = http_get(session, url).text
+    soup = BeautifulSoup(html, "html.parser")
+
+    # Bug id: query string is the number (?68391), fall back to item_id.
+    q = urlparse(url).query
+    bug_id = ""
+    m = re.match(r"^(\d+)$", q.strip())
+    if m:
+        bug_id = m.group(1)
+    if not bug_id:
+        bug_id = parse_qs(q).get("item_id", [""])[0]
+
+    # Full title from an <h1> containing "bug #<id>: <title>"
+    title = ""
+    for h1 in soup.find_all("h1"):
+        txt = h1.get_text(" ", strip=True)
+        mt = re.search(r"bug\s+#\d+\s*:\s*(.+)$", txt, flags=re.IGNORECASE)
+        if mt:
+            title = mt.group(1).strip()
+            break
+    if not title:
+        # Fall back to <title> (may be truncated with "...")
+        t_tag = soup.find("title")
+        if t_tag:
+            raw = t_tag.get_text(" ", strip=True)
+            mt = re.search(r"bug\s+#\d+\s*,\s*(.+?)\s*\[Savannah\]", raw, flags=re.IGNORECASE)
+            if mt:
+                title = mt.group(1).strip()
+
+    # Project/group name: pick the most frequent ?group=<name> across the page,
+    # ignoring the generic "administration" support link in the site menu.
+    groups: Dict[str, int] = {}
+    for g in re.findall(r"[?&]group=([A-Za-z0-9_.\-]+)", html):
+        if g.lower() == "administration":
+            continue
+        groups[g] = groups.get(g, 0) + 1
+    group = max(groups.items(), key=lambda kv: kv[1])[0] if groups else ""
+    project_display = capitalize_project(group) if group else "Savannah"
+
+    # Submitted date
+    date_str = ""
+    for td in soup.find_all("td", class_="preinput"):
+        if "Submitted" in td.get_text(" ", strip=True):
+            sib = td.find_next_sibling("td")
+            if sib:
+                date_str = iso_date(sib.get_text(" ", strip=True))
+            break
+    if not date_str:
+        date_str = find_any_date_text(soup.get_text(" ", strip=True))
+
+    return {
+        "id": "%s #%s" % (project_display, bug_id) if bug_id else "%s" % project_display,
+        "url": url,
+        "lead": lead,
+        "date": date_str,
+        "desc": title,
+    }
+
+def fetch_forgejo(session, url: str, lead: str):
+    """
+    Forgejo/Gitea instances (e.g. https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23299).
+    Uses the /api/v1 REST API for issues and pull requests.
+      - Path: /<owner>/<repo>/(issues|pulls)/<number>
+      - ID: <RepoDisplay> #<number>
+    """
+    parts = urlparse(url)
+    seg = parts.path.strip("/").split("/")
+    if len(seg) < 4 or seg[2] not in ("issues", "pulls"):
+        raise ValueError("Unrecognized Forgejo issue/PR URL: %s" % url)
+    owner, repo, kind, number = seg[0], seg[1], seg[2], seg[3]
+
+    api = "https://%s/api/v1/repos/%s/%s/%s/%s" % (parts.netloc, owner, repo, kind, number)
+    data = {}
+    try:
+        data = http_get(session, api, headers={"Accept": "application/json"}).json()
+    except Exception:
+        data = {}
+
+    title = (data.get("title") or "").strip() if isinstance(data, dict) else ""
+    created = iso_date(data.get("created_at", "")) if isinstance(data, dict) else ""
+
+    # Canonical repo name from API (base.repo.name), fall back to path segment
+    repo_canonical = repo
+    if isinstance(data, dict):
+        base_name = (data.get("base") or {}).get("repo", {}).get("name")
+        if base_name:
+            repo_canonical = base_name
+
+    # Fallbacks from HTML if API failed
+    if not title or not created:
+        soup = BeautifulSoup(http_get(session, url).text, "html.parser")
+        if not title:
+            t_tag = soup.find("title")
+            if t_tag:
+                raw = t_tag.get_text(" ", strip=True)
+                mt = re.match(r"#\d+\s+-\s+(.+?)\s+-\s+", raw)
+                title = mt.group(1).strip() if mt else raw
+        if not created:
+            all_dates = collect_all_datetimes_from_html(soup)
+            if all_dates:
+                created = min(all_dates)
+
+    # Repo name from the API is already the canonical display name (e.g. "FFmpeg");
+    # use it directly rather than doing a cross-host GitHub README lookup.
+    return {
+        "id": "%s #%s" % (repo_canonical, number),
+        "url": url,
+        "lead": lead,
+        "date": created,
+        "desc": title,
+    }
+
+def _parse_mantis_view(html: str, url: str, lead: str, bug_id: str):
+    """Parse a MantisBT view.php page into a result dict (shared by live + Wayback)."""
+    soup = BeautifulSoup(html, "html.parser")
+
+    def td_text(cls: str) -> str:
+        el = soup.find("td", class_=cls)
+        return el.get_text(" ", strip=True) if el else ""
+
+    # Summary: "0000768: <title>" -> strip the zero-padded id prefix
+    summary = td_text("bug-summary")
+    if not summary:
+        t_tag = soup.find("title")
+        if t_tag:
+            summary = t_tag.get_text(" ", strip=True).rsplit("-", 1)[0].strip()
+    desc = re.sub(r"^0*\d+\s*:\s*", "", summary).strip()
+
+    # Project name -> display (e.g. "file" -> "File")
+    project = td_text("bug-project")
+    project_display = capitalize_project(project) if project else "Astron"
+
+    # Date submitted
+    date_str = iso_date(td_text("bug-date-submitted"))
+    if not date_str:
+        date_str = find_any_date_text(soup.get_text(" ", strip=True))
+
+    return {
+        "id": "%s #%s" % (project_display, bug_id),
+        "url": url,
+        "lead": lead,
+        "date": date_str,
+        "desc": desc,
+    }
+
+def _looks_like_mantis_login(html: str) -> bool:
+    low = html.lower()
+    if "bug-summary" in low:
+        return False
+    return "login_page.php" in low or "<title>mantisbt</title>" in low or "login_anon" in low
+
+def fetch_astron(session, url: str, lead: str):
+    """
+    MantisBT tracker (bugs.astron.com), e.g. https://bugs.astron.com/view.php?id=768
+      - ID: <Project> #<id>   (project from the 'bug-project' cell, e.g. file -> File)
+      - Title: 'bug-summary' cell, minus the zero-padded id prefix
+      - Date: 'bug-date-submitted' cell
+
+    bugs.astron.com is login-walled for some items; when the live page redirects to
+    the login screen we fall back to the most recent public Wayback Machine snapshot.
+    """
+    bug_id = parse_qs(urlparse(url).query).get("id", [""])[0] or os.path.basename(url)
+
+    resp = http_get(session, url, headers={"Accept": "text/html"})
+    html = resp.text
+    if not _looks_like_mantis_login(html):
+        return _parse_mantis_view(html, url, lead, bug_id)
+
+    # Login-walled: try the latest public Wayback Machine capture.
+    try:
+        cdx = http_get(
+            session,
+            "http://web.archive.org/cdx/search/cdx?url=%s&output=json&filter=statuscode:200&limit=-1"
+            % requests.utils.quote(url, safe=""),
+        ).json()
+        rows = [r for r in cdx[1:]] if isinstance(cdx, list) and len(cdx) > 1 else []
+        if rows:
+            ts = rows[-1][1]
+            snap = http_get(session, "https://web.archive.org/web/%sid_/%s" % (ts, url))
+            snap_html = snap.text
+            if not _looks_like_mantis_login(snap_html):
+                return _parse_mantis_view(snap_html, url, lead, bug_id)
+    except Exception:
+        pass
+
+    raise ValueError("Astron bug is login-walled and no public snapshot exists: %s" % url)
+
 # ------------------ Dispatcher ------------------
 def process_link(session, url: str, lead: str):
     host = urlparse(url).netloc.lower()
@@ -656,6 +865,12 @@ def process_link(session, url: str, lead: str):
             return fetch_github(session, url, lead)
         if "gitlab" in host or "invent.kde.org" in host:
             return fetch_gitlab(session, url, lead)
+        if "savannah.gnu.org" in host or "savannah.nongnu.org" in host:
+            return fetch_savannah(session, url, lead)
+        if "bugs.astron.com" in host:
+            return fetch_astron(session, url, lead)
+        if "code.ffmpeg.org" in host:
+            return fetch_forgejo(session, url, lead)
         if "mail-archive.com" in host:
             return fetch_mailarchive(session, url, lead)
         if "qcad.org" in host:

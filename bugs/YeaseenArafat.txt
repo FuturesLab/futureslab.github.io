@@ -81,10 +81,23 @@ https://github.com/swc-project/swc/issues/11050
 https://github.com/swc-project/swc/issues/11051
 https://github.com/swc-project/swc/issues/11052
 
-# CrossCheck
+# New
 https://github.com/richardscollin/tmux-rs/issues/48
 https://github.com/richardscollin/tmux-rs/issues/50
 https://github.com/richardscollin/tmux-rs/issues/51
 https://github.com/richardscollin/tmux-rs/issues/52
 https://github.com/richardscollin/tmux-rs/issues/53
 https://github.com/richardscollin/tmux-rs/issues/64
+https://github.com/safelibs/port-cjson/issues/6
+https://github.com/safelibs/port-cjson/issues/7
+https://github.com/safelibs/port-giflib/issues/6
+https://github.com/safelibs/port-giflib/issues/7
+https://github.com/safelibs/port-giflib/issues/8
+https://github.com/safelibs/port-libjson/issues/5
+https://github.com/safelibs/port-libyaml/issues/5
+https://github.com/richardscollin/tmux-rs/issues/145
+https://github.com/richardscollin/tmux-rs/issues/143
+https://github.com/richardscollin/tmux-rs/issues/141
+https://github.com/richardscollin/tmux-rs/issues/142
+https://github.com/richardscollin/tmux-rs/issues/144
+

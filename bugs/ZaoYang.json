@@ -189,6 +189,34 @@
     "desc": "AccessViolation at fileutil.c:124"
   },
   {
+    "id": "DVISVGm #299",
+    "url": "https://github.com/mgieseki/dvisvgm/pull/299",
+    "lead": "Zao Yang",
+    "date": "2026-05-25",
+    "desc": "FontEngine: check FT_Set_Charmap return"
+  },
+  {
+    "id": "DVISVGm #300",
+    "url": "https://github.com/mgieseki/dvisvgm/pull/300",
+    "lead": "Zao Yang",
+    "date": "2026-06-17",
+    "desc": "FontEngine: handle FT_Init_FreeType failure"
+  },
+  {
+    "id": "FFmpeg #23299",
+    "url": "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23299",
+    "lead": "Zao Yang",
+    "date": "2026-06-01",
+    "desc": "avformat/demux: propagate ENOMEM from packet reads"
+  },
+  {
+    "id": "Gettext #68391",
+    "url": "https://savannah.gnu.org/bugs/?68391",
+    "lead": "Zao Yang",
+    "date": "2026-05-22",
+    "desc": "xgettext - incorrect handling of xmlHasProp failure leads to double-free"
+  },
+  {
     "id": "GPMF-Parser #201",
     "url": "https://github.com/gopro/gpmf-parser/issues/201",
     "lead": "Zao Yang",
@@ -294,6 +322,20 @@
     "desc": "No string literals are generated"
   },
   {
+    "id": "Revng #379",
+    "url": "https://github.com/revng/revng/issues/379",
+    "lead": "Zao Yang",
+    "date": "2024-04-18",
+    "desc": "Order of memory accesses not preserved upon emission of `if` statements"
+  },
+  {
+    "id": "Revng #380",
+    "url": "https://github.com/revng/revng/issues/380",
+    "lead": "Zao Yang",
+    "date": "2024-04-18",
+    "desc": "`SimplifyDualSwitch` incorrectly handles `switch` with two cases and `default`"
+  },
+  {
     "id": "Revng #381",
     "url": "https://github.com/revng/revng/issues/381",
     "lead": "Zao Yang",
@@ -315,18 +357,32 @@
     "desc": "Error when decompiling binary (2)"
   },
   {
-    "id": "Revng-C #379",
-    "url": "https://github.com/revng/revng/issues/379",
+    "id": "Shotdetect #27",
+    "url": "https://github.com/johmathe/shotdetect/pull/27",
     "lead": "Zao Yang",
-    "date": "2024-04-18",
-    "desc": "Order of memory accesses not preserved upon emission of `if` statements"
+    "date": "2026-05-28",
+    "desc": "add null-ptr check for avcodec_alloc_frame in film::process()"
   },
   {
-    "id": "Revng-C #380",
-    "url": "https://github.com/revng/revng/issues/380",
+    "id": "Shotdetect #28",
+    "url": "https://github.com/johmathe/shotdetect/pull/28",
     "lead": "Zao Yang",
-    "date": "2024-04-18",
-    "desc": "`SimplifyDualSwitch` incorrectly handles `switch` with two cases and `default`"
+    "date": "2026-05-28",
+    "desc": "add error return check for avpicture_alloc in film::process()"
+  },
+  {
+    "id": "Shotdetect #29",
+    "url": "https://github.com/johmathe/shotdetect/pull/29",
+    "lead": "Zao Yang",
+    "date": "2026-05-28",
+    "desc": "add null-ptr check for avcodec_alloc_frame in process_audio"
+  },
+  {
+    "id": "Shotdetect #30",
+    "url": "https://github.com/johmathe/shotdetect/issues/30",
+    "lead": "Zao Yang",
+    "date": "2026-05-28",
+    "desc": "Floating point exception in graph::draw_canvas()"
   },
   {
     "id": "StormLib #397",
@@ -341,6 +397,27 @@
     "lead": "Zao Yang",
     "date": "2025-09-14",
     "desc": "allocation-size-too-big at StormLib/src/SBaseFileTable.cpp:1184:38"
+  },
+  {
+    "id": "Unpaper #236",
+    "url": "https://github.com/unpaper/unpaper/pull/236",
+    "lead": "Zao Yang",
+    "date": "2026-06-02",
+    "desc": "check av_frame_alloc failure in loadImage"
+  },
+  {
+    "id": "Unpaper #237",
+    "url": "https://github.com/unpaper/unpaper/pull/237",
+    "lead": "Zao Yang",
+    "date": "2026-06-02",
+    "desc": "check av_frame_clone failure in loadImage"
+  },
+  {
+    "id": "Unpaper #238",
+    "url": "https://github.com/unpaper/unpaper/pull/238",
+    "lead": "Zao Yang",
+    "date": "2026-06-02",
+    "desc": "check av_frame_alloc failure in create_image"
   },
   {
     "id": "XnView #49598",

@@ -1,0 +1,4 @@
+# New
+https://github.com/netwide-assembler/nasm/issues/260
+https://github.com/cmusphinx/pocketsphinx/issues/482
+https://github.com/mdaus/nitro/issues/633

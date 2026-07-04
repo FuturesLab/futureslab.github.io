@@ -6,6 +6,8 @@
         "authors": "<u>Zao Yang</u> and <b>Stefan Nagy</b>",
         "venue": "ACM International Conference on the Foundations of Software Engineering (<b>FSE'26</b>)",
         "links": [
+            {"type": "slides", "url": "papers/26FSE-c_slides.pdf.pdf"},
+            {"type": "code", "url": "https://github.com/FuturesLab/Binvariants"}
         ]
     },
     {
@@ -15,7 +17,9 @@
         "authors": "<u>Gabriel Sherman</u> and <b>Stefan Nagy</b>",
         "venue": "ACM International Conference on the Foundations of Software Engineering (<b>FSE'26</b>)",
         "links": [
-        ]    
+            {"type": "slides", "url": "papers/26FSE-b_slides.pdf"},
+            {"type": "code", "url": "https://github.com/FuturesLab/SnakeCharmer"}
+        ]
     },
     {
         "year": "2026",
@@ -24,6 +28,8 @@
         "authors": "<u>Yeaseen Arafat</u> and <b>Stefan Nagy</b>",
         "venue": "ACM International Conference on the Foundations of Software Engineering (<b>FSE'26</b>)",
         "links": [
+            {"type": "slides", "url": "papers/26FSE-a_slides.pdf"},
+            {"type": "code", "url": "https://github.com/FuturesLab/PROGnosticator"}
         ]
     },
     {

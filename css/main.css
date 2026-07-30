@@ -1097,6 +1097,7 @@ h3 { color: var(--ink); }
 .hero-logo:hover img { filter: brightness(.72); }
 .hero-intro { color: rgba(255,255,255,0.74); font-size: 1.12rem; line-height: 1.7; max-width: 680px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
+.hero-actions .button-link { box-sizing: border-box; width: 220px; }
 
 .button-link {
     align-items: center;

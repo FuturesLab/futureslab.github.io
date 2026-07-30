@@ -1056,15 +1056,19 @@ h3 { color: var(--ink); }
 .site-links a:hover, .site-links a:focus { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.45); color: white; text-decoration: none; }
 
 .navbar-toggle {
+    -webkit-appearance: none;
+    appearance: none;
     background: transparent;
     border: 0;
     border-radius: 0;
+    color: white;
     display: none;
     float: none;
+    forced-color-adjust: none;
     margin: 0;
     padding: 10px;
 }
-.navbar-toggle span { background: white; display: block; height: 2px; margin: 5px 0; width: 26px; }
+.navbar-toggle span { background-color: currentColor !important; display: block; height: 2px; margin: 5px 0; opacity: 1; width: 26px; }
 
 .home-hero {
     background:

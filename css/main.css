@@ -1267,6 +1267,7 @@ h3 { color: var(--ink); }
 .people-section h2 { border-bottom: 1px solid var(--line); font-size: 1.4rem; letter-spacing: -0.01em; margin: 0 0 24px; padding-bottom: 11px; text-align: left; }
 .people-grid { display: grid; gap: 35px 24px; grid-template-columns: repeat(auto-fill, minmax(200px, 260px)); }
 .people-grid.alumni-grid { grid-template-columns: repeat(5, 1fr); }
+.person-card { min-width: 0; }
 .person-card > a { color: var(--ink); display: block; text-decoration: none; }
 .person-card img { aspect-ratio: 1; border-radius: 10px; box-shadow: 0 8px 20px rgba(31, 39, 63, .18); height: auto; margin: 0 0 15px; object-fit: cover; transition: filter .2s ease; width: 100%; }
 .person-card > a:hover img { filter: grayscale(1) brightness(.8); }
@@ -1277,7 +1278,7 @@ h3 { color: var(--ink); }
 .person-card .person-expertise { font-size: .95rem; line-height: 1.4; margin-top: 7px; }
 .person-expertise strong { color: var(--ink); font-weight: 600; }
 .person-pi strong { color: inherit; }
-.person-links { display: flex; gap: 7px; margin-top: 11px; }
+.person-links { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 11px; }
 .person-links a { align-items: center; background: var(--ink); border: 1px solid var(--ink); border-radius: 4px; color: white; display: inline-flex; height: 36px; justify-content: center; text-decoration: none; transition: background-color .18s ease, border-color .18s ease, color .18s ease; width: 36px; }
 .person-links a:hover, .person-links a:focus { background: var(--acid); border-color: var(--acid); color: var(--ink); text-decoration: none; }
 
@@ -1422,7 +1423,7 @@ h3 { color: var(--ink); }
     .sponsor-block a:nth-of-type(3) img { height: 70px; width: 70px; }
     .footer-inner { grid-template-columns: 1fr; }
     .footer-meta { text-align: left; }
-    .people-grid, .people-grid.alumni-grid { grid-template-columns: repeat(2, 1fr); }
+    .people-grid, .people-grid.alumni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .research-area { gap: 20px; grid-template-columns: 36px 1fr; padding: 38px 0; }
     .research-contact { grid-template-columns: 1fr; padding: 30px; }
 }

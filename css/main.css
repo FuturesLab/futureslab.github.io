@@ -1099,6 +1099,7 @@ h3 { color: var(--ink); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
 
 .button-link {
+    align-items: center;
     border: 1px solid rgba(255,255,255,0.45);
     color: white;
     display: inline-flex;
@@ -1109,6 +1110,10 @@ h3 { color: var(--ink); }
 }
 .button-link:hover, .button-link:focus { background: white; color: var(--ink); text-decoration: none; }
 .button-link-primary { background: var(--acid); border-color: var(--acid); color: var(--ink); }
+.triangle { border-bottom: .32em solid transparent; border-top: .32em solid transparent; display: inline-block; height: 0; width: 0; }
+.triangle-right { border-left: .48em solid currentColor; }
+.triangle-left { border-right: .48em solid currentColor; }
+.button-link .triangle, .section-heading > a .triangle { font-size: 1.4em; }
 
 .hero-carousel { align-self: stretch; border-radius: 8px; box-shadow: 0 16px 38px rgba(8, 15, 35, .5); margin: 28px 0 80px; overflow: hidden; position: relative; width: 100%; }
 .carousel-track { height: 100%; inset: 0; position: absolute; }
@@ -1141,6 +1146,7 @@ h3 { color: var(--ink); }
 .carousel-slide figcaption:hover { opacity: 0; }
 .carousel-controls { inset: 0; pointer-events: none; position: absolute; z-index: 3; }
 .carousel-arrow { align-items: center; border: 0; color: rgba(255,255,255,.96); display: flex; font-size: 1.1rem; height: 100%; justify-content: center; opacity: .82; padding: 0; pointer-events: auto; position: absolute; text-shadow: 0 2px 5px rgba(0,0,0,.9); top: 0; transition: opacity .18s ease; width: 64px; }
+.carousel-arrow .triangle { filter: drop-shadow(0 2px 3px rgba(0,0,0,.9)); font-size: 1.3rem; }
 .carousel-previous { background: linear-gradient(90deg, rgba(31,39,63,.68), transparent); left: 0; }
 .carousel-next { background: linear-gradient(270deg, rgba(31,39,63,.68), transparent); right: 0; }
 .carousel-arrow:hover, .carousel-arrow:focus { color: white; opacity: 1; }

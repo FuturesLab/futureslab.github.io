@@ -1,189 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>FuTURES³ Lab</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>FuTURES³ Lab | University of Utah</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="FuTURES³ Lab at University of Utah - Research in software security, testing, and automated bug repair">
-    
+    <meta name="description" content="FuTURES³ Lab at the University of Utah researches software testing, program analysis, and software instrumentation.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
-    <link href="css/main.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
-    
-    <!-- Preload carousel images -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.2.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="preload" as="image" href="img/slideshow/arch.jpg">
-    <link rel="preload" as="image" href="img/slideshow/yeaseen.jpg">
-    <link rel="preload" as="image" href="img/slideshow/dinner.jpg">
-    <link rel="preload" as="image" href="img/slideshow/david.jpg">
-    <link rel="preload" as="image" href="img/slideshow/utahsec.jpg">
 </head>
-
-<script>
-  window.addEventListener('load', function () {
-    const logo = document.querySelector('.overlay-logo');
-    if (!logo) return;
-
-    // If it's already cached and loaded
-    if (logo.complete) {
-      logo.classList.add('animate-in');
-    } else {
-      // Wait until it's fully loaded
-      logo.addEventListener('load', function () {
-        logo.classList.add('animate-in');
-      });
-    }
-  });
-</script>
-
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
     <div id="navbar-placeholder"></div>
 
-    <main id="main-content" role="main">
-        <h1 class="sr-only">FuTURES³ Lab - Software Security Research</h1>
-        
-        <div class="container main-container">
-            <div class="col-md-12">
-                <div id="photos" class="carousel slide" data-ride="carousel" role="region" aria-label="Lab photos slideshow" style="border-radius: 55px; filter: drop-shadow(0 0 0.5rem black);">
-                    <ul class="carousel-indicators" aria-label="Slide navigation">
-                        <li data-target="#photos" data-slide-to="0" class="active" aria-current="true"><span class="sr-only">Slide 1</span></li>
-                        <li data-target="#photos" data-slide-to="1"><span class="sr-only">Slide 2</span></li>
-                        <li data-target="#photos" data-slide-to="2"><span class="sr-only">Slide 3</span></li>
-                        <li data-target="#photos" data-slide-to="3"><span class="sr-only">Slide 4</span></li>
-                        <li data-target="#photos" data-slide-to="4"><span class="sr-only">Slide 5</span></li>
-                        <li data-target="#photos" data-slide-to="5"><span class="sr-only">Slide 6</span></li>
-                    </ul>
-
-                    <div class="carousel-wrapper">
-                        <div class="carousel-inner" style="border-radius: 15px;">
-                            <div class="item active" style="position: relative;">
-                                <img src="img/slideshow/arch.jpg" alt="Delicate Arch in Utah with lab members">
-                                <img src="img/logos/lablogo-plain_white_path.svg" class="overlay-logo" alt="FuTURES³ Lab logo">
+    <main id="main-content">
+        <section class="home-hero">
+            <div class="hero-copy">
+                <h1 class="hero-logo"><img src="img/logos/lablogo-plain_white_path.svg" alt="FuTURES³ Lab"></h1>
+                <p class="eyebrow">University of Utah · Kahlert School of Computing</p>
+                <p class="hero-intro">We are a team of researchers who build practical systems with the aim of improving real-world software security and robustness.</p>
+                <p class="hero-intro">We routinely find software bugs and publish our work in premier security and software engineering venues like ACM CCS and ICSE.</p>
+                <div class="hero-actions">
+                    <a class="button-link button-link-primary" href="#research">Explore research <span aria-hidden="true">▶</span></a>
+                    <a class="button-link" href="publications">View publications <span aria-hidden="true">▶</span></a>
+                </div>
+            </div>
+            <div class="hero-carousel" role="region" aria-roledescription="carousel" aria-label="FuTURES Lab photos">
+                <div class="carousel-track" aria-live="off">
+                    <figure class="carousel-slide pan-right is-active">
+                        <img src="img/slideshow/arch.jpg" alt="FuTURES Lab members at Delicate Arch in Utah">
+                        <aside class="carousel-stats" aria-label="FuTURES Lab statistics">
+                            <a href="publications" aria-label="View 16 FuTURES Lab publications at ICORE A or A-star conferences">
+                                <strong id="carousel-paper-total" aria-hidden="true">0</strong>
+                                <span>A/A*&nbsp;Conference<br>Publications</span>
+                            </a>
+                            <a href="bugs/" id="carousel-bug-link" aria-label="View reported software bugs and vulnerabilities">
+                                <strong id="carousel-bug-total" aria-hidden="true">0</strong>
+                                <span>Reported<br>Software&nbsp;Defects</span>
+                            </a>
+                            <div aria-label="$1.61 million in DoW and NSF funding">
+                                <strong id="carousel-funding-total" aria-hidden="true">$0.00M</strong>
+                                <span>Total Research Funding</span>
                             </div>
-                            
-                            <div class="item"><img src="img/slideshow/tanner.png" alt="Lab member Tanner"></div>
-                           	<div class="item"><img src="img/slideshow/zao.jpg" alt="Lab member Zao"></div>
-                           	<div class="item"><img src="img/slideshow/dinner.jpg" alt="Lab dinner gathering"></div>
-                            <div class="item"><img src="img/slideshow/yeaseen.jpg" alt="Lab member Yeaseen"></div>
-                            <div class="item"><img src="img/slideshow/gabe.jpg" alt="Lab member Gabe"></div>
-                        </div>
+                        </aside>
+                        <figcaption>Delicate Arch · Utah</figcaption>
+                    </figure>
+                    <figure class="carousel-slide pan-left"><img src="img/slideshow/tanner.png" alt="Lab member Tanner Rowlett"><figcaption>Tanner Rowlett</figcaption></figure>
+                    <figure class="carousel-slide pan-right"><img src="img/slideshow/yeaseen.jpg" alt="Lab member Yeaseen Arafat"><figcaption>Yeaseen Arafat</figcaption></figure>
+                    <figure class="carousel-slide pan-left"><img src="img/slideshow/zao.jpg" alt="Lab member Zao Yang"><figcaption>Zao Yang</figcaption></figure>
+                    <figure class="carousel-slide pan-right"><img src="img/slideshow/gabe.jpg" alt="Lab member Gabe Sherman"><figcaption>Gabe Sherman</figcaption></figure>
+                </div>
+                <div class="carousel-controls">
+                    <button type="button" class="carousel-arrow carousel-previous" aria-label="Previous photo">◀</button>
+                    <div class="carousel-dots" aria-label="Choose photo"></div>
+                    <button type="button" class="carousel-arrow carousel-next" aria-label="Next photo">▶</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-research section-shell" id="research" aria-labelledby="research-title">
+            <div class="section-heading">
+                <div><p class="eyebrow">What we work on</p><h2 id="research-title">Research</h2></div>
+            </div>
+            <div class="research-grid">
+                <article class="research-card">
+                    <div class="research-card-heading"><span class="research-card-icon" aria-hidden="true"><i class="fa-solid fa-puzzle-piece"></i></span><h3>Harness-Driven Fuzzing</h3></div>
+                    <div class="research-card-body">
+                        <p>Automating the construction and adaptation of harnesses that connect fuzzers to complex APIs and make software components testable.</p>
+                        <details class="research-work">
+                            <summary><span>Related work</span><span class="research-card-toggle" aria-hidden="true">▶</span></summary>
+                            <ul>
+                                <li><a href="papers/26FSE-b.pdf">SnakeCharmer</a></li>
+                                <li><a href="papers/25ISSTA.pdf">WildSync</a></li>
+                                <li><a href="papers/25ICSE-b.pdf">OGHarn</a></li>
+                            </ul>
+                        </details>
                     </div>
-                    <a class="carousel-control left" href="#photos" data-slide="prev" style="border-radius: 15px;" aria-label="Previous slide"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
-                    <a class="carousel-control right" href="#photos" data-slide="next" style="border-radius: 15px;" aria-label="Next slide"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
-                </div>
-                <br>
-            </div>
-
-            <div class="col-md-12">
-              <div class="row middle-align">
-                <div class="col-md-6">
-                  <div style="text-align: center;">
-                    <img class="button sponsor" src="img/logos/lablogo-full_blue_path.svg" alt="FuTURES³ Lab full logo" style="width: 100%; max-width: 575px;">
-                  </div>
-                </div>
-
-                <br class="on-narrow">
-
-                <div class="col-md-6" style="margin-top:1.5%">
-                  <p style="text-align: left;">We are a team of researchers who build practical systems with the aim of improving <b>real-world software security and robustness</b>.</p>
-                  <p style="text-align: left;">We routinely <a href="bugs">find software bugs</a> and publish our work in <b>security</b> and <b>software engineering</b> venues like ACM CCS and ICSE.</p>
-                  <p style="text-align: left;">Our group currently focuses on the following research areas: <b>software testing</b>, <b>program analysis</b>, and <b>automated bug repair</b>.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- News (e.g., papers, talks, etc.) -->
-            <section class="col-md-12" style="margin-top: 1em;" aria-labelledby="news">
-                <hr><h2 id="news" style="text-align: left;">New News</h2>
-                <div class="news-container">
-                    <ul id="news-list" aria-label="Lab news updates"></ul>
-                </div>
-            </section>
-            <script>
-                fetch('news.json')
-                    .then(response => response.json())
-                    .then(news => {
-                        const list = document.getElementById('news-list');
-                        news.forEach(item => {
-                            const li = document.createElement('li');
-                            li.innerHTML = `<span class="news-date">${item.date}</span> ${item.text}`;
-                            list.appendChild(li);
-                        });
-                    })
-                    .catch(err => console.error('Error loading news:', err));
-            </script>
-
-            <div class="col-md-12" style="margin-top:10pt;">
-                <hr><h2 id="contact" style="text-align: left;">Contact</h2>
-
-                <div class="col-md-5 text-left">
-                    <table role="presentation">
-                        <tbody>
-                        <tr>
-                            <td width="10%"  style="padding-left:0em;">
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            </td>
-                            <td>
-                                3446 Merrill Engineering (MEB) <br>
-                                50 Central Campus Drive <br>
-                                Salt Lake City, UT 84112
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="10%"  style="padding-left:0em;">
-                                <i class="fa fa-envelope" aria-hidden="true"></i> 
-                            </td>
-                            <td>
-                                snagy@cs.utah.edu
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="10%"  style="padding-left:0em;">
-                                <i class="fa fa-phone" aria-hidden="true"></i> 
-                            </td>
-                            <td> 
-                                +1 801-581-8224 
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <br class="on-narrow">
-
-                <div class="col-md-7 text-center">
-                    <div class="map-wrapper">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.6947593760556!2d-111.84924788810584!3d40.76873783402054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87525f8e1b9c7d31%3A0x914548c9f976bce5!2sUniversity%20of%20Utah%20School%20of%20Computing!5e0!3m2!1sen!2sus!4v1686075330489!5m2!1sen!2sus" scrolling="no" style="border:0; /*height:20%*/ width:100%; max-height:125px;" allowfullscreen="" loading="lazy" class="rounded" title="Map showing University of Utah School of Computing location"></iframe>
-                        <div class="map-overlay"></div>
+                </article>
+                <article class="research-card">
+                    <div class="research-card-heading"><span class="research-card-icon" aria-hidden="true"><i class="fa-solid fa-square-binary"></i></span><h3>Reverse Engineering</h3></div>
+                    <div class="research-card-body">
+                        <p>Recovering the structure and behavior of compiled software for analysis and security when source code is unavailable.</p>
+                        <details class="research-work">
+                            <summary><span>Related work</span><span class="research-card-toggle" aria-hidden="true">▶</span></summary>
+                            <ul>
+                                <li><a href="papers/26FSE-c.pdf">Binvariants</a></li>
+                                <li><a href="papers/23SEC.pdf">WinFuzz</a></li>
+                                <li><a href="papers/21CCS.pdf">HeXcite</a></li>
+                                <li><a href="papers/21SEC.pdf">ZAFL</a></li>
+                                <li><a href="papers/19SP.pdf">UnTracer</a></li>
+                            </ul>
+                        </details>
                     </div>
+                </article>
+                <article class="research-card">
+                    <div class="research-card-heading"><span class="research-card-icon" aria-hidden="true"><i class="fa-solid fa-code-compare"></i></span><h3>Translation Validation</h3></div>
+                    <div class="research-card-body">
+                        <p>Checking whether compilers and other program transformations preserve intended behavior across source and binary representations.</p>
+                        <details class="research-work">
+                            <summary><span>Related work</span><span class="research-card-toggle" aria-hidden="true">▶</span></summary>
+                            <ul>
+                                <li><a href="papers/26FSE-a.pdf">PROGnosticator</a></li>
+                                <li><a href="papers/25ACSAC.pdf">TeTRIS</a></li>
+                                <li><a href="papers/25ATC.pdf">Bin2Wrong</a></li>
+                            </ul>
+                        </details>
+                    </div>
+                </article>
+                <article class="research-card">
+                    <div class="research-card-heading"><span class="research-card-icon" aria-hidden="true"><i class="fa-regular fa-window-restore"></i></span><h3>GUI Testing</h3></div>
+                    <div class="research-card-body">
+                        <p>Automating the testing of interactive applications whose behavior depends on event sequences, interface state, and user workflows.</p>
+                        <details class="research-work">
+                            <summary><span>Related work</span><span class="research-card-toggle" aria-hidden="true">▶</span></summary>
+                            <ul>
+                                <li><a href="papers/25ASE.pdf">GUIFuzz++</a></li>
+                            </ul>
+                        </details>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="home-work section-shell" aria-labelledby="work-title">
+            <div class="section-heading">
+                <div><p class="eyebrow">Selected work</p><h2 id="work-title">Recent Publications</h2></div>
+                <a href="publications">All publications <span aria-hidden="true">▶</span></a>
+            </div>
+            <div id="featured-publications" class="featured-publications"></div>
+        </section>
+
+        <section class="home-news section-shell" aria-labelledby="news">
+            <div class="section-heading">
+                <div><p class="eyebrow">Updates</p><h2 id="news">Recent News</h2></div>
+            </div>
+            <ol id="news-list" class="news-list" aria-label="Lab news updates"></ol>
+        </section>
+
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="contact-copy">
+                <h2 id="contact-title">Contact</h2>
+                <p class="eyebrow">FuTURES<sup>3</sup> Lab</p>
+                <div class="contact-details">
+                    <p>3446 Merrill Engineering Building<br>50 Central Campus Drive<br>Salt Lake City, UT 84112</p>
+                    <p><a href="mailto:snagy@cs.utah.edu">snagy@cs.utah.edu</a><br><a href="tel:+18015818224">+1 801-581-8224</a></p>
                 </div>
             </div>
-
-            <div class="col-md-12" style="margin-top:1.5em;">
-                <hr><h2 id="sponsors" style="text-align: left;">Our Sponsors</h2>
-                <div class="col-md-12" style="display:flex; justify-content:center; gap:20px;">
-                    <a href="https://www.nsf.gov" target="_blank" style="display:flex; justify-content:center;" aria-label="National Science Foundation website">
-                        <img class="img button sponsor" src="img/logos/nsf.png" alt="NSF Logo">
-                    </a>
-                    <a href="https://www.darpa.mil" target="_blank" style="display:flex; justify-content:center;" aria-label="DARPA website">
-                        <img class="img button sponsor" src="img/logos/darpa.png" alt="DARPA Logo">
-                    </a>
-                </div>
-            </div>        
-        </div>
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.6947593760556!2d-111.84924788810584!3d40.76873783402054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87525f8e1b9c7d31%3A0x914548c9f976bce5!2sUniversity%20of%20Utah%20School%20of%20Computing!5e0!3m2!1sen!2sus!4v1686075330489!5m2!1sen!2sus" title="Map of the University of Utah Kahlert School of Computing" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="sponsor-block">
+                <span>Supported by</span>
+                <a href="https://www.nsf.gov" aria-label="National Science Foundation"><img src="img/logos/nsf.png" alt="NSF"></a>
+                <a href="https://www.darpa.mil" aria-label="DARPA"><img src="img/logos/darpa.png" alt="DARPA"></a>
+                <a href="https://www.cto.mil/trmc/" aria-label="Test Resource Management Center"><img src="https://www.cto.mil/wp-content/uploads/2025/12/TRMC-logo_color_20250909-500x500-1.png" alt="Test Resource Management Center"></a>
+            </div>
+        </section>
     </main>
-
-    <br>
 
     <div id="footer-placeholder"></div>
 
+    <script>
+        const carousel = document.querySelector('.hero-carousel');
+        const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+        const dots = carousel.querySelector('.carousel-dots');
+        let currentSlide = 0;
+        let carouselTimer;
+
+        slides.forEach((slide, index) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.setAttribute('aria-label', `Show photo ${index + 1}`);
+            dot.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+            dot.addEventListener('click', () => showSlide(index));
+            dots.appendChild(dot);
+        });
+
+        function showSlide(index) {
+            currentSlide = (index + slides.length) % slides.length;
+            slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === currentSlide));
+            Array.from(dots.children).forEach((dot, dotIndex) => dot.setAttribute('aria-current', dotIndex === currentSlide ? 'true' : 'false'));
+        }
+
+        function startCarousel() {
+            window.clearInterval(carouselTimer);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                carouselTimer = window.setInterval(() => showSlide(currentSlide + 1), 7500);
+            }
+        }
+
+        carousel.querySelector('.carousel-previous').addEventListener('click', () => showSlide(currentSlide - 1));
+        carousel.querySelector('.carousel-next').addEventListener('click', () => showSlide(currentSlide + 1));
+        carousel.addEventListener('mouseenter', () => window.clearInterval(carouselTimer));
+        carousel.addEventListener('mouseleave', startCarousel);
+        carousel.addEventListener('focusin', () => window.clearInterval(carouselTimer));
+        carousel.addEventListener('focusout', startCarousel);
+        startCarousel();
+
+        const bugFiles = [
+            'ZaoYang.json',
+            'YeaseenArafat.json',
+            'GabeSherman.json',
+            'DillonOtto.json',
+            'TannerRowlett.json',
+            'ClarkParry.json'
+        ];
+        Promise.all(bugFiles.map(file => fetch(`bugs/${file}`).then(response => {
+            if (!response.ok) throw new Error(`Failed to load ${file}`);
+            return response.json();
+        }))).then(bugLists => {
+            const total = bugLists.reduce((count, bugs) => count + bugs.length, 0);
+            const counter = document.getElementById('carousel-bug-total');
+            const stats = counter.closest('.carousel-stats');
+            document.getElementById('carousel-bug-link').setAttribute('aria-label', `View ${total} reported software bugs and vulnerabilities`);
+            stats.classList.add('is-loaded');
+
+            const counters = [
+                { element: counter, target: total, format: value => Math.round(value) },
+                { element: document.getElementById('carousel-paper-total'), target: 16, format: value => Math.round(value) },
+                { element: document.getElementById('carousel-funding-total'), target: 1.61, format: value => `$${value.toFixed(2)}M` }
+            ];
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                counters.forEach(item => item.element.textContent = item.format(item.target));
+                return;
+            }
+
+            const start = performance.now();
+            const duration = 1200;
+            function updateCounters(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const easedProgress = 1 - Math.pow(1 - progress, 3);
+                counters.forEach(item => item.element.textContent = item.format(item.target * easedProgress));
+                if (progress < 1) window.requestAnimationFrame(updateCounters);
+            }
+            window.requestAnimationFrame(updateCounters);
+        }).catch(err => console.error('Error loading bug count:', err));
+
+        Promise.all([
+            fetch('news.json').then(response => response.json()),
+            fetch('papers.json').then(response => response.json())
+        ]).then(([news, papers]) => {
+            const newsList = document.getElementById('news-list');
+            news.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `<time>${item.date}</time><div>${item.text}</div>`;
+                newsList.appendChild(li);
+            });
+
+            function sizeNewsList() {
+                const firstItem = newsList.children[0];
+                const seventhItem = newsList.children[6];
+                if (firstItem && seventhItem) {
+                    newsList.style.maxHeight = `${seventhItem.offsetTop - firstItem.offsetTop}px`;
+                }
+            }
+            sizeNewsList();
+            window.addEventListener('resize', sizeNewsList);
+
+            const publications = document.getElementById('featured-publications');
+            papers.slice(0, 6).forEach(paper => {
+                publications.insertAdjacentHTML('beforeend', `
+                    <article>
+                        <div class="paper-meta"><span class="paper-series">${paper.series || 'Publication'}</span><span>${paper.year}</span></div>
+                        <h3><a href="${paper.url}">${paper.title}</a></h3>
+                        <p>${paper.authors}</p>
+                        <p class="paper-venue">${paper.venue}${paper.series ? ` <span class="paper-venue-series">(${paper.series}'${paper.year.slice(-2)})</span>` : ''}</p>
+                    </article>`);
+            });
+        }).catch(err => console.error('Error loading site data:', err));
+    </script>
     <script src="includes/load-includes.js"></script>
 </body>
 </html>

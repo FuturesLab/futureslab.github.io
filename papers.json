@@ -1,211 +1,389 @@
 [
     {
         "year": "2026",
+        "series": "FSE",
+        "doi": "10.1145/3797078",
         "title": "Binvariants: Enhancing Fuzzing of Closed-source Binary Executables via Register-level Likely Invariants",
         "url": "https://futures.cs.utah.edu/papers/26FSE-c.pdf",
         "authors": "<u>Zao Yang</u> and <b>Stefan Nagy</b>",
-        "venue": "ACM International Conference on the Foundations of Software Engineering (<b>FSE'26</b>)",
+        "venue": "ACM International Conference on the Foundations of Software Engineering",
         "links": [
-            {"type": "slides", "url": "papers/26FSE-c_slides.pdf"},
-            {"type": "code", "url": "https://github.com/FuturesLab/Binvariants"}
-        ]
+            {
+                "type": "slides",
+                "url": "papers/26FSE-c_slides.pdf"
+            },
+            {
+                "type": "code",
+                "url": "https://github.com/FuturesLab/Binvariants"
+            }
+        ],
+        "abstract": "Closed-source software is ubiquitous in everyday computing, underscoring the need for robust security vetting of “binary-only” executable code. While code-coverage-guided fuzzing has long proven effective at unearthing software bugs, fuzzing in open-source contexts has since evolved beyond code coverage as its principal guiding metric. State-of-the-art fuzzing advancements demonstrate that likely data invariants—data-level properties which, if violated, expose unusual and often bug-preceding program states—significantly widen fuzzing’s reach to defects ordinarily occluded by coverage-only testing. Unfortunately, current invariant-guided fuzzing universally depends on source-level abstractions, rendering it unportable to binary-only targets. Consequently, closed-source software fuzzing—and more importantly, binary-only bug discovery—remain stalled at now-obsolete coverage-only techniques, even as open-source software fuzzing advances well past them. To bridge this longstanding gap, this paper introduces register-level likely invariants: the first technique to integrate likely data invariants within binary-only fuzzing. In contrast to contemporary source-level data invariant mining, our approach operates directly on CPU registers, capturing the low-level program states that themselves encode higher-level data relationships. From these low-level states, we automatically derive likely data invariants and expose their violations as fuzzer-observable signals via runtime instrumentation, steering fuzzing into states often unreachable by code coverage alone. In doing so, our approach surfaces qualitatively different states, complementing traditional coverage-guided fuzzing with distinct bug-finding capabilities. We implement our approach as a prototype, Binvariants, and evaluate its performance across 25 benchmark applications: 7 closed-source, as well as 18 open-source programs compiled as binary-only executables. Our results show that, compared to driving binary fuzzing solely via code coverage, register-level likely invariants helps fuzzing trigger over 27× more unique invariant violations beyond coverage-only fuzzing, thereby exercising a mean 52% more distinct code regions. Moreover, our approach uncovers 143 total bugs versus coverage-only fuzzing’s 137—including 20 missed by code coverage—demonstrating how register-level likely invariants extends binary-only fuzzing’s reach into execution states beyond what coverage alone is capable of.",
+        "bibtex": "@article{Yang_2026, title={Binvariants: Enhancing Fuzzing of Closed-Source Binary Executables via Register-Level Likely Invariants}, volume={3}, ISSN={2994-970X}, url={http://dx.doi.org/10.1145/3797078}, DOI={10.1145/3797078}, number={FSE}, journal={Proceedings of the ACM on Software Engineering}, publisher={Association for Computing Machinery (ACM)}, author={Yang, Zao and Nagy, Stefan}, year={2026}, month=June, pages={1104–1127} }"
     },
     {
         "year": "2026",
+        "series": "FSE",
+        "doi": "10.1145/3797066",
         "title": "SnakeCharmer: Automatic Fuzzing Harness Generation for Pure and Hybrid Python Libraries",
         "url": "https://futures.cs.utah.edu/papers/26FSE-b.pdf",
         "authors": "<u>Gabriel Sherman</u> and <b>Stefan Nagy</b>",
-        "venue": "ACM International Conference on the Foundations of Software Engineering (<b>FSE'26</b>)",
+        "venue": "ACM International Conference on the Foundations of Software Engineering",
         "links": [
-            {"type": "slides", "url": "papers/26FSE-b_slides.pdf"},
-            {"type": "code", "url": "https://github.com/FuturesLab/SnakeCharmer"}
-        ]
+            {
+                "type": "slides",
+                "url": "papers/26FSE-b_slides.pdf"
+            },
+            {
+                "type": "code",
+                "url": "https://github.com/FuturesLab/SnakeCharmer"
+            }
+        ],
+        "abstract": "With Python’s rising popularity, ensuring the correctness of its ever-growing ecosystem of software libraries is more critical than ever. Recently, fuzzing has become a de facto technique for vetting software libraries, enabled via the use of harnesses: small wrapper programs that inject fuzzer-generated test cases into the library under test. While harness creation has shed its reliance on human expertise and is now fully automated for languages such as C and C++, Python remains uniquely challenging—both for pure Python libraries as well as hybrid ones combining Python with native C/C++ extensions—due to (1) limited visibility across language boundaries, (2) the absence of reliable bug oracles, and (3) incomplete type information. Consequently, attempts at automating harnessing for Python fail to both uphold critical runtime behaviors and produce the structured call and data flows needed for effective fuzzing, leaving much of today’s Python ecosystem largely unvetted. To overcome these challenges and broaden fuzzing’s reach across Python libraries, this paper introduces SnakeCharmer: the first automated harness generation approach for both pure and hybrid Python libraries. At its core, SnakeCharmer leverages static analysis to first capture key interface information from both Python and native code components, subsequently enriching it with runtime-captured type information and exception behaviors. During fuzzing, SnakeCharmer further distinguishes between expected exceptions and true library bugs, filtering out benign exceptions that would otherwise derail testing progress. Together, these techniques significantly enhance the scope and effectiveness of fuzzing across the Python library ecosystem, enabling the automated discovery of bugs in code previously inaccessible to existing Python fuzzing efforts. We evaluate SnakeCharmer alongside today’s leading Python auto-harnessing approach, PyRTFuzz; the actively fuzzed expert-written harnesses from both OSS-Fuzz and PolyFuzz; and the harnesses generated by Google’s own state-of-the-art LLM-driven automatic harnessing approach, OSS-Fuzz-Gen. Across 21 diverse Python libraries, SnakeCharmer attains type-recovery precision and exception-filtering accuracy of 95% and 97%, respectively, further attaining 1.48×, 1.87×, 1.78×, and 1.40× the code coverage of the fuzzing harnesses from PyRTFuzz, OSS-Fuzz, PolyFuzz, and OSS-Fuzz-Gen, respectively. Further, SnakeCharmer finds 16, 24, and 24 more Python library bugs than all expert- and LLM-created harnesses as well as PyRTFuzz, respectively—uncovering a total of 20 new bugs, with 18 since confirmed or fixed by developers.",
+        "bibtex": "@article{Sherman_2026, title={SnakeCharmer: Automatic Fuzzing Harness Generation for Pure and Hybrid Python Libraries}, volume={3}, ISSN={2994-970X}, url={http://dx.doi.org/10.1145/3797066}, DOI={10.1145/3797066}, number={FSE}, journal={Proceedings of the ACM on Software Engineering}, publisher={Association for Computing Machinery (ACM)}, author={Sherman, Gabriel and Nagy, Stefan}, year={2026}, month=June, pages={69–91} }"
     },
     {
         "year": "2026",
+        "series": "FSE",
+        "doi": "10.1145/3797135",
         "title": "PROGnosticator: Testing Source-to-Source Code Translators via Construct-oriented Fuzzing",
         "url": "https://futures.cs.utah.edu/papers/26FSE-a.pdf",
         "authors": "<u>Yeaseen Arafat</u> and <b>Stefan Nagy</b>",
-        "venue": "ACM International Conference on the Foundations of Software Engineering (<b>FSE'26</b>)",
+        "venue": "ACM International Conference on the Foundations of Software Engineering",
         "links": [
-            {"type": "slides", "url": "papers/26FSE-a_slides.pdf"},
-            {"type": "code", "url": "https://github.com/FuturesLab/PROGnosticator"}
-        ]
+            {
+                "type": "slides",
+                "url": "papers/26FSE-a_slides.pdf"
+            },
+            {
+                "type": "code",
+                "url": "https://github.com/FuturesLab/PROGnosticator"
+            }
+        ],
+        "abstract": "To ease software interoperability and migration, developers are increasingly embracing transpilers: automated tools for converting source code from one language to another. Unfortunately, differences in language constructs, syntax, and semantics leave transpilers facing many translation bugs, emitting incorrect or non-functional translations. Thorough, proactive transpiler testing is thus critical to the reliability of emergent translation-oriented development. While fuzzers excel in testing adjacent classes of language processors (e.g., compilers), current fuzzers remain tied to only the specific code patterns expressed in their inputs— hardcoded grammars or seed programs—which are costly to curate and extend, constraining their testing to just narrow subsets of language constructs. Worse yet, their generated programs are often overly complex, requiring non-trivial reduction to pinpoint the exact code patterns behind transpiler errors. Evaluating current and future transpilers thus demands a rigorous, input-independent fuzzing strategy—systematically exercising languages’ broad range of code constructs without needing costly per-language expertise or re-engineering. To bridge this gap, we present Construct-oriented Fuzzing: a language-agnostic yet construct-aware approach for systematically testing transpilers. Motivated by our insights from past transpiler bugs, revealing most translation errors embody construct-specific mishandling, our approach explicitly targets the vast space of code patterns derived from core language constructs. Harnessing large language models’ code understanding and synthesis, we (1) automatically enumerate a language’s core constructs, before (2) generating self-contained programs exercising them individually—and combinations thereof—precisely testing transpilers’ many edge-cases whilst eschewing cumbersome grammars or seeds. In evaluating our prototype, PROGnosticator, against four state-of-the-art compiler and transpiler fuzzers across seven transpilers for C, Go, and JavaScript, we show how our approach attains high per-language validity as well as construct-usage diversity—exposing 77 total transpiler bugs, of which 64 are previously unknown, with 63 since confirmed or fixed by developers.",
+        "bibtex": "@article{Arafat_2026, title={PROGnosticator: Testing Source-to-Source Code Translators via Construct-Oriented Fuzzing}, volume={3}, ISSN={2994-970X}, url={http://dx.doi.org/10.1145/3797135}, DOI={10.1145/3797135}, number={FSE}, journal={Proceedings of the ACM on Software Engineering}, publisher={Association for Computing Machinery (ACM)}, author={Arafat, Yeaseen and Nagy, Stefan}, year={2026}, month=June, pages={876–898} }"
     },
     {
         "year": "2025",
+        "series": "ACSAC",
+        "doi": "10.1109/ACSAC67867.2025.00025",
         "title": "TeTRIS: General-purpose Fuzzing for Translation Bugs in Source-to-Source Code Transpilers",
         "url": "https://futures.cs.utah.edu/papers/25ACSAC.pdf",
         "authors": "<u>Yeaseen Arafat</u> and <b>Stefan Nagy</b>",
-        "venue": "Annual Computer Security Applications Conference (<b>ACSAC'25</b>)",
+        "venue": "Annual Computer Security Applications Conference",
         "links": [
-            {"type": "slides", "url": "papers/25ACSAC_slides.pdf"},
-            {"type": "code", "url": "https://github.com/FuturesLab/TeTRIS"}
-        ]
+            {
+                "type": "slides",
+                "url": "papers/25ACSAC_slides.pdf"
+            },
+            {
+                "type": "code",
+                "url": "https://github.com/FuturesLab/TeTRIS"
+            }
+        ],
+        "abstract": "Amid the rise of heterogeneous computing and concerns over systems and application security, developers are increasingly embracing transpilers: a growing class of tools for converting code from one programming language into another . As languages differ greatly in constructs, syntactic sugar, security mitigations, and more, transpilers face difficulties in faithfully translating software between source and target languages—sometimes causing outright failures, or worse, subtle-yet-incorrect execution behavior . Proactively testing transpilers’ correctness is thus critical to the success of code-translation-oriented development tasks, but unfortunately, no effective techniques currently exist. Although fuzztesting appears a natural fit, current general-purpose fuzzing tools mostly generate invalid, junk code that fails to engage transpilers’ core translation logic; while dedicated compiler fuzzers cannot keep pace with the ever-expanding set of languages targeted by existing and emergent transpilers. Thoroughly vetting transpilers’ correctness thus demands a fuzzing approach combining the reach of general-purpose fuzzing— with the precision of dedicated compiler fuzzers. This paper presents TeTRIS: a general-purpose fuzzer for testing source-to-source code transpilers. At its core, TeTRIS bridges the flexibility of general-purpose fuzzing, abstracting away language-level differences into a unified interface for fine-grained code mutations, with the precision of compiler fuzzers by rigorously enforcing syntactic and semantic correctness. Relying solely on minimal language specifications, TeTRIS supports fuzzing of any transpiler—irrespective of input or output language—producing high-quality programs that extensively probe its underlying translation logic. In an evaluation against four state-of-the-art fuzzers across seven popular transpilers for C, Go, and Haxe, TeTRIS is the only solution to uphold both high language validity and high transpiler code coverage—whilst supporting the broadest range of transpilers. Moreover, TeTRIS reveals the most code translation bugs— all 12 of which were previously unknown—underscoring its effectiveness in vetting today’s diverse transpiler ecosystem.",
+        "bibtex": "@inproceedings{Arafat_2025, title={TeTRIS: General-purpose Fuzzing for Translation Bugs in Source-to-Source Code Transpilers}, url={http://dx.doi.org/10.1109/ACSAC67867.2025.00025}, DOI={10.1109/acsac67867.2025.00025}, booktitle={2025 IEEE Annual Computer Security Applications Conference (ACSAC)}, publisher={IEEE}, author={Arafat, Yeaseen and Nagy, Stefan}, year={2025}, month=Dec, pages={123–136} }"
     },
     {
         "year": "2025",
+        "series": "ASE",
+        "doi": "10.1109/ASE63991.2025.00098",
         "title": "GUIFuzz++: Unleashing Grey-box Fuzzing on Desktop Graphical User Interfacing Applications",
         "url": "https://futures.cs.utah.edu/papers/25ASE.pdf",
         "authors": "<u>Dillon Otto</u>, <u>Tanner Rowlett</u>, and <b>Stefan Nagy</b>",
-        "venue": "IEEE/ACM International Conference on Automated Software Engineering (<b>ASE'25</b>)",
+        "venue": "IEEE/ACM International Conference on Automated Software Engineering",
         "links": [
-            {"type": "slides", "url": "papers/25ASE_slides.pdf"},
-            {"type": "code", "url": "https://github.com/FuturesLab/GUIFuzzPlusPlus"}
-        ]
+            {
+                "type": "slides",
+                "url": "papers/25ASE_slides.pdf"
+            },
+            {
+                "type": "code",
+                "url": "https://github.com/FuturesLab/GUIFuzzPlusPlus"
+            }
+        ],
+        "abstract": "Desktop applications represent one of today’s largest software ecosystems, accounting for over 96% of workplace computing and supporting essential operations across critical sectors such as healthcare, commerce, industry, and government. Though modern software is increasingly being vetted through fuzzing—an automated testing technique for large-scale bug discovery—a major component of desktop applications remains universally under-vetted: the Graphical User Interface (GUI). Existing desktop-based fuzzers like AFL++ and libFuzzer are limited to non-GUI interfaces (e.g., file- or buffer-based inputs), rendering them wholly incompatible with GUIs. Conversely, mobile app GUI fuzzers like Android’s Monkey and iOS’s XCMonkey rely on platform-specific SDKs and event-handling, rendering them fundamentally unportable to the broader, more complex landscape of desktop software. For these reasons, desktop GUI code remains largely under-tested, burdening users with numerous GUI-induced errors that should, in principle, be just as discoverable as any other well-fuzzed class of software bugs. This paper introduces GUIFuzz++: the first general-purpose fuzzer for desktop GUI software. Unlike desktop fuzzers that randomly mutate file- or buffer-based inputs, GUIFuzz++ exclusively targets GUI interactions—clicks, scrolls, key presses, window navigation, and more—to uncover complex event sequences triggering GUI-induced program errors. Central to our approach is a novel GUI Interaction Interpreter : a middle-layer translating fuzzer-generated random inputs into distinct GUI operations, enabling successful non-GUI fuzzers like AFL++ to be easily ported to testing GUIs. Beyond supporting today’s most popular GUI development frameworks like QT, GTK, and Xorg, we introduce a suite of enhancements capitalizing on ubiquitous Software Accessibility Technologies , significantly boosting GUI fuzzing precision as well as GUI bug-finding effectiveness. We integrate GUIFuzz++ as a prototype atop state-of-the-art GUI-agnostic fuzzer AFL++, and perform a large-scale ablation study of its fundamental components and enhancements. In an evaluation across 12 popular, real-world GUI applications, GUIFuzz++ uncovers 23 previously-unknown GUI-induced bugs— with 14 thus far confirmed or fixed by developers.",
+        "bibtex": "@inproceedings{Otto_2025, title={GUIFuzz++: Unleashing Grey-box Fuzzing on Desktop Graphical User Interfacing Applications}, url={http://dx.doi.org/10.1109/ASE63991.2025.00098}, DOI={10.1109/ase63991.2025.00098}, booktitle={2025 40th IEEE/ACM International Conference on Automated Software Engineering (ASE)}, publisher={IEEE}, author={Otto, Dillon and Rowlett, Tanner and Nagy, Stefan}, year={2025}, month=Nov, pages={1132–1142} }"
     },
     {
         "year": "2025",
+        "series": "ATC",
         "title": "Bin2Wrong: a Unified Fuzzing Framework for Uncovering Semantic Errors in Binary-to-C Decompilers",
         "url": "papers/25ATC.pdf",
         "authors": "<u>Zao Yang</u> and <b>Stefan Nagy</b>",
-        "venue": "USENIX Annual Technical Conference (<b>ATC'25</b>)",
+        "venue": "USENIX Annual Technical Conference",
         "links": [
-            {"type": "video", "url": "https://www.youtube.com/watch?v=FhyAO3IGtM4"},
-            {"type": "slides", "url": "papers/25ATC_slides.pdf"},
-            {"type": "code", "url": "https://github.com/FuturesLab/Bin2Wrong"}
-        ]
+            {
+                "type": "acm",
+                "url": "https://dl.acm.org/doi/10.5555/3768039.3768107"
+            },
+            {
+                "type": "video",
+                "url": "https://www.youtube.com/watch?v=FhyAO3IGtM4"
+            },
+            {
+                "type": "slides",
+                "url": "papers/25ATC_slides.pdf"
+            },
+            {
+                "type": "code",
+                "url": "https://github.com/FuturesLab/Bin2Wrong"
+            }
+        ],
+        "abstract": "Binary decompilation is central to many systems tasks that rely on analyzing or modifying closed-source software, such as debugging, performance tuning, and security hardening. Decompilers translate executables into C code with the goal of reconstructing a semantically-equivalent form of the original program’s source. Unfortunately, when challenged by intricate program logic, data structures, and diverse executable layouts, decompilers often produce semantically-wrong code. Proactively detecting such decompilation defects is critical for ensuring the success of downstream tasks that depend on precise binary analysis. Yet, current methods for assessing decompiler correctness only narrowly explore the variety of source constructs, compilers, optimization levels, executable formats, and combinations thereof that influence binary code. Fully guaranteeing decompilation precision—and, by extension, supporting all tasks that hinge on accurate binary-tosource recovery—demands a testing approach that unifies all factors affecting binary code, extending practical, systematic correctness testing to all decompilers today. To accelerate discovery of decompilation defects, this paper introduces BIN2WRONG : a general-purpose decompiler fuzzer combining systematic binary mutation with practical, decompiler-agnostic support. Our approach coalesces all factors of binary generation—source, compiler, optimization, and executable format—into a novel, unified testcase structure for mutation. Beyond enabling deeper exploration along these individual dimensions,BIN2W RONG finds unique combinations exposing complex, multi-dimensional errors that elude prior decompiler testing approaches. In evaluating BIN2WRONG alongside state-of-the-art decompiler fuzzers Cornucopia and DecFuzzer across seven free and commercial decompilers, BIN2WRONG achieves upwards of 10.39× and 17.18× higher binary diversity and 1.16× and 1.32× more decompiler code coverage, respectively, whilst uncovering the most decompilation bugs. Beyond finding 48 new bugs, with 30 confirmed, BIN2W RONG spurred a major redesign of the commercial decompiler Binary Ninja—showing its utility in uncovering critical defects in mainstream decompilers.",
+        "bibtex": "@inproceedings {yang-zao-bin2wrong,\nauthor = {Zao Yang and Stefan Nagy},\ntitle = {{Bin2Wrong}: a Unified Fuzzing Framework for Uncovering Semantic Errors in {Binary-to-C} Decompilers},\nbooktitle = {2025 USENIX Annual Technical Conference (USENIX ATC 25)},\nyear = {2025},\naddress = {Boston, MA},\npublisher = {USENIX Association},\nmonth = jul,\npages = {499--514},\nurl = {https://www.usenix.org/conference/atc25/presentation/yang-zao}\n}"
     },
     {
         "year": "2025",
+        "series": "ISSTA",
+        "doi": "10.1145/3728918",
         "title": "WildSync: Automated Fuzzing Harness Synthesis via Wild API Usage Recovery",
         "url": "papers/25ISSTA.pdf",
         "authors": "Wei-Cheng Wu, <b>Stefan Nagy</b>, and Christophe Hauser",
-        "venue": "ACM International Symposium on Software Testing and Analysis (<b>ISSTA'25</b>)",
+        "venue": "ACM International Symposium on Software Testing and Analysis",
         "links": [
-            {"type": "code", "url": "https://github.com/spencerwuwu/WildSync"}
-        ]
+            {
+                "type": "code",
+                "url": "https://github.com/spencerwuwu/WildSync"
+            }
+        ],
+        "abstract": "Fuzzing stands as one of the most practical techniques for testing software efficiently. When applying fuzzing to software library APIs, high-quality fuzzing harnesses are essential, enabling fuzzers to execute the APIs with precise sequences and function parameters. Although software developers commonly rely on manual efforts to create fuzzing harnesses, there has been a growing interest in automating this process. Existing works are often constrained in scalability and effectiveness due to their reliance on compiler-based analysis or runtime execution traces, which require manual setup and configuration. Our investigation of multiple actively fuzzed libraries reveals that a large number of exported API functions externally used by various open-source projects remain untested by existing harnesses or unit-test files. The lack of testing for these API functions increase the risk of vulnerabilities going undetected, potentially leading to security issues. In order to address the lack of coverage affecting existing fuzzing methods, we propose a novel approach to automatically generate fuzzing harnesses by extracting usage patterns of untested functions from real-world scenarios, using techniques based on lightweight Abstract Syntax Tree parsing to extract API usage from external source code. Then, we integrate the usage patterns into existing harnesses to construct new ones covering these untested functions. We have implemented a prototype of this concept named WildSync, enabling the automatic synthesis of fuzzing harnesses for C/C++ libraries on OSS-Fuzz. In our experiments, WildSync successfully produced 469 new harnesses for 24 actively fuzzed libraries on OSS-Fuzz, and also 3 widely used libraries that can be later integrated into OSS-Fuzz. This results in a significant increase in test coverage spanning over 1.3k functions and 16k lines of code, while also identifying 7 previously undetected bugs.",
+        "bibtex": "@article{Wu_2025, title={WildSync: Automated Fuzzing Harness Synthesis via Wild API Usage Recovery}, volume={2}, ISSN={2994-970X}, url={http://dx.doi.org/10.1145/3728918}, DOI={10.1145/3728918}, number={ISSTA}, journal={Proceedings of the ACM on Software Engineering}, publisher={Association for Computing Machinery (ACM)}, author={Wu, Wei-Cheng and Nagy, Stefan and Hauser, Christophe}, year={2025}, month=June, pages={963–984} }"
     },
     {
         "year": "2025",
+        "series": "ICSE",
+        "doi": "10.1109/ICSE55347.2025.00239",
         "title": "No Harness, No Problem: Oracle-guided Harnessing for Auto-generating C API Fuzzing Harnesses",
         "url": "papers/25ICSE-b.pdf",
         "authors": "<u>Gabriel Sherman</u> and <b>Stefan Nagy</b>",
-        "venue": "IEEE/ACM International Conference on Software Engineering (<b>ICSE'25</b>)",
+        "venue": "IEEE/ACM International Conference on Software Engineering",
         "links": [
-            {"type": "slides", "url": "papers/25ICSE-b_slides.pdf"},
-            {"type": "code", "url": "https://github.com/FuturesLab/OGHarn"}
-        ]
+            {
+                "type": "slides",
+                "url": "papers/25ICSE-b_slides.pdf"
+            },
+            {
+                "type": "code",
+                "url": "https://github.com/FuturesLab/OGHarn"
+            }
+        ],
+        "abstract": "Library APIs are used by virtually every modern application and system, making them among today’s most security-critical software. In recent years, library bug-finding efforts have overwhelmingly adopted the powerful testing strategy of coverage-guided fuzzing. At its core, API fuzzing operates on harnesses: wrapper programs that initialize an API before feeding random inputs to its functions. Successful fuzzing demands correct and thorough harnesses, making manual harnessing challenging without sufficient domain expertise. To overcome this, recent strategies propose “learning” libraries’ intended usage to automatically generate their fuzzing harnesses. Yet, despite their high code coverage, resulting harnesses frequently miss key API semantics—bringing with them invalid, unrealistic, or otherwise-impossible data and call sequences—derailing fuzzing with falsepositive crashes. Thus, without a precise, semantically-correct harnessing, many critical APIs will remain beyond fuzzing’s reach—leaving their hidden vulnerabilities ripe for attackers. This paper introduces Oracle-guided Harnessing : a technique for fully-automatic, semantics-aware API fuzzing harness synthesis. At a high level, Oracle-guided Harnessing mimics the trial-and-error process of manual harness creation—yet automates it via fuzzing. Specifically, we leverage information from API headers to mutationally stitch-together candidate harnesses; and evaluate their validity via a set of Correctness Oracles : compilation, execution, and changes in coverage. By keeping— and further mutating—only correct candidates, our approach produces a diverse set of semantically-correct harnesses for complex, real-world libraries in as little as one hour . We integrate Oracle-guided Harnessing as a prototype, OGHarn ; and evaluate it alongside today’s leading fullyautomatic harnessing approach, Hopper, and a plethora of developer-written harnesses from OSS-Fuzz. Across 20 realworld APIs, OGHarn outperforms developer-written harnesses by a median 14% code coverage, while uncovering 31 and 30 more vulnerabilities than both Hopper and developer-written harnesses, respectively—with zero false-positive crashes. Of the 41 new vulnerabilities found by OGHarn , all 41 are confirmed by developers—40 of which are since fixed—with many found in APIs that, until now, lacked harnesses whatsoever.",
+        "bibtex": "@inproceedings{Sherman_2025, title={No Harness, No Problem: Oracle-guided Harnessing for Auto-generating C API Fuzzing Harnesses}, url={http://dx.doi.org/10.1109/ICSE55347.2025.00239}, DOI={10.1109/icse55347.2025.00239}, booktitle={2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)}, publisher={IEEE}, author={Sherman, Gabriel and Nagy, Stefan}, year={2025}, month=Apr, pages={165–177} }"
     },
     {
         "year": "2025",
+        "series": "ICSE",
+        "doi": "10.1109/ICSE55347.2025.00042",
         "title": "A Little Goes a Long Way: Tuning Configuration Selection for Continuous Kernel Fuzzing",
         "url": "papers/25ICSE-a.pdf",
         "authors": "Sanan Hasanov, <b>Stefan Nagy</b>, and Paul Gazzillo",
-        "venue": "IEEE/ACM International Conference on Software Engineering (<b>ICSE'25</b>)",
+        "venue": "IEEE/ACM International Conference on Software Engineering",
         "links": [
-            {"type": "code", "url": "https://github.com/appleseedlab/icse25/"}
-        ]
+            {
+                "type": "code",
+                "url": "https://github.com/appleseedlab/icse25/"
+            }
+        ],
+        "abstract": "The Linux kernel is actively-developed and widely-used. It supports billions of devices of all classes, from highperformance computing to the Internet-of-Things, in part because of its sophisticated configuration system, which automatically tailors the source code according to thousands of user-provided configuration options. Fuzzing has been highly successful at finding kernel bugs, being among the top bug reporters. Since the kernel receives 100s of patches per day, fuzzers run continuously, stopping regularly to rebuild the kernel with the latest changes before restarting fuzzing. But kernel fuzzers currently use predefined configuration settings that, as we show, exclude the majority of new patches from the kernel binary, nullifying the benefits of continuous fuzzing. Unfortunately, state-of-theart configuration testing techniques are generally ill-suited to the needs of continuous fuzzing, excluding necessary options or requiring too many configuration files to be tractable. We distill down the needs of continuous testing into six properties with the most impact, systematically analyze the space of configuration selection strategies, and provide actionable recommendations. Through our analysis, we discover that continuous fuzzers can improve configuration variety without sacrificing performance. We empirically evaluate our discovery by modifying the configuration selection strategy for syzkaller, the most popular Linux kernel fuzzer, which subsequently found more than twice as many new bugs (35 vs. 13) than with the original configuration file and 12x more (24 vs. 2) when considering only unique bugs—with one security vulnerability being assigned a CVE.",
+        "bibtex": "@inproceedings{Hasanov_2025, title={A Little Goes a Long Way: Tuning Configuration Selection for Continuous Kernel Fuzzing}, url={http://dx.doi.org/10.1109/ICSE55347.2025.00042}, DOI={10.1109/icse55347.2025.00042}, booktitle={2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)}, publisher={IEEE}, author={Hasanov, Sanan and Nagy, Stefan and Gazzillo, Paul}, year={2025}, month=Apr, pages={795–807} }"
     },
     {
         "year": "2023",
+        "series": "SEC",
         "title": "No Linux, No Problem: Fast and Correct Windows Binary Fuzzing via Target-embedded Snapshotting",
         "url": "papers/23SEC.pdf",
         "authors": "Leo Stone, Rishi Ranjan, <b>Stefan Nagy</b>, and Matthew Hicks",
-        "venue": "USENIX Security Symposium (<b>USENIX'23</b>)",
+        "venue": "USENIX Security Symposium",
         "links": [
-            {"type": "video", "url": "https://www.youtube.com/watch?v=JjbNrNsuaF4"},
-            {"type": "slides", "url": "https://www.usenix.org/system/files/sec23_slides_stone-leo.pdf"},
-            {"type": "code", "url": "https://github.com/FoRTE-Research/WinFuzz/"}
-        ]
+            {
+                "type": "acm",
+                "url": "https://dl.acm.org/doi/10.5555/3620237.3620512"
+            },
+            {
+                "type": "video",
+                "url": "https://www.youtube.com/watch?v=JjbNrNsuaF4"
+            },
+            {
+                "type": "slides",
+                "url": "https://www.usenix.org/system/files/sec23_slides_stone-leo.pdf"
+            },
+            {
+                "type": "code",
+                "url": "https://github.com/FoRTE-Research/WinFuzz/"
+            }
+        ],
+        "abstract": "Coverage-guided fuzzing remains today’s most successful approach for exposing software security vulnerabilities. Speed is paramount in fuzzing, as maintaining a high test case throughput enables more expeditious exploration of programs—leading to faster vulnerability discovery. Highperformance fuzzers exploit the Linux kernel’s customizability to implement process snapshotting: fuzzing-oriented execution primitives that dramatically increase fuzzing throughput. Unfortunately, such speeds remain elusive on Windows. The closed-source nature of its kernel prevents current kernel-based snapshotting techniques from being ported—severely limiting fuzzing’s effectiveness on Windows programs. Thus, accelerating vetting of the Windows software ecosystem demands a fast, correct, and kernel-agnostic fuzzing execution mechanism. We propose making state snapshotting an applicationlevel concern as opposed to a kernel-level concern via target-embedded snapshotting . Target-embedded-snapshotting combines binary- and library-level hooking to allow applications to snapshot themselves—while leaving both their source code and the Windows kernel untouched. Our evaluation on 10 realworld Windows binaries shows that target-embedded snapshotting overcomes the speed, correctness, and compatibility challenges of previous Windows fuzzing execution mechanisms (i.e., process creation, forkserver-based cloning, and persistent mode). The result is 7–182x increased performance.",
+        "bibtex": "@inproceedings {stone-no-linux,\nauthor = {Leo Stone and Rishi Ranjan and Stefan Nagy and Matthew Hicks},\ntitle = {No Linux, No Problem: Fast and Correct Windows Binary Fuzzing via Target-embedded Snapshotting},\nbooktitle = {32nd USENIX Security Symposium (USENIX Security 23)},\nyear = {2023},\naddress = {Anaheim, CA},\npublisher = {USENIX Association},\nmonth = aug,\npages = {4917--4933},\nurl = {https://www.usenix.org/conference/usenixsecurity23/presentation/stone}\n}"
     },
     {
         "year": "2023",
+        "series": "CCS",
+        "doi": "10.1145/3576915.3616636",
         "title": "Profile-guided System Optimizations for Accelerated Greybox Fuzzing",
         "url": "papers/23CCS.pdf",
         "authors": "Yunhang Zhang, Chengbin Pang, <b>Stefan Nagy</b>, Xun Chen, and Jun Xu",
-        "venue": "ACM Conference on Computer and Communications Security (<b>CCS'23</b>)",
+        "venue": "ACM Conference on Computer and Communications Security",
         "links": [
-            {"type": "code", "url": "https://github.com/emptyiscolor/Profile-guided-Fuzzing"}
-        ]
+            {
+                "type": "code",
+                "url": "https://github.com/emptyiscolor/Profile-guided-Fuzzing"
+            }
+        ],
+        "abstract": "Greybox fuzzing is a highly popular option for security testing, incentivizing tremendous efforts to improve its performance. Prior research has brought many algorithmic advancements, leading to substantial performance growth. However, less attention has been paid to the system-level designs of greybox fuzzing tools, despite the high impacts of such designs on fuzzing throughput. In this paper, we explore system-level optimizations for greybox fuzzing. Throughout an empirical study, we unveil two systemlevel optimization opportunities. First, the common fuzzing mode with a fork server visibly slows down the target execution, which can be optimized by coupling persistent mode with efficient state recovery. Second, greybox fuzzing tools rely on the native Operating System (OS) to support interactions issued by the target program, involving complex but fuzzing-irrelevant operations. Simplification of OS interactions represents another optimization opportunity. We develop two techniques, informed by a short profiling phase of the fuzzing tool, to achieve the optimizations above. The first technique enables reliable and efficient persistent mode by learning critical execution states from the profiling and patching the target program to reset them. The second technique introduces user-space abstractions to simulate OS functionality, reducing expensive OS interactions. Evaluated with 20 programs and the MAGMA benchmark, we demonstrate that our optimizations can accelerate AFL and AFL++ for higher code coverage and faster bug finding.",
+        "bibtex": "@inproceedings{Zhang_2023, series={CCS ’23}, title={Profile-guided System Optimizations for Accelerated Greybox Fuzzing}, url={http://dx.doi.org/10.1145/3576915.3616636}, DOI={10.1145/3576915.3616636}, booktitle={Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security}, publisher={ACM}, author={Zhang, Yunhang and Pang, Chengbin and Nagy, Stefan and Chen, Xun and Xu, Jun}, year={2023}, month=Nov, pages={1257–1271}, collection={CCS ’23} }"
     },
     {
         "year": "2023",
+        "doi": "10.1145/3580504",
         "title": "The Fun in Fuzzing: The Debugging Technique Comes into Its Own",
         "url": "https://dl.acm.org/doi/10.1145/3580504",
         "authors": "<b>Stefan Nagy</b> and Peter Alvaro",
         "venue": "ACM Queue Magazine",
-        "links": []
+        "links": [],
+        "abstract": "Stefan Nagy, an assistant professor in the Kahlert School of Computing at the University of Utah, takes us on a tour of recent research in software fuzzing, or the systematic testing of programs via the generation of novel or unexpected inputs. The first paper he discusses extends the state of the art in coverage-guided fuzzing with the semantic notion of \"likely invariants,\" inferred via techniques from property-based testing. The second explores encoding domain-specific knowledge about certain bug classes into test-case generation. His last selection takes us through the looking glass, randomly generating entire C programs and using differential analysis to compare traces of optimized and unoptimized executions, in order to find bugs in the compilers themselves.",
+        "bibtex": "@article{Nagy_2022, title={The Fun in Fuzzing: The debugging technique comes into its own.}, volume={20}, ISSN={1542-7749}, url={http://dx.doi.org/10.1145/3580504}, DOI={10.1145/3580504}, number={6}, journal={Queue}, publisher={Association for Computing Machinery (ACM)}, author={Nagy, Stefan}, editor={Alvaro, Peter}, year={2022}, month=Dec, pages={80–87} }"
     },
     {
         "year": "2022",
+        "series": "ACSAC",
+        "doi": "10.1145/3564625.3564643",
         "title": "One Fuzz Doesn't Fit All: Optimizing Directed Fuzzing via Target-tailored Program State Restriction",
         "url": "papers/22ACSAC.pdf",
         "authors": "Prashast Srivastava, <b>Stefan Nagy</b>, Matthew Hicks, Antonio Bianchi, and Mathias Payer",
-        "venue": "Annual Computer Security Applications Conference (<b>ACSAC'22</b>)",
+        "venue": "Annual Computer Security Applications Conference",
         "links": [
-            {"type": "code", "url": "https://github.com/HexHive/SieveFuzz"}
-        ]
+            {
+                "type": "code",
+                "url": "https://github.com/HexHive/SieveFuzz"
+            }
+        ],
+        "abstract": "Fuzzing is the de-facto default technique to discover software flaws, randomly testing programs to discover crashing test cases. Yet, a particular scenario may only care about specific code regions (for, e.g., bug reproduction, patch or regression testing)—spurring the adoption of directed fuzzing. Given a set of pre-determined target locations, directed fuzzers drive exploration toward them through distance minimization strategies that (1) isolate the closest-reaching test cases and (2) mutate them stochastically. However, these strategies are applied ontoevery explored test case—irrespective of whether they ever reach the targets—stalling progress on the paths where targets are unreachable. Accelerating directed fuzzing requires prioritizing target-reachable paths. To overcome the bottleneck of wasteful exploration in directed fuzzing, we introduce tripwiring: a lightweight technique to preempt and terminate the fuzzing of paths that will never reach target locations. By constraining exploration to only the set of target-reachable program paths, tripwiring curtails directed fuzzers’ search noise—while unshackling them from the high-overhead instrumentation and bookkeeping of distance minimization—enabling directed fuzzers to obtain up to 99× higher test case throughput. We implement tripwiring-directed fuzzing as a prototype, Sieve- Fuzz, and evaluate it alongside the state-of-the-art directed fuzzers AFLGo, BEACON and the leading undirected fuzzer AFL++. Overall, across nine benchmarks, SieveFuzz’s tripwiring enables it to trigger bugs on an average 47% more consistently and 117% faster than AFLGo, BEACON and AFL++.",
+        "bibtex": "@inproceedings{Srivastava_2022, series={ACSAC}, title={One Fuzz Doesn’t Fit All: Optimizing Directed Fuzzing via Target-tailored Program State Restriction}, url={http://dx.doi.org/10.1145/3564625.3564643}, DOI={10.1145/3564625.3564643}, booktitle={Proceedings of the 38th Annual Computer Security Applications Conference}, publisher={ACM}, author={Srivastava, Prashast and Nagy, Stefan and Hicks, Matthew and Bianchi, Antonio and Payer, Mathias}, year={2022}, month=Dec, pages={388–399}, collection={ACSAC} }"
     },
     {
         "year": "2022",
         "title": "Practical Feedback and Instrumentation Enhancements for Performant Security Testing of Closed-source Executables",
         "url": "files/StefanNagy-PhDThesis.pdf",
         "authors": "<b>Stefan Nagy</b>",
-        "venue": "Virginia Polytechnic Institute and State University (<b>Ph.D. Thesis</b>)",
-        "links": []
+        "venue": "Ph.D. thesis, Virginia Polytechnic Institute and State University",
+        "links": [],
+        "abstract": "The Department of Homeland Security reports that over 90% of cyberattacks stem from security vulnerabilities in software, costing the U.S. $109 billion dollars in damages in 2016 alone according to The White House. As NIST estimates that today’s software contains 25 bugs for every 1,000 lines of code, the prompt discovery of security flaws is now vital to mitigating the next major cyberattack. Over the last decade, the software industry has overwhelmingly turned to a lightweight defect discovery approach known as fuzzing: automated testing that uncovers program bugs through repeated injection of randomly-mutated test cases. Academic and industry efforts have long exploited the semantic richness of opensource software to enhance fuzzing with fast and fine-grained code coverage feedback , as well as fuzzing-enhancing code transformations facilitated through lightweight compiler-based instrumentation. However, the world’s increasing reliance on closed-source software (i.e., commercial, proprietary, and legacy software) demands analogous advances in automated security vetting beyond open-source contexts. Unfortunately, the semantic gaps between source code and opaque binary code leave fuzzing nowhere near as effective on closed-source targets. The difficulty of balancing coverage feedback speed and precision in binary executables leaves fuzzers frequently bottlenecked and orders-of-magnitude slower at uncovering security vulnerabilities in closed-source software. Moreover, the challenges of analyzing and modifying binary executables at scale leaves closed-source software fuzzing unable to fully leverage the sophisticated enhancements that have long accelerated open-source software vulnerability discovery. As the U.S. Cybersecurity and Infrastructure Security Agency reports that closed-source software makes up over 80% of the top routinely exploited software today, combating the ever-growing threat of cyberattacks demands new practical, precise, and performant fuzzing techniques unrestricted by the availability of source code . This thesis answers the following research questions toward enabling fast, effective fuzzing of closed-source software: 1. Can common-case fuzzing insights be exploited to more achieve low-overhead, fine-grained code coverage feedback irrespective of access to source code? 2. What properties of binary instrumentation are needed to extend performant fuzzingenhancing program transformation to closed-source software fuzzing? In answering these questions, this thesis produces the following key innovations: A. The first code coverage techniques to enable fuzzing speed and code coverage greater than source-level fuzzing for closed-source software targets. (Chapter 3) B. The first instrumentation platform to extend both compiler-quality code transformation and compiler-level speed to closed-source fuzzing contexts (Chapter 4)",
+        "bibtex": "@phdthesis{nagy2022practical,\nauthor = {Stefan Nagy},\ntitle = {Practical Feedback and Instrumentation Enhancements for Performant Security Testing of Closed-source Executables},\nschool = {Virginia Polytechnic Institute and State University},\nyear = {2022}\n}"
     },
     {
         "year": "2021",
+        "series": "CCS",
+        "doi": "10.1145/3460120.3484787",
         "title": "Same Coverage, Less Bloat: Accelerating Binary-only Fuzzing with Coverage-preserving Coverage-guided Tracing",
         "url": "papers/21CCS.pdf",
         "authors": "<b>Stefan Nagy</b>, Anh Nguyen-Tuong, Jason Hiser, Jack Davidson, and Matthew Hicks",
-        "venue": "ACM Conference on Computer and Communications Security (<b>CCS'21</b>)",
+        "venue": "ACM Conference on Computer and Communications Security",
         "links": [
-            {"type": "video", "url": "https://drive.google.com/file/d/1XDIHbESZkjry0d0k_gQgpg4ztCo7_O_j/view?usp=sharing"},
-            {"type": "slides", "url": "papers/21CCS-slides.pdf"},
-            {"type": "code", "url": "https://github.com/FoRTE-Research/HeXcite"}
-        ]
+            {
+                "type": "video",
+                "url": "https://drive.google.com/file/d/1XDIHbESZkjry0d0k_gQgpg4ztCo7_O_j/view?usp=sharing"
+            },
+            {
+                "type": "slides",
+                "url": "papers/21CCS-slides.pdf"
+            },
+            {
+                "type": "code",
+                "url": "https://github.com/FoRTE-Research/HeXcite"
+            }
+        ],
+        "abstract": "Coverage-guided fuzzing’s aggressive, high-volume testing has helped reveal tens of thousands of software security flaws. While executing billions of test cases mandates fast code coverage tracing, the nature of binary-only targets leads to reduced tracing performance. A recent advancement in binary fuzzing performance is Coverage-guided Tracing (CGT), which brings orders-of-magnitude gains in throughput by restricting the expense of coverage tracing to only when new coverage is guaranteed. Unfortunately, CGT suits only a basic block coverage granularity—yet most fuzzers require finer-grain coverage metrics:edge coverage and hit counts. It is this limitation which prohibits nearly all of today’s state-of-the-art fuzzers from attaining the performance benefits of CGT. This paper tackles the challenges of adapting CGT to fuzzing’s most ubiquitous coverage metrics. We introduce and implement a suite of enhancements that expand CGT’s introspection to fuzzing’s most common code coverage metrics, while maintaining its orders-of-magnitude speedup over conventional always-on coverage tracing. We evaluate their trade-offs with respect to fuzzing performance and effectiveness across12 diverse real-world binaries (8 open- and 4 closed-source). On average, our coverage-preserving CGT attains near-identical speed to the present block-coverageonly CGT, UnTracer; and outperforms leading binary- and source-level coverage tracers QEMU, Dyninst, RetroWrite, and AFL-Clang by 2–24×, finding more bugs in less time.",
+        "bibtex": "@inproceedings{Nagy_2021, series={CCS ’21}, title={Same Coverage, Less Bloat: Accelerating Binary-only Fuzzing with Coverage-preserving Coverage-guided Tracing}, url={http://dx.doi.org/10.1145/3460120.3484787}, DOI={10.1145/3460120.3484787}, booktitle={Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security}, publisher={ACM}, author={Nagy, Stefan and Nguyen-Tuong, Anh and Hiser, Jason D. and Davidson, Jack W. and Hicks, Matthew}, year={2021}, month=Nov, pages={351–365}, collection={CCS ’21} }"
     },
     {
         "year": "2021",
+        "series": "SEC",
         "title": "Breaking Through Binaries: Compiler-quality Instrumentation for Better Binary-only Fuzzing",
         "url": "papers/21SEC.pdf",
         "authors": "<b>Stefan Nagy</b>, Anh Nguyen-Tuong, Jason Hiser, Jack Davidson, and Matthew Hicks",
-        "venue": "USENIX Security Symposium (<b>USENIX'21</b>)",
+        "venue": "USENIX Security Symposium",
         "links": [
-            {"type": "video", "url": "https://www.usenix.org/conference/usenixsecurity21/presentation/nagy"},
-            {"type": "slides", "url": "papers/21SEC-slides.pdf"},
-            {"type": "code", "url": "https://git.zephyr-software.com/opensrc/zafl"}
-        ]
+            {
+                "type": "video",
+                "url": "https://www.usenix.org/conference/usenixsecurity21/presentation/nagy"
+            },
+            {
+                "type": "slides",
+                "url": "papers/21SEC-slides.pdf"
+            },
+            {
+                "type": "code",
+                "url": "https://git.zephyr-software.com/opensrc/zafl"
+            }
+        ],
+        "abstract": "Coverage-guided fuzzing is one of the most effective software security testing techniques. Fuzzing takes on one of two forms: compiler-based or binary-only, depending on the availability of source code. While the fuzzing community has improved compiler-based fuzzing with performanceand feedback-enhancing program transformations, binaryonly fuzzing lags behind due to the semantic and performance limitations of instrumenting code at the binary level. Many fuzzing use cases are binary-only (i.e., closed source). Thus, applying fuzzing-enhancing program transformations to binary-only fuzzing—without sacrificing performance— remains a compelling challenge. This paper examines the properties required to achieve compiler-quality binary-only fuzzing instrumentation. Based on our findings, we design ZAFL: a platform for applying fuzzing-enhancing program transformations to binary-only targets—maintaining compiler-level performance. We showcase ZAFL’s capabilities in an implementation for the popular fuzzer AFL, including five compiler-style fuzzing-enhancing transformations, and evaluate it against the leading binaryonly fuzzing instrumenters AFL-QEMU and AFL-Dyninst. Across LA V A-M and real-world targets,ZAFL improves crashfinding by 26–96% and 37–131%; and throughput by 48– 78% and 159–203% compared to AFL-Dyninst and AFL- QEMU, respectively—while maintaining compiler-level of overhead of 27%. We also show that ZAFL supports realworld open- and closed-source software of varying size (10K– 100MB), complexity (100–1M basic blocks), platform (Linux and Windows), and format (e.g., stripped and PIC).",
+        "bibtex": "@inproceedings {nagy-breaking,\nauthor = {Stefan Nagy and Anh Nguyen-Tuong and Jason D. Hiser and Jack W. Davidson and Matthew Hicks},\ntitle = {Breaking Through Binaries: Compiler-quality Instrumentation for Better Binary-only Fuzzing},\nbooktitle = {30th USENIX Security Symposium (USENIX Security 21)},\nyear = {2021},\npublisher = {USENIX Association},\nmonth = aug,\npages = {1683--1697},\nurl = {https://www.usenix.org/conference/usenixsecurity21/presentation/nagy}\n}"
     },
     {
         "year": "2019",
+        "series": "ISTAS",
+        "doi": "10.1109/ISTAS48451.2019.8937885",
         "title": "A Case Study on a Sustainable Framework for Ethically Aware Predictive Modeling",
         "url": "papers/19ISTAS.pdf",
         "authors": "Thomas Lux, <b>Stefan Nagy</b>, Mohammed Almanaa, Sirui Yao, and Reid Bixler",
-        "venue": "IEEE International Symposium on Technology and Society (<b>ISTAS'19</b>)",
+        "venue": "IEEE International Symposium on Technology and Society",
         "links": [
-            {"type": "video", "url": "https://www.youtube.com/watch?v=L0WA9pcMMUw"}
-        ]
+            {
+                "type": "video",
+                "url": "https://www.youtube.com/watch?v=L0WA9pcMMUw"
+            }
+        ],
+        "abstract": "Large volumes of data allow for modern application of statistical and mathematical models to practical social issues. Many applications of predictive models like criminal activity heat mapping, recidivism estimation, and child safety scoring rely on data that may be incomplete, incorrect, or biased. Many sensitive social and historical issues can unintentionally be incorporated into predictions causing ethical mistreatment. This work proposes a mechanism for continuously mitigating model bias by using algorithms that produce predictions from reasonably small subsets of data, allowing a human-in-the-loop approach to model application. The benefits offered by this framework are twofold: (1) bias can be identified either statistically or by human users on a per-prediction basis; (2) data can be cleaned for bias on a per-prediction basis. A modeling and data management methodology similar to that presented here could strengthen the ethical application of data science and make the process of cleaning and validating data manageable in the long term.",
+        "bibtex": "@inproceedings{Lux_2019, title={A Case Study on a Sustainable Framework for Ethically Aware Predictive Modeling}, url={http://dx.doi.org/10.1109/ISTAS48451.2019.8937885}, DOI={10.1109/istas48451.2019.8937885}, booktitle={2019 IEEE International Symposium on Technology and Society (ISTAS)}, publisher={IEEE}, author={Lux, Thomas C.H. and Nagy, Stefan and Almanaa, Mohammed and Yao, Sirui and Bixler, Reid}, year={2019}, month=Nov, pages={1–7} }"
     },
     {
         "year": "2019",
+        "series": "S&P",
+        "doi": "10.1109/SP.2019.00069",
         "title": "Full-speed Fuzzing: Reducing Fuzzing Overhead through Coverage-guided Tracing",
         "url": "papers/19SP.pdf",
         "authors": "<b>Stefan Nagy</b> and Matthew Hicks",
-        "venue": "IEEE Symposium on Security and Privacy (<b>Oakland'19</b>)",
+        "venue": "IEEE Symposium on Security and Privacy",
         "links": [
-            {"type": "video", "url": "https://www.youtube.com/watch?v=2Rg8wtccCNA"},
-            {"type": "slides", "url": "papers/19SP-slides.pdf"},
-            {"type": "code", "url": "https://github.com/FoRTE-Research/UnTracer-AFL"}
-        ]
+            {
+                "type": "video",
+                "url": "https://www.youtube.com/watch?v=2Rg8wtccCNA"
+            },
+            {
+                "type": "slides",
+                "url": "papers/19SP-slides.pdf"
+            },
+            {
+                "type": "code",
+                "url": "https://github.com/FoRTE-Research/UnTracer-AFL"
+            }
+        ],
+        "abstract": "Coverage-guided fuzzing is one of the most successful approaches for discovering software bugs and security vulnerabilities. Of its three main components: (1) test case generation, (2) code coverage tracing, and (3) crash triage, code coverage tracing is a dominant source of overhead. Coverageguided fuzzers trace every test case’s code coverage through either static or dynamic binary instrumentation, or more recently, using hardware support. Unfortunately, tracing all test cases incurs significant performance penalties—even when the overwhelming majority of test cases and their coverage information are discarded because they do not increase code coverage. To eliminate needless tracing by coverage-guided fuzzers, we introduce the notion of coverage-guided tracing. Coverageguided tracing leverages two observations: (1) only a fraction of generated test cases increase coverage, and thus require tracing; and (2) coverage-increasing test cases become less frequent over time. Coverage-guided tracing encodes the current frontier of coverage in the target binary so that it self-reports when a test case produces new coverage—without tracing. This acts as a filter for tracing; restricting the expense of tracing to only coverage-increasing test cases. Thus, coverage-guided tracing trades increased time handling coverage-increasing test cases for decreased time handling non-coverage-increasing test cases. To show the potential of coverage-guided tracing, we create an implementation based on the static binary instrumentor Dyninst called UnTracer. We evaluate UnTracer using eight real-world binaries commonly used by the fuzzing community. Experiments show that after only an hour of fuzzing, UnTracer’s average overhead is below 1%, and after 24-hours of fuzzing, UnTracer approaches 0% overhead, while tracing every test case with popular white- and black-box-binary tracers AFL-Clang, AFL- QEMU, and AFL-Dyninst incurs overheads of 36%, 612%, and 518%, respectively. We further integrate UnTracer with the stateof-the-art hybrid fuzzer QSYM and show that in 24-hours of fuzzing, QSYM-UnTracer executes 79% and 616% more test cases than QSYM-Clang and QSYM-QEMU, respectively.",
+        "bibtex": "@inproceedings{Nagy_2019, title={Full-Speed Fuzzing: Reducing Fuzzing Overhead through Coverage-Guided Tracing}, url={http://dx.doi.org/10.1109/SP.2019.00069}, DOI={10.1109/sp.2019.00069}, booktitle={2019 IEEE Symposium on Security and Privacy (SP)}, publisher={IEEE}, author={Nagy, Stefan and Hicks, Matthew}, year={2019}, month=May, pages={787–802} }"
     },
     {
         "year": "2018",
+        "series": "ICSE",
+        "doi": "10.1145/3180155.3180201",
         "title": "Secure Coding Practices in Java: Challenges and Vulnerabilities",
         "url": "papers/18ICSE.pdf",
         "authors": "Na Meng, <b>Stefan Nagy</b>, Danfeng Yao, Wenjie Zhuang, and Gustavo Argoty",
-        "venue": "International Conference on Software Engineering (<b>ICSE'18</b>)",
-        "links": []
+        "venue": "International Conference on Software Engineering",
+        "links": [],
+        "abstract": "The Java platform and its third-party libraries provide useful features to facilitate secure coding. However, misusing them can cost developers time and effort, as well as introduce security vulnerabilities in software. We conducted an empirical study on StackOverflow posts, aiming to understand developers’ concerns on Java secure coding, their programming obstacles, and insecure coding practices. We observed a wide adoption of the authentication and authorization features provided by Spring Security—a third-party framework designed to secure enterprise applications. We found that programming challenges are usually related to APIs or libraries, including the complicated cross-language data handling of cryptography APIs, and the complex Java-based or XML-based approaches to configure Spring Security. In addition, we reported multiple security vulnerabilities in the suggested code of accepted answers on the StackOverflow forum. The vulnerabilities included disabling the default protection against Cross-Site Request Forgery (CSRF) attacks, breaking SSL/TLS security through bypassing certificate validation, and using insecure cryptographic hash functions. Our findings reveal the insufficiency of secure coding assistance and documentation, as well as the huge gap between security theory and coding practices.",
+        "bibtex": "@inproceedings{Meng_2018, series={ICSE ’18}, title={Secure coding practices in Java: challenges and vulnerabilities}, url={http://dx.doi.org/10.1145/3180155.3180201}, DOI={10.1145/3180155.3180201}, booktitle={Proceedings of the 40th International Conference on Software Engineering}, publisher={ACM}, author={Meng, Na and Nagy, Stefan and Yao, Danfeng (Daphne) and Zhuang, Wenjie and Argoty, Gustavo Arango}, year={2018}, month=May, pages={372–383}, collection={ICSE ’18} }"
     },
     {
         "year": "2015",
+        "series": "ICDF2C",
+        "doi": "10.1007/978-3-319-25512-5_1",
         "title": "Digital Forensics Education: A Multidisciplinary Curriculum Model",
         "url": "papers/15ICDF2C.pdf",
         "authors": "Imani Palmer, Elaine Wood, <b>Stefan Nagy</b>, Gabriela Garcia, Masooda Bashir, and Roy Campbell",
-        "venue": "International Conference on Digital Forensics & Cyber Crime (<b>ICDF2C'15</b>)",
-        "links": []
+        "venue": "International Conference on Digital Forensics & Cyber Crime",
+        "links": [],
+        "abstract": "This paper reports experiences and lessons learned in the process of developing and implementing an undergraduate curriculum for digital forensics over the last three years at the University of Illinois at Urbana-Champaign. The project addresses the challenges of developing a higher-education standardized curriculum for digital forensics that meets the needs of the digital forensics community. The curriculum provides degree options and considers the growing employability of digital forensics students in an increasing range of jobs. The approach builds on the multidisciplinary nature of the field. The findings include a curriculum model, detailed course content, exams, and an evaluation package for measuring how students respond to the courses. This paper summarizes the model, results, challenges, and opportunities.",
+        "bibtex": "@inbook{Palmer_2015, title={Digital Forensics Education: A Multidisciplinary Curriculum Model}, ISBN={9783319255125}, ISSN={1867-822X}, url={http://dx.doi.org/10.1007/978-3-319-25512-5_1}, DOI={10.1007/978-3-319-25512-5_1}, booktitle={Digital Forensics and Cyber Crime}, publisher={Springer International Publishing}, author={Palmer, Imani and Wood, Elaine and Nagy, Stefan and Garcia, Gabriela and Bashir, Masooda and Campbell, Roy}, year={2015}, pages={3–15} }"
     },
     {
         "year": "2015",
@@ -213,14 +391,19 @@
         "url": "papers/15IDEALS.pdf",
         "authors": "Chien-Ying Chen, Amiremad Ghassami, <b>Stefan Nagy</b>, Man-Ki Yoon, Sibin Mohan, Negar Kiyavash, Rakesh B Bobba, and Rodolfo Pellizzoni",
         "venue": "Illinois Digital Environment for Access to Learning and Scholarship",
-        "links": []
+        "links": [],
+        "abstract": "Security failures in real-time embedded systems can have catastrophic effects and can lead to injury to (or even loss of life for) humans, damage to the system and also environmental fallouts. Until recently security was an afterthought in the design of such systems. Even less understood are attack mechanisms that target real-time systems. In this paper we present a novel attack model and algorithm to extract the exact schedules of real-time systems designed using fixed priority algorithms. The attack is demonstrated on a real hardware platform and shows a high success rate. The leaked schedules are then used to launch a side-channel attack against a specific victim task. Our algorithm is robust in the presence of some schedule randomization defenses as well as jitters.",
+        "bibtex": "@inproceedings{chen2015schedule,\nauthor = {Chien-Ying Chen and Amiremad Ghassami and Stefan Nagy and Man-Ki Yoon and Sibin Mohan and Negar Kiyavash and Rakesh B. Bobba and Rodolfo Pellizzoni},\ntitle = {Schedule-Based Side-Channel Attack in Fixed-Priority Real-time Systems},\nyear = {2015}\n}"
     },
     {
         "year": "2015",
+        "series": "SADFE",
         "title": "An Empirical Study on Current Models for Reasoning about Digital Evidence",
         "url": "papers/15SADFE.pdf",
         "authors": "<b>Stefan Nagy</b>, Imani Palmer, Sathya Sundaramurthy, Xinming Ou, and Roy Campbell",
-        "venue": "Intl. Conf. on Systematic Approaches to Digital Forensic Engineering (<b>SADFE'15</b>)",
-        "links": []
+        "venue": "Intl. Conf. on Systematic Approaches to Digital Forensic Engineering",
+        "links": [],
+        "abstract": "The forensic process relies on the scientific method to scrutinize recovered evidence that either supports or negates an investigative hypothesis. Currently, analysis of digital evidence remains highly subjective to the forensic practitioner. Digital forensics is in need of a deterministic approach to obtain the most judicious conclusions from evidence. The objective of this paper is to examine current methods of digital evidence analysis. It describes the mechanisms for which these processes may be carried out, and discusses the key obstacles presented by each. Lastly, it concludes with suggestions for further improvement of the digital forensic process as a whole.",
+        "bibtex": "@inproceedings{nagy2015empirical,\nauthor = {Stefan Nagy and Imani Palmer and Sathya Sundaramurthy and Xinming Ou and Roy Campbell},\ntitle = {An Empirical Study on Current Models for Reasoning about Digital Evidence},\nbooktitle = {Proceedings of the Tenth International Conference on Systematic Approaches to Digital Forensic Engineering},\nyear = {2015}\n}"
     }
 ]

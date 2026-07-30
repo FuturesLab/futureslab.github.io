@@ -1,36 +1,23 @@
-<a href="#main-content" class="skip-link sr-only sr-only-focusable">Skip to main content</a>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-<nav class="navbar navbar-inverse" role="navigation" aria-label="Main navigation">
-    <a class="navbar-brand" href="https://cs.utah.edu" aria-label="University of Utah School of Computing">
-        <img class="button" width="185px" src="{{BASE_PATH}}img/logos/ksoclogo_white.png" alt="University of Utah School of Computing logo" style="margin-top:1.3%">
-    </a>
+<header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+        <a class="site-wordmark" href="https://www.cs.utah.edu" aria-label="Kahlert School of Computing">
+            <img src="{{BASE_PATH}}img/logos/ksoclogo_white.png" alt="Kahlert School of Computing">
+        </a>
 
-    <div class="ml-auto">
-        <div class="navbar-header">
-            <button type="button" 
-                    class="navbar-toggle" 
-                    data-toggle="collapse" 
-                    data-target="#myNavbar"
-                    aria-expanded="false"
-                    aria-controls="myNavbar"
-                    aria-label="Toggle navigation menu">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+        <button type="button" class="navbar-toggle" aria-expanded="false" aria-controls="myNavbar" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="site-links" id="myNavbar">
+            <a href="{{BASE_PATH}}">Home</a>
+            <a href="{{BASE_PATH}}#research">Research</a>
+            <a href="{{BASE_PATH}}people">People</a>
+            <a href="{{BASE_PATH}}publications">Publications</a>
+            <a href="{{BASE_PATH}}bugs/">Reported Bugs</a>
+            <a href="https://github.com/FuturesLab" target="_blank" rel="noopener noreferrer">Software <span class="sr-only">(opens in new tab)</span></a>
+            <a href="{{BASE_PATH}}#contact">Contact</a>
         </div>
-        
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav" style="margin-top: 1px;">
-                <li><a href="{{BASE_PATH}}">Home</a></li>
-                <li><a href="{{BASE_PATH}}#news">News</a></li>
-                <li><a href="{{BASE_PATH}}people">People</a></li>
-                <li><a href="{{BASE_PATH}}publications">Publications</a></li>
-                <li><a href="{{BASE_PATH}}bugs/">Reported Bugs</a></li>
-                <li><a href="https://github.com/FuturesLab" target="_blank" rel="noopener noreferrer">Software <span class="sr-only">(opens in new tab)</span></a></li>
-                <li><a href="{{BASE_PATH}}#contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    </nav>
+</header>

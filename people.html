@@ -4,162 +4,93 @@
     <title>People | FuTURES³ Lab</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Meet the researchers of the FuTURES Lab at the University of Utah, including faculty, graduate students, and undergraduate researchers.">
+    <meta name="description" content="Researchers and alumni of the FuTURES Lab at the University of Utah.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
-    <link href="css/main.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
     <div id="navbar-placeholder"></div>
 
-    <main id="main-content" role="main">
-        <div class="container main-container" style="margin-top:1.15em">
-            <section aria-labelledby="pi-heading" class="col-md-12" style="text-align: center; margin-bottom:50px">
-                <h2 id="pi-heading" style="text-align: center">Principal Investigator</h2><br>
+    <main id="main-content">
+        <div class="container main-container">
+            <header class="page-intro page-intro-title-only">
+                <h1>People</h1>
+            </header>
 
-                <article class="col-md-12" style="text-align: center">
-                    <a href='https://www.cs.utah.edu/~snagy/'>
-                        <img class="img rounded button profilepiccircle" src="img/people/stefannagy.jpg" alt="Photo of Dr. Stefan Nagy">
-                    </a><br>
-                    <p><b>Dr. Stefan Nagy</b> <br> Assistant Professor</p>
-                </article>
+            <section class="people-section" aria-label="Faculty">
+                <div class="people-grid">
+                    <article class="person-card">
+                        <a href="https://users.cs.utah.edu/~snagy/"><img src="img/people/stefannagy.jpg" alt="Dr. Stefan Nagy"></a>
+                        <h3><a href="https://users.cs.utah.edu/~snagy/">Dr. Stefan Nagy</a></h3>
+                        <p>Assistant Professor</p>
+                        <p class="person-expertise person-pi"><strong>Principal Investigator</strong></p>
+                        <div class="person-links"><a href="mailto:snagy@cs.utah.edu" aria-label="Email Stefan Nagy" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/stefannagy/" aria-label="Stefan Nagy on LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a><a href="https://github.com/stevenagy" aria-label="Stefan Nagy on GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a><a href="https://scholar.google.com/citations?user=9hLWq-0AAAAJ&amp;hl=en&amp;oi=ao" aria-label="Stefan Nagy on Google Scholar" title="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i></a><a href="https://users.cs.utah.edu/~snagy/" aria-label="Stefan Nagy's website" title="Personal website"><i class="fa-solid fa-globe" aria-hidden="true"></i></a></div>
+                    </article>
+                </div>
             </section>
 
-            <section aria-labelledby="grad-heading" class="col-md-12" style="text-align: center; margin-bottom:50px">
-                <hr class="wide">
-                <h2 id="grad-heading" style="text-align: center">Graduate Student Researchers</h2><br>
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://sites.google.com/view/zaoyang">
-                        <img class="img rounded button profilepiccircle" src="img/people/zaoyang.jpg" alt="Photo of Zao Yang">
-                    </a><br>
-                    <p><b>Zao Yang</b> <br> PhD Student</p>
-                </article>
-
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://yeaseen.github.io/">
-                        <img class="img rounded button profilepiccircle" src="img/people/yeaseenarafat.png" alt="Photo of Yeaseen Arafat">
-                    </a><br>
-                    <p><b>Yeaseen Arafat</b> <br> PhD Student</p>
-                </article>
-
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://gabe-sherman.github.io/">
-                        <img class="img rounded button profilepiccircle" src="img/people/gabesherman.jpg" alt="Photo of Gabe Sherman">
-                    </a><br>
-                    <p><b>Gabe Sherman</b> <br> PhD Student</p>
-                </article>
-                <article class="col-md-6" style="text-align: center">
-                    <a href="https://www.linkedin.com/in/tannerrowlett/">
-                        <img class="img rounded button profilepiccircle" src="img/people/tannerrowlett.jpg" alt="Photo of Tanner Rowlett">
-                    </a><br>                        
-                    <p><b>Tanner Rowlett</b> <br> PhD Student</p>
-                </article>
-                <article class="col-md-6" style="text-align: center">
-                    <a href="https://www.linkedin.com/in/carson-he/">
-                        <img class="img rounded button profilepiccircle" src="img/people/carsonhe.jpg" alt="Photo of Carson He">
-                    </a><br>
-                    <p><b>Carson He</b> <br> MS Student</p>
-                </article>
+            <section class="people-section" aria-labelledby="students-heading">
+                <h2 id="students-heading">Graduate Student Researchers</h2>
+                <div class="people-grid">
+                    <article class="person-card">
+                        <a href="https://sites.google.com/view/zaoyang"><img src="img/people/zaoyang.jpg" alt="Zao Yang"></a>
+                        <h3><a href="https://sites.google.com/view/zaoyang">Zao Yang</a></h3>
+                        <p>PhD student</p>
+                        <p class="person-expertise"><strong>Expertise:</strong> binary reverse engineering</p>
+                        <div class="person-links"><a href="mailto:zao.yang@utah.edu" aria-label="Email Zao Yang" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/zao-yang-8b7113171/" aria-label="Zao Yang on LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a><a href="https://github.com/yangzao" aria-label="Zao Yang on GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a><a href="https://scholar.google.com/citations?user=H5C4kcsAAAAJ&amp;hl=en&amp;oi=ao" aria-label="Zao Yang on Google Scholar" title="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i></a><a href="https://sites.google.com/view/zaoyang" aria-label="Zao Yang's website" title="Personal website"><i class="fa-solid fa-globe" aria-hidden="true"></i></a></div>
+                    </article>
+                    <article class="person-card">
+                        <a href="https://yeaseen.github.io/"><img src="img/people/yeaseenarafat.png" alt="Yeaseen Arafat"></a>
+                        <h3><a href="https://yeaseen.github.io/">Yeaseen Arafat</a></h3>
+                        <p>PhD student</p>
+                        <p class="person-expertise"><strong>Expertise:</strong> translation validation</p>
+                        <div class="person-links"><a href="mailto:y.arafat@utah.edu" aria-label="Email Yeaseen Arafat" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/yeaseen-arafat/" aria-label="Yeaseen Arafat on LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a><a href="https://github.com/Yeaseen" aria-label="Yeaseen Arafat on GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a><a href="https://scholar.google.com/citations?user=FM29QSsAAAAJ&amp;hl=en&amp;oi=ao" aria-label="Yeaseen Arafat on Google Scholar" title="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i></a><a href="https://yeaseen.github.io/" aria-label="Yeaseen Arafat's website" title="Personal website"><i class="fa-solid fa-globe" aria-hidden="true"></i></a></div>
+                    </article>
+                    <article class="person-card">
+                        <a href="https://gabe-sherman.github.io/"><img src="img/people/gabesherman.jpg" alt="Gabe Sherman"></a>
+                        <h3><a href="https://gabe-sherman.github.io/">Gabe Sherman</a></h3>
+                        <p>PhD student</p>
+                        <p class="person-expertise"><strong>Expertise:</strong> fuzzing harness generation</p>
+                        <div class="person-links"><a href="mailto:gabe.sherman@utah.edu" aria-label="Email Gabe Sherman" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/gabe-sherman-891200/" aria-label="Gabe Sherman on LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a><a href="https://github.com/gabe-sherman" aria-label="Gabe Sherman on GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a><a href="https://scholar.google.com/citations?user=J3N4pvIAAAAJ&amp;hl=en&amp;oi=ao" aria-label="Gabe Sherman on Google Scholar" title="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i></a><a href="https://gabe-sherman.github.io/" aria-label="Gabe Sherman's website" title="Personal website"><i class="fa-solid fa-globe" aria-hidden="true"></i></a></div>
+                    </article>
+                    <article class="person-card">
+                        <a href="https://www.linkedin.com/in/tannerrowlett/"><img src="img/people/tannerrowlett.jpg" alt="Tanner Rowlett"></a>
+                        <h3><a href="https://www.linkedin.com/in/tannerrowlett/">Tanner Rowlett</a></h3>
+                        <p>PhD student</p>
+                        <p class="person-expertise"><strong>Expertise:</strong> graphical user interfaces</p>
+                        <div class="person-links"><a href="mailto:u1335967@utah.edu" aria-label="Email Tanner Rowlett" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/tannerrowlett/" aria-label="Tanner Rowlett on LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a><a href="https://github.com/Trowlett0" aria-label="Tanner Rowlett on GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a></div>
+                    </article>
+                    <article class="person-card">
+                        <a href="https://www.linkedin.com/in/carson-he/"><img src="img/people/carsonhe.jpg" alt="Carson He"></a>
+                        <h3><a href="https://www.linkedin.com/in/carson-he/">Carson He</a></h3>
+                        <p>MS student</p>
+                        <p class="person-expertise"><strong>Expertise:</strong> binary reverse engineering</p>
+                        <div class="person-links"><a href="mailto:u1309986@utah.edu" aria-label="Email Carson He" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/carson-he/" aria-label="Carson He on LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a><a href="https://github.com/hecarson" aria-label="Carson He on GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a></div>
+                    </article>
+                </div>
             </section>
 
-            <!--<section aria-labelledby="undergrad-heading" class="col-md-12" style="text-align: center; margin-bottom:50px">
-                <hr class="wide">
-                <h2 id="undergrad-heading" style="text-align: center">Undergraduate Student Researchers</h2><br>
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://www.linkedin.com/in/ecollier03/">
-                        <img class="img rounded button profilepiccircle" src="img/people/ethancollier.jpg" alt="Photo of Ethan Collier">
-                    </a><br>                        
-                    <p><b>Ethan Collier</b></p>
-                </article>
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://www.linkedin.com/in/clark-parry-935b33275/">
-                        <img class="img rounded button profilepiccircle" src="img/people/clarkparry.png" alt="Photo of Clark Parry">
-                    </a><br>                        
-                    <p><b>Clark Parry</b></p>
-                </article>
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://www.linkedin.com/in/corinna-healey/">
-                        <img class="img rounded button profilepiccircle" src="img/people/corinna.png" alt="Photo of Corinna Healey">
-                    </a><br>                        
-                    <p><b>Corinna Healey</b></p>
-                </article>
-            </section>-->
-
-            <section aria-labelledby="alumni-heading" class="col-md-12" style="text-align: center; margin-bottom:50px">
-                <hr class="wide">
-                <h2 id="alumni-heading" style="text-align: center">Lab Alumni</h2> <br>
-
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://www.linkedin.com/in/ecollier03/">
-                        <img class="img rounded button profilepiccircle" src="img/people/ethancollier.jpg" alt="Photo of Ethan Collier">
-                    </a><br>                        
-                    <p><b>Ethan Collier</b></p>
-                </article>
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://www.linkedin.com/in/clark-parry-935b33275/">
-                        <img class="img rounded button profilepiccircle" src="img/people/clarkparry.png" alt="Photo of Clark Parry">
-                    </a><br>                        
-                    <p><b>Clark Parry</b></p>
-                </article>
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://www.linkedin.com/in/corinna-healey/">
-                        <img class="img rounded button profilepiccircle" src="img/people/corinna.png" alt="Photo of Corinna Healey">
-                    </a><br>                        
-                    <p><b>Corinna Healey</b></p>
-                </article>
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://www.linkedin.com/in/dallin-hoyt-099558207/">
-                        <img class="img rounded button profilepiccircle" src="img/people/dallinhoyt.jpg" alt="Photo of Dallin Hoyt">
-                    </a><br>                        
-                    <p><b>Dallin Hoyt</b></p>
-                </article>
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://www.linkedin.com/in/dillon-otto/">
-                        <img class="img rounded button profilepiccircle" src="img/people/dillonotto.jpg" alt="Photo of Dillon Otto">
-                    </a><br>                        
-                    <p><b>Dillon Otto</b></p>
-                </article>
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://raj-reddy.com">
-                        <img class="img rounded button profilepiccircle" src="img/people/rajreddy.jpg" alt="Photo of Raj Reddy">
-                    </a><br>                        
-                    <p><b>Raj Reddy</b></p>
-                </article>
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://www.linkedin.com/in/josh-dean-05090b243/">
-                        <img class="img rounded button profilepiccircle" src="img/people/joshdean.jpg" alt="Photo of Josh Dean">
-                    </a><br>                        
-                    <p><b>Josh Dean</b></p>
-                </article>
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://candrewlee14.github.io/">
-                        <img class="img rounded button profilepiccircle" src="img/people/andrewlee.jpg" alt="Photo of Andrew Lee">
-                    </a><br>
-                    <p><b>Andrew Lee</b></p>
-                </article>
-                <article class="col-md-4" style="text-align: center">
-                    <a href="https://www.linkedin.com/in/david-clark-1434891b6/">
-                        <img class="img rounded button profilepiccircle" src="img/people/davidclark.jpg" alt="Photo of David Clark">
-                    </a><br>
-                    <p><b>David Clark</b></p>
-                </article>
+            <section class="people-section" aria-labelledby="alumni-heading">
+                <h2 id="alumni-heading">Lab Alumni</h2>
+                <div class="people-grid alumni-grid">
+                    <article class="person-card"><a href="https://www.linkedin.com/in/ecollier03/"><img src="img/people/ethancollier.jpg" alt="Ethan Collier"><h3>Ethan Collier</h3></a></article>
+                    <article class="person-card"><a href="https://www.linkedin.com/in/clark-parry-935b33275/"><img src="img/people/clarkparry.png" alt="Clark Parry"><h3>Clark Parry</h3></a></article>
+                    <article class="person-card"><a href="https://www.linkedin.com/in/corinna-healey/"><img src="img/people/corinna.png" alt="Corinna Healey"><h3>Corinna Healey</h3></a></article>
+                    <article class="person-card"><a href="https://www.linkedin.com/in/dallin-hoyt-099558207/"><img src="img/people/dallinhoyt.jpg" alt="Dallin Hoyt"><h3>Dallin Hoyt</h3></a></article>
+                    <article class="person-card"><a href="https://www.linkedin.com/in/dillon-otto/"><img src="img/people/dillonotto.jpg" alt="Dillon Otto"><h3>Dillon Otto</h3></a></article>
+                    <article class="person-card"><a href="https://raj-reddy.com"><img src="img/people/rajreddy.jpg" alt="Raj Reddy"><h3>Raj Reddy</h3></a></article>
+                    <article class="person-card"><a href="https://www.linkedin.com/in/josh-dean-05090b243/"><img src="img/people/joshdean.jpg" alt="Josh Dean"><h3>Josh Dean</h3></a></article>
+                    <article class="person-card"><a href="https://candrewlee14.github.io/"><img src="img/people/andrewlee.jpg" alt="Andrew Lee"><h3>Andrew Lee</h3></a></article>
+                    <article class="person-card"><a href="https://www.linkedin.com/in/david-clark-1434891b6/"><img src="img/people/davidclark.jpg" alt="David Clark"><h3>David Clark</h3></a></article>
+                </div>
             </section>
-
         </div>
     </main>
 
-    <br>
-
     <div id="footer-placeholder"></div>
-
     <script src="includes/load-includes.js"></script>
 </body>
 </html>

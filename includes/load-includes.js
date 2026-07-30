@@ -64,24 +64,20 @@
             });
         }
 
-        // Mobile toggle aria-expanded management
+        // Mobile navigation
         const navbarToggle = document.querySelector('.navbar-toggle');
-        const navbarCollapse = document.getElementById('myNavbar');
+        const navbarMenu = document.getElementById('myNavbar');
         
-        if (navbarToggle && navbarCollapse) {
-            // Update aria-expanded on toggle
+        if (navbarToggle && navbarMenu) {
             navbarToggle.addEventListener('click', function() {
-                const isExpanded = navbarCollapse.classList.contains('in');
-                navbarToggle.setAttribute('aria-expanded', !isExpanded);
+                const isExpanded = navbarMenu.classList.toggle('is-open');
+                navbarToggle.setAttribute('aria-expanded', String(isExpanded));
             });
-
-            // Bootstrap 3 collapse events
-            $(navbarCollapse).on('shown.bs.collapse', function() {
-                navbarToggle.setAttribute('aria-expanded', 'true');
-            });
-
-            $(navbarCollapse).on('hidden.bs.collapse', function() {
-                navbarToggle.setAttribute('aria-expanded', 'false');
+            navbarMenu.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    navbarMenu.classList.remove('is-open');
+                    navbarToggle.setAttribute('aria-expanded', 'false');
+                });
             });
         }
     }

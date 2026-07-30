@@ -4,7 +4,7 @@
     <title>Publications | FuTURES³ Lab</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="FuTURES Lab publications - Research papers on software security, testing, program analysis, and automated bug repair.">
+    <meta name="description" content="FuTURES Lab publications on software security, testing, program analysis, and instrumentation.">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -23,64 +23,171 @@
     <script src="includes/load-includes.js"></script>
 </head>
 
-<body>
+<body class="publications-page">
     <div id="navbar-placeholder"></div>
 
     <main id="main-content" role="main">
-        <div class="container main-container" style="margin-top:1.15em">
-            <div class="col-md-12">
-                <h2 id="publications">Publications</h2>
-
-                <p><small>Names of FuTURES&#179; Lab student researchers are <u>underlined</u>.</small></p>
-                <div class="row"><div class="col-sm-12" style="border-bottom: 1px solid #eee; margin-top: 0.5em; margin-bottom: 0;"></div></div>
-                <div id="publications-list"></div>
+        <div class="container main-container">
+            <header class="page-intro">
+                <h1 id="publications">Publications</h1>
+                <p>FuTURES&#179; Lab student researchers are <u>underlined</u>. A/A* conference ranks follow the <a href="https://portal.core.edu.au/conf-ranks/?search=&amp;by=all&amp;source=CORE2026">ICORE 2026 rankings</a>.</p>
+            </header>
+            <div class="publication-search" role="search">
+                <label for="publication-search-input">Search:
+                    <input id="publication-search-input" type="search" placeholder="Title, author, venue, or topic" autocomplete="off">
+                </label>
+                <span id="publication-search-status" class="publication-search-status" aria-live="polite"></span>
             </div>
+            <div id="publications-list"></div>
+            <p id="publication-search-empty" class="publication-search-empty" hidden>No publications match that search.</p>
         </div>
     </main>
 
     <script>
         const linkIcons = {
+            acm: '<i class="fa-solid fa-link"></i> DOI',
             video: '<i class="fa-solid fa-video"></i> Video',
             slides: '<i class="fa-solid fa-display"></i> Slides',
-            code: '<i class="fa-brands fa-github"></i> Code'
+            code: '<i class="fa-brands fa-github"></i> Code',
+            doi: '<i class="fa-solid fa-link"></i> DOI'
         };
+        const icoreRanks = {
+            'ACSAC': 'A',
+            'ASE': 'A*',
+            'ATC': 'A',
+            'CCS': 'A*',
+            'FSE': 'A*',
+            'ICSE': 'A*',
+            'ISSTA': 'A',
+            'S&P': 'A*',
+            'SEC': 'A*'
+        };
+
+        function escapeHtml(value) {
+            return value.replace(/[&<>"']/g, character => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            })[character]);
+        }
 
         fetch('papers.json')
             .then(response => response.json())
             .then(papers => {
                 const container = document.getElementById('publications-list');
                 
-                papers.forEach(paper => {
-                    const linksHtml = paper.links.length > 0 
-                        ? `<div class="pub-links">
-                            ${paper.links.map(link => 
+                papers.forEach((paper, index) => {
+                    const abstractId = `paper-${index}-abstract`;
+                    const bibtexId = `paper-${index}-bibtex`;
+                    const icoreRank = icoreRanks[paper.series];
+                    const paperLinks = paper.doi
+                        ? [{type: 'doi', url: `https://doi.org/${paper.doi}`}, ...paper.links]
+                        : paper.links;
+                    const linksHtml = `<div class="pub-links">
+                            <button type="button" class="pub-link pub-toggle" aria-expanded="false" aria-controls="${abstractId}" data-target="${abstractId}"><i class="fa-solid fa-align-left"></i> Abstract</button>
+                            <button type="button" class="pub-link pub-toggle" aria-expanded="false" aria-controls="${bibtexId}" data-target="${bibtexId}"><i class="fa-solid fa-quote-right"></i> Bib</button>
+                            ${paperLinks.map(link =>
                                 `<a href="${link.url}" class="pub-link" aria-label="${link.type} for ${paper.title}">${linkIcons[link.type]}</a>`
                             ).join('')}
-                           </div>`
-                        : '';
+                        </div>`;
 
                     const html = `
                         <article class="row publication" role="article">
                             <div class="col-sm-1">
                                 <span class="pub-year"><b>${paper.year}</b></span>
+                                ${paper.series ? `<span class="pub-badges"><span class="pub-series">${paper.series}</span>${icoreRank ? `<span class="pub-rank" aria-label="ICORE 2026 rank ${icoreRank === 'A*' ? 'A star' : 'A'}">${icoreRank}</span>` : ''}</span>` : ''}
                             </div>
                             <div class="col-sm-11">
                                 <div class="pub-content">
                                     <p class="pub-title"><a href="${paper.url}">${paper.title}</a>.</p>
                                     <p class="pub-authors"><small>${paper.authors}.</small></p>
-                                    <p class="pub-venue"><small>${paper.venue}.</small></p>
+                                    <p class="pub-venue"><small>${paper.venue}${paper.series ? `<span class="paper-venue-series"> (${paper.series})</span>` : ''}.</small></p>
                                 </div>
                                 ${linksHtml}
+                                <div class="pub-detail-panels">
+                                    <section class="pub-detail-panel" id="${abstractId}" hidden>
+                                        <h4>Abstract</h4>
+                                        <p>${escapeHtml(paper.abstract)}</p>
+                                    </section>
+                                    <section class="pub-detail-panel" id="${bibtexId}" hidden>
+                                        <h4>BibTeX</h4>
+                                        <pre class="pub-bibtex"><code>${escapeHtml(paper.bibtex)}</code></pre>
+                                    </section>
+                                </div>
                             </div>
                         </article>
                     `;
                     container.insertAdjacentHTML('beforeend', html);
+                    container.lastElementChild.dataset.search = [
+                        paper.title,
+                        paper.authors,
+                        paper.venue,
+                        paper.series,
+                        paper.year,
+                        paper.abstract
+                    ].filter(Boolean).join(' ').toLowerCase();
+                });
+
+                const searchInput = document.getElementById('publication-search-input');
+                const searchStatus = document.getElementById('publication-search-status');
+                const searchEmpty = document.getElementById('publication-search-empty');
+                const publications = [...container.querySelectorAll('.publication')];
+                const initialSearch = new URLSearchParams(window.location.search).get('search');
+
+                if (initialSearch) searchInput.value = initialSearch;
+
+                function filterPublications() {
+                    const query = searchInput.value.trim().toLowerCase();
+                    let visibleCount = 0;
+
+                    publications.forEach(publication => {
+                        const matches = !query || publication.dataset.search.includes(query);
+                        publication.hidden = !matches;
+                        if (matches) visibleCount += 1;
+                    });
+
+                    const count = document.createElement('b');
+                    count.textContent = visibleCount;
+                    searchStatus.replaceChildren(
+                        ...(query
+                            ? ['Showing ', count, ` results for “${searchInput.value.trim()}” (out of ${publications.length} total).`]
+                            : ['Showing all ', count, ' publications.'])
+                    );
+                    searchEmpty.hidden = visibleCount !== 0;
+                }
+
+                searchInput.addEventListener('input', () => {
+                    filterPublications();
+
+                    const url = new URL(window.location.href);
+                    const query = searchInput.value.trim();
+                    if (query) {
+                        url.searchParams.set('search', query);
+                    } else {
+                        url.searchParams.delete('search');
+                    }
+                    window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+                });
+                filterPublications();
+
+                container.addEventListener('click', event => {
+                    const toggle = event.target.closest('.pub-toggle');
+                    if (!toggle) return;
+
+                    const publication = toggle.closest('.publication');
+                    const target = document.getElementById(toggle.dataset.target);
+                    const willOpen = target.hidden;
+
+                    publication.querySelectorAll('.pub-detail-panel').forEach(panel => panel.hidden = true);
+                    publication.querySelectorAll('.pub-toggle').forEach(button => button.setAttribute('aria-expanded', 'false'));
+                    target.hidden = !willOpen;
+                    toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
                 });
             })
             .catch(err => console.error('Error loading papers:', err));
     </script>
-
-    <br>
 
     <div id="footer-placeholder"></div>
 </body>

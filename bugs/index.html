@@ -25,30 +25,6 @@
   <!-- DOMPurify (XSS protection for query params) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
 
-  <style>
-    body { font-family: 'Work Sans', sans-serif; }
-    .main-container { margin-top: 1.15em; }
-    .counter { transition: opacity .25s ease; opacity: 0; color: #BE0000; }
-
-    /* Top bar (search left, summary right) */
-    .top-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-    .top-left { display: flex; align-items: center;}
-    .top-right { font-size: 0.95em; color: #555; white-space: normal; flex-wrap: wrap;}
-    /* make the DataTables search input a bit wider */
-    div.dataTables_filter label input { width: 220px; margin-left: 0.75em !important; font-weight: normal; }
-    div.dataTables_filter { overflow: visible; padding-top: 4px; }
-
-    /* Row hover highlight */
-    #security-bugs tbody tr:hover td { background-color: #d9edf7 !important; }
-  </style>
-
   <script>
     // Accept both ?q= and ?search= (sanitized)
     function getSanitizedQueryParamAny() {
@@ -105,9 +81,9 @@
         loadingRow.remove();
         allBugs.forEach(bug => {
           const row = `<tr>
-            <td>${bug.date}</td>
-            <td><a href="${bug.url}" target="_blank" rel="noopener noreferrer">${bug.id}</a>: ${bug.desc}</td>
-            <td>${bug.lead}</td>
+            <td class="bug-date">${bug.date}</td>
+            <td class="bug-description"><a href="${bug.url}" target="_blank" rel="noopener noreferrer">${bug.id}</a><span>${bug.desc}</span></td>
+            <td><span class="bug-lead">${bug.lead}</span></td>
           </tr>`;
           tableBody.insertAdjacentHTML('beforeend', row);
         });
@@ -153,7 +129,11 @@
           // Remove tabindex from non-interactive elements (column headers)
           $('#security-bugs thead th').removeAttr('tabindex');
           // Add autocomplete to search input
-          $('#security-bugs_filter input').attr('autocomplete', 'off');
+          $('#security-bugs_filter input').attr({
+            'autocomplete': 'off',
+            'placeholder': 'Project, issue, or researcher',
+            'aria-label': 'Search reported software bugs'
+          });
         }
         fixDataTablesA11y();
         table.on('draw', fixDataTablesA11y);
@@ -166,9 +146,13 @@
         function renderBanner() {
           const query = ($('#security-bugs_filter input').val() || '').trim();
           const filtered = table.rows({ search: 'applied' }).count();
-          bannerEl.innerHTML = query
-            ? `Showing <b>${filtered}</b> results for "${query}" (out of ${totalCount} total).`
-            : `Showing all <b>${totalCount}</b> entries.`;
+          const count = document.createElement('b');
+          count.textContent = filtered;
+          bannerEl.replaceChildren(
+            ...(query
+              ? ['Showing ', count, ` results for "${query}" (out of ${totalCount} total).`]
+              : ['Showing all ', count, ' entries.'])
+          );
         }
 
         table.on('draw', renderBanner);
@@ -204,22 +188,14 @@
   <div id="navbar-placeholder"></div>
 
   <main id="main-content" role="main">
-    <div class="container main-container">
-      <div class="col-md-12 text-center" style="margin-bottom:10px">
-        <h1>FuTURES³ Lab <br class="on-narrow"> Reported Bugs:
-          <span class="counter" id="bug-count" aria-live="polite">0</span>
-        </h1>
-      </div>
+    <div class="container main-container bugs-page">
+      <header class="page-intro">
+        <h1>Reported Software Bugs: <span class="bug-count"><span class="counter" id="bug-count" aria-live="polite">0</span></span></h1>
+        <p>Publicly reported software bugs and security vulnerabilities found through FuTURES³ Lab research.</p>
+      </header>
 
-      <div class="col-md-12" style="margin-bottom:15px">
-        <p>
-          We regularly report new software bugs and security vulnerabilities found by our research.
-          Below is an updated list of <b>publicly reported</b> bugs:
-        </p>
-      </div>
-
-      <div class="col-md-12 table-responsive">
-        <table id="security-bugs" class="display table table-striped table-bordered" style="width:100%" role="table" aria-label="Security bugs and vulnerabilities reported by FuTURES³ Lab">
+      <div class="table-responsive bugs-table-wrap">
+        <table id="security-bugs" class="display table" style="width:100%" role="table" aria-label="Security bugs and vulnerabilities reported by FuTURES³ Lab">
           <thead>
             <tr>
               <th scope="col" style="width:12%">Date</th>
@@ -236,8 +212,6 @@
       </div>
     </div>
   </main>
-
-  <br>
 
   <div id="footer-placeholder"></div>
 

@@ -1,0 +1,9 @@
+[
+  {
+    "id": "WAMR Security Advisory #GHSA-g346-ch27-jm9r",
+    "url": "https://github.com/wasm-micro-runtime/wasm-micro-runtime/security/advisories/GHSA-g346-ch27-jm9r",
+    "lead": "Dallin Hoyt",
+    "date": "2026-11-17",
+    "desc": "NULL pointer dereference in `destroy_const_expr_stack()` when loading a malformed WASM module with Extended Constant Expressions enabled (`WAMR_BUILD_EXTENDED_CONST_EXPR=1`)"
+  }
+]
